@@ -73,3 +73,10 @@
 [submodule "vim/bundle/vim-jsbeautify"]
 	path = vim/bundle/vim-jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify
+[submodule "vim/bundle/--force"]
+	path = vim/bundle/--force
+	url = https://github.com/vim-scripts/ZoomWin
+[submodule "vim/bundle/ZoomWin"]
+	path = vim/bundle/ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin
+	ignore = dirty
