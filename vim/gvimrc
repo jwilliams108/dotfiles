@@ -12,6 +12,7 @@ set go-=r
 "theme
 syntax enable
 colorscheme seoul256
+set background=dark
 "colorscheme solarized
 "set background=light
 "set transparency=2
