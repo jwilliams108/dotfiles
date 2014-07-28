@@ -1,0 +1,17 @@
+set lines=60 columns=150
+"set guifont=Consolas\ for\ Powerline:h14
+set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+
+"remove toolbar
+set go-=T
+
+"remove scrollbars
+set go-=L
+set go-=r
+
+"theme
+syntax enable
+colorscheme seoul256
+"colorscheme solarized
+"set background=light
+"set transparency=2
