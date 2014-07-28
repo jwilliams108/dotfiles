@@ -1,0 +1,23 @@
+[user]
+	name = ***REMOVED***
+	email = ***REMOVED***
+[alias]
+	co = checkout
+	ci = commit
+	ca = commit --amend
+	st = status
+	br = branch
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	hist = log --pretty=format:\"%h %cd | %s%d [%an]\" --graph --date=short
+	laa = add --all
+	ao = add --patch
+	cp = cherry-pick
+	d = diff
+	dc = diff --cached
+	rc = rebase --continue
+	type = cat-file -t
+	dump = cat-file -p
+[core]
+	excludesfile = /Users/***REMOVED***/.gitignore
+[push]
+	default = upstream

@@ -1,0 +1,5 @@
+alias brews='brew list -1'
+alias bi='brew -v install'
+alias bu='brew -v upgrade'
+alias bup='brew update'
+alias bout='brew outdated'
