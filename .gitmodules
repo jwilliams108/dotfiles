@@ -10,6 +10,3 @@
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/autoload/vim-pathogen"]
-	path = vim/autoload/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
