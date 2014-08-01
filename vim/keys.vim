@@ -1,11 +1,23 @@
-" Leader
+"leader
 let mapleader = ','
 
-" remaps
+"key remaps {{{
+
 " switch semicolon
 nnoremap ; :
 nnoremap <leader>; ;
 nnoremap <leader><leader> ,
+
+imap ii <Esc>
+
+nnoremap D d$
+noremap H ^
+noremap L $
+vnoremap L g_
+
+"}}}
+
+"movement {{{
 
 " move splits
 nmap gh <C-w>h
@@ -23,9 +35,6 @@ nmap K 5k
 xmap J 5j
 xmap K 5k
 
-imap ii <Esc>
-nmap <leader>ll :set list!<CR>
-
 " bash-like movement
 imap <C-f> <Right>
 imap <C-b> <Left>
@@ -33,13 +42,71 @@ imap <C-a> <Home>
 imap <C-e> <End>
 imap <C-d> <Del>
 
-" utilities
+"line joins/splits
+nmap <C-j> :join<CR>
+nmap <C-s> i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+
+"}}}
+
+"searching {{{
+
+" matchit
+runtime macros/matchit.vim
+map <Tab> %
+
+" don't move on *
+nnoremap * *<C-o>
+
+" keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" same when jumping around
+nnoremap g; g;zz
+nnoremap g, g,zz
+"nnoremap <C-o> <C-o>zz
+
+" Visual Mode */# from Scrooloose
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+"}}}
+
+"display utilities {{{
+
+" toggle [i]nvisible characters
+nnoremap <leader>i :set list!<CR>
+
+" wrap
+nnoremap <leader>W :set wrap!<cr>
+
+" set text wrapping toggles
+nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
+
+" turn off highlight search
+"nmap <silent> <leader><space> :nohls<CR>
+nmap <silent> <leader><space> :noh<CR>:call clearmatches()<CR>
+
+" Underline the current line with '='
+nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
+
+"}}}
+
+"whitespace utilities {{{
+
 " increase/decrease indentation
 vmap <leader>l >gv
 vmap <leader>h <gv
 
 " trim trailing whitespace
-nnoremap <leader>w :%s/\s\+$//<CR>:let @/=''<CR>
+nnoremap <leader>w mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " convert tabs to spaces
 nnoremap <leader>e :retab<CR>
@@ -50,26 +117,34 @@ map <leader>r :set ts=4 noet<CR>:retab!<CR>:set et ts=2<CR>:retab<CR>
 " insert spaces after colons (for css)
 map <leader>: :%s/: \@!/: /g<CR>
 
+"}}}
+
+"buffers {{{
+
+" list buffers then wait for input to switch
+nnoremap <leader>ls :ls<CR>:b<Space>
+
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>
 "nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
-" Turn off highlight search
-nmap <silent> <leader><space> :nohls<CR>
+"}}}
 
-" set text wrapping toggles
-nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
+"clipboard {{{
 
-" Underline the current line with '='
-nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
-
-"copy to/replace with clipboard
+" copy to/replace with clipboard
 set clipboard=unnamed
 map <leader>c :%y+<CR>
 map <leader>v gg"_dGP
+
+"}}}
+
+"vimdiff {{{
 
 " do vimdiff clipboard in new window
 nnoremap <leader>dt :vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
 
 " close vimdiff clipboard new window
 nnoremap <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
+
+"}}}

@@ -1,5 +1,11 @@
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
+
 set nocompatible
 
 source ~/.vim/config.vim
+source ~/.vim/filetypes.vim
 source ~/.vim/keys.vim
 source ~/.vim/plugins.vim

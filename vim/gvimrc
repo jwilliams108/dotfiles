@@ -1,18 +1,27 @@
-set lines=60 columns=150
-"set guifont=Consolas\ for\ Powerline:h14
-set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+"appearance {{{
 
-"remove toolbar
+set lines=60 columns=150
+set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+"set guifont=Consolas\ for\ Powerline:h14
+
+" remove toolbar
 set go-=T
 
-"remove scrollbars
+" remove scrollbars
 set go-=L
 set go-=r
 
-"theme
-syntax enable
-colorscheme seoul256
-set background=dark
-"colorscheme solarized
+"}}}
+
+"theme {{{
+
+syntax on
 "set background=light
+set background=dark
+
+"colorscheme solarized
+colorscheme seoul256
+
 "set transparency=2
+
+"}}}
