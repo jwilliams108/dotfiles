@@ -28,17 +28,20 @@ prompt_end() {
   CURRENT_BG=''
 }
 
+prompt_context () {
+  local user=`whoami`
+  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+    echo -n "%F{blue}$user%f on %F{green}%m%f"
+  fi
+}
+
 # Dir: current working directory
 prompt_dir() {
   prompt_segment 10 250 '%~'
 }
 
-#
 # PROMPT
-#
-#PROMPT_DIR='%F{green}%d%f'
-#PROMPT_DIR='%F{green}${PWD/#$HOME/~}%f'
-PROMPT_DIR='[$(prompt_dir)$(prompt_end) ]'
+PROMPT_DIR='[$(prompt_context)$(prompt_dir)$(prompt_end) ]'
 
 PROMPT_SIGN='%F{red}%B➜ %b%f'
 
@@ -48,9 +51,7 @@ GIT_PROMPT_STATUS='$(git_prompt_status)'
 PROMPT="${PROMPT_DIR}${GIT_PROMPT_INFO}${GIT_PROMPT_STATUS}
 ${PROMPT_SIGN} "
 
-#
-# Git repository
-#
+# Git stuff
 ZSH_THEME_GIT_PROMPT_PREFIX=" %F{cyan}%B~%b%f git:(%F{blue}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f"
 ZSH_THEME_GIT_PROMPT_DIRTY=")%F{yellow} ✗ "
