@@ -37,7 +37,14 @@ export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.perl5/perlbrew/bin:/opt/local/
 #eval "$(rbenv init -)"
 
 # for perlbrew
-source $HOME/.perl5/perlbrew/etc/bashrc
+if [ -d ~/.perl5/perlbrew ]; then
+  source $HOME/.perl5/perlbrew/etc/bashrc
+fi
+
+# for phpbrew
+if [ -d ~/.phpbrew ]; then
+  source $HOME/.phpbrew/bashrc
+fi
 
 export EDITOR=vim
 export PAGER=less
