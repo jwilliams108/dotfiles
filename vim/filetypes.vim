@@ -1,4 +1,4 @@
-"Javascript, Coffeescript {{{
+"Javascript {{{
 
 augroup ft_javascript
   au!
@@ -14,7 +14,21 @@ augroup ft_javascript
   au FileType javascript vnoremap <buffer> <leader>p :!python -m json.tool<cr>
 augroup END
 
-" }}}
+"}}}
+
+"Coffeescript {{{
+
+augroup ft_coffeescript
+  au!
+
+  au FileType coffee setlocal foldmethod=marker
+  au FileType coffee setlocal foldmarker={,}
+
+  " Treat litcoffee as coffeescript
+  au BufNewFile,BufRead *.litcoffee set ft=coffee
+augroup END
+
+"}}}
 
 "CSS, Less and Sass {{{
 
@@ -55,7 +69,7 @@ augroup ft_css
   au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<CR> {}<left><CR><space><space><space><space>.<CR><Esc>kA<bs>
 augroup END
 
-" }}}
+"}}}
 
 "XML {{{
 
@@ -71,7 +85,7 @@ augroup ft_xml
   au FileType xml nnoremap <buffer> <localleader>= Vat=
 augroup END
 
-" }}}
+"}}}
 
 "VIM config files {{{
 
@@ -83,7 +97,7 @@ augroup ft_vim
   au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
 augroup END
 
-" }}}
+"}}}
 
 "Python {{{
 
@@ -94,4 +108,16 @@ augroup ft_python
   au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
 augroup END
 
-" }}}
+"}}}
+
+"PHP {{{
+
+augroup ft_php
+  au!
+
+  "au Filetype php,inc setlocal foldmethod=syntax
+  au Filetype php,inc setlocal foldmethod=marker
+  au Filetype php,inc setlocal foldmarker={,}
+augroup END
+
+"}}}

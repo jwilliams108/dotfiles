@@ -60,9 +60,9 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
-set wrap
 
 " text
+set wrap
 set showbreak=↪
 set linebreak
 set textwidth=80

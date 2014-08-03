@@ -10,7 +10,7 @@ nnoremap <leader><leader> ,
 
 imap ii <Esc>
 
-nnoremap D d$
+nnoremap Y y$
 noremap H ^
 noremap L $
 vnoremap L g_
@@ -82,10 +82,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 "display utilities {{{
 
 " toggle [i]nvisible characters
-nnoremap <leader>i :set list!<CR>
+nnoremap <F2> :set list!<CR>
 
 " wrap
-nnoremap <leader>W :set wrap!<cr>
+nnoremap <F3> :set wrap!<CR>
 
 " set text wrapping toggles
 nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
@@ -100,6 +100,9 @@ nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
 "}}}
 
 "whitespace utilities {{{
+
+" toggle expandtab
+nmap <F4> :set expandtab!<CR>
 
 " increase/decrease indentation
 vmap <leader>l >gv

@@ -134,6 +134,10 @@ let g:airline_symbols.linenr = '⭡'
 
 "indent guides {{{
 
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
 let g:indentguides_state = 0
 function! IndentGuides() " {{{
     if g:indentguides_state
