@@ -2,8 +2,8 @@
 
 ## Basic Settings
 
-    MARGIN_X     = 3
-    MARGIN_Y     = 3
+    MARGIN_X     = 4
+    MARGIN_Y     = 4
     GRID_WIDTH   = 21
     GRID_HEIGHT  = 13
 
