@@ -43,7 +43,7 @@ prompt_dir() {
 # PROMPT
 PROMPT_DIR='[$(prompt_context)$(prompt_dir)$(prompt_end) ]'
 
-PROMPT_SIGN='%F{red}%B➜ %b%f'
+PROMPT_SIGN='%F{red}➜ %f'
 
 GIT_PROMPT_INFO='$(git_prompt_info)'
 GIT_PROMPT_STATUS='$(git_prompt_status)'
