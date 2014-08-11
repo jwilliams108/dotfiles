@@ -392,6 +392,7 @@ readable.
 Combinations of **Cmd** + **Alt/Opt** + **Ctrl**
 
     ctrl       = ['ctrl']
+    ctrlShift  = 'ctrl+shift'.split '+'
     ctrlCmd    = 'ctrl+cmd'.split '+'
     ctrlAlt    = 'ctrl+alt'.split '+'
     ctrlAltCmd = 'ctrl+alt+cmd'.split '+'
@@ -406,13 +407,15 @@ Transpose/Swap Windows
 
 Move the current window to the specific area of the screen and fill it.
 
-    key_binding '[',  ctrl,    -> Window.focusedWindow().toFib13Left()
-    key_binding ']',  ctrl,    -> Window.focusedWindow().toFib8Right()
+    key_binding '[',  ctrl,      -> Window.focusedWindow().toFib13Left()
+    key_binding ']',  ctrl,      -> Window.focusedWindow().toFib8Right()
+    key_binding '[',  ctrlShift, -> Window.focusedWindow().toFib13Left()
+    key_binding ']',  ctrlShift, -> Window.focusedWindow().toFib8Right()
 
-    key_binding '\\', ctrl,    -> Window.focusedWindow().toFib13TopLeft()
-    key_binding '/',  ctrl,    -> Window.focusedWindow().toFib13BtmLeft()
-    key_binding '\\', ctrlCmd, -> Window.focusedWindow().toFib8TopRight()
-    key_binding '/',  ctrlCmd, -> Window.focusedWindow().toFib8BtmRight()
+    #key_binding '\\', ctrl,      -> Window.focusedWindow().toFib13TopLeft()
+    #key_binding '/',  ctrl,      -> Window.focusedWindow().toFib13BtmLeft()
+    key_binding '\\', ctrlShift,   -> Window.focusedWindow().toFib8TopRight()
+    key_binding '/',  ctrlShift,   -> Window.focusedWindow().toFib8BtmRight()
 
 Focus to direction
 
@@ -423,46 +426,46 @@ Focus to direction
 
 Maximize the current window
 
-    key_binding 'space', ctrlCmd, -> Window.focusedWindow().toFullScreen()
+    key_binding 'space', ctrlShift, -> Window.focusedWindow().toFullScreen()
 
 Switch to or lauch apps, as defined in the [Application config](#application-config)
 
-    #key_binding '0',     ctrlCmd, -> App.focusOrStart EDITOR
-    #key_binding '9',     ctrlCmd, -> App.focusOrStart TERMINAL
-    #key_binding '8',     ctrlCmd, -> App.focusOrStart BROWSER
-    #key_binding '7',     ctrlCmd, -> App.focusOrStart FINDER
+    #key_binding '0',     ctrlShift, -> App.focusOrStart EDITOR
+    #key_binding '9',     ctrlShift, -> App.focusOrStart TERMINAL
+    #key_binding '8',     ctrlShift, -> App.focusOrStart BROWSER
+    #key_binding '7',     ctrlShift, -> App.focusOrStart FINDER
 
 Switch layouts using the predefined [Layout config](#layout-config)
 
-    key_binding '1',     ctrlCmd, -> switchLayout 'Editor and Terminal'
-    key_binding '2',     ctrlCmd, -> switchLayout 'Communications'
-    #key_binding '5',     ctrlCmd, -> switchLayout 'Editor and Browser'
-    #key_binding '3',     ctrlCmd, -> switchLayout 'Terminal and Browser'
-    #key_binding '2',     ctrlCmd, -> switchLayout 'Finder and Terminal'
-    #key_binding '1',     ctrlCmd, -> switchLayout 'Finder and Browser'
+    key_binding '1',     ctrlShift, -> switchLayout 'Editor and Terminal'
+    key_binding '2',     ctrlShift, -> switchLayout 'Communications'
+    #key_binding '5',     ctrlShift, -> switchLayout 'Editor and Browser'
+    #key_binding '3',     ctrlShift, -> switchLayout 'Terminal and Browser'
+    #key_binding '2',     ctrlShift, -> switchLayout 'Finder and Terminal'
+    #key_binding '1',     ctrlShift, -> switchLayout 'Finder and Browser'
 
 Move window between screens
 
-    key_binding 'N',     ctrlCmd, -> moveWindowToNextScreen()
-    key_binding 'P',     ctrlCmd, -> moveWindowToPreviousScreen()
+    key_binding 'N',     ctrlShift, -> moveWindowToNextScreen()
+    key_binding 'P',     ctrlShift, -> moveWindowToPreviousScreen()
 
 Snap current window or all windows to the grid
 
-    #key_binding ';',     ctrlCmd, -> Window.focusedWindow().snapToGrid()
-    #key_binding "'",     ctrlCmd, -> Window.visibleWindows().map (win)-> win.snapToGrid()
+    #key_binding ';',     ctrlShift, -> Window.focusedWindow().snapToGrid()
+    #key_binding "'",     ctrlShift, -> Window.visibleWindows().map (win)-> win.snapToGrid()
 
 Move the current window around the grid
 
-    #key_binding 'left',  ctrlCmd, -> moveWindowLeftOneColumn()
-    #key_binding 'up',    ctrlCmd, -> windowUpOneRow()
-    #key_binding 'down',  ctrlCmd, -> windowDownOneRow()
-    #key_binding 'right', ctrlCmd, -> moveWindowRightOneColumn()
+    #key_binding 'left',  ctrlShift, -> moveWindowLeftOneColumn()
+    #key_binding 'up',    ctrlShift, -> windowUpOneRow()
+    #key_binding 'down',  ctrlShift, -> windowDownOneRow()
+    #key_binding 'right', ctrlShift, -> moveWindowRightOneColumn()
 
 Size the current window on the grid
 
-    #key_binding 'U',     ctrlCmd, -> windowToFullHeight()
+    #key_binding 'U',     ctrlShift, -> windowToFullHeight()
 
-    #key_binding 'I',     ctrlCmd, -> windowShrinkOneGridColumn()
-    #key_binding 'O',     ctrlCmd, -> windowGrowOneGridColumn()
-    #key_binding ',',     ctrlCmd, -> windowShrinkOneGridRow()
-    #key_binding '.',     ctrlCmd, -> windowGrowOneGridRow()
+    #key_binding 'I',     ctrlShift, -> windowShrinkOneGridColumn()
+    #key_binding 'O',     ctrlShift, -> windowGrowOneGridColumn()
+    #key_binding ',',     ctrlShift, -> windowShrinkOneGridRow()
+    #key_binding '.',     ctrlShift, -> windowGrowOneGridRow()
