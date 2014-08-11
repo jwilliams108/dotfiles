@@ -11,11 +11,6 @@ set go-=T
 set go-=L
 set go-=r
 
-"}}}
-
-"theme {{{
-
-syntax on
 "set background=light
 set background=dark
 

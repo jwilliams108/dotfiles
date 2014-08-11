@@ -13,6 +13,12 @@ set autoread
 
 "}}}
 
+"theme {{{
+
+syntax on
+
+"}}}
+
 "searching {{{
 set ignorecase
 set smartcase
