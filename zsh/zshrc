@@ -39,6 +39,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.perl5/perlbrew/bin:/opt/local/
 # for perlbrew
 if [ -d ~/.perl5/perlbrew ]; then
   source $HOME/.perl5/perlbrew/etc/bashrc
+  export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 fi
 
 # for phpbrew
@@ -49,9 +50,7 @@ fi
 export EDITOR=vim
 export PAGER=less
 export NODE_PATH=/usr/local/lib/node
-export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 export COPYFILE_DISABLE=1
-#export SSL_CERT_FILE=$HOME/Documents/certs/cacert.pem
 
 # history
 HISTFILE=$HOME/.zsh-history
