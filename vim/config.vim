@@ -72,7 +72,7 @@ set colorcolumn=+1
 
 "folding {{{
 
-set foldlevelstart=0
+set foldlevelstart=99
 
 " Space to toggle folds.
 nnoremap <Space> za
