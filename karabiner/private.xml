@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<root>
+  <list>
+    <item>
+      <name>Cmus Controls</name>
+      <appendix>Send commands to cmus-remote via keystrokes</appendix>
+
+      <!-- cmus commands -->
+      <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_pause</name>
+        <url type="shell">
+          <![CDATA[  /usr/local/bin/cmus-remote -u  ]]>
+        </url>
+      </vkopenurldef>
+      <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_next</name>
+        <url type="shell">
+          <![CDATA[  /usr/local/bin/cmus-remote -n  ]]>
+        </url>
+      </vkopenurldef>
+      <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_prev</name>
+        <url type="shell">
+          <![CDATA[  /usr/local/bin/cmus-remote -r  ]]>
+        </url>
+      </vkopenurldef>
+
+      <!-- function key combinations -->
+      <item>
+        <name>Use F6 to execute cmus-remote -r</name>
+        <identifier>private.f6</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F6,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
+        </autogen>
+      </item>
+      <item>
+        <name>Use F7 to execute cmus-remote -u</name>
+        <identifier>private.f7</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F7,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
+        </autogen>
+      </item>
+      <item>
+        <name>Use F8 to execute cmus-remote -n</name>
+        <identifier>private.F8</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F8,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_next
+        </autogen>
+      </item>
+
+      <!-- left option + arrow key combinations -->
+      <item>
+        <name>Use left-option + left arrow to execute cmus-remote -r</name>
+        <identifier>private.left_option_left_arrow</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
+        </autogen>
+      </item>
+      <item>
+        <name>Use left-option enter to execute cmus-remote -u</name>
+        <identifier>private.left_option_enter</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::RETURN, ModifierFlag::OPTION_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
+        </autogen>
+      </item>
+      <item>
+        <name>Use left-option + right arrow to execute cmus-remote -n</name>
+        <identifier>private.left_option_right_arrow</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_next
+        </autogen>
+      </item>
+    </item>
+  </list>
+
+  <list>
+    <item>
+      <name>Additional Meta Controls</name>
+
+      <item>
+        <name>Remap left-control (F19) to ctrl + option + command</name>
+        <identifier>private.left_control_to_hyper</identifier>
+        <autogen>
+          --KeyToKey--
+          KeyCode::F19,
+          KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+        <!-- fix for ctrl-c -->
+        <autogen>
+          --KeyToKey--
+          KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::C, ModifierFlag::CONTROL_L
+        </autogen>
+        <!-- fix for ctrl-numbers -->
+        <autogen>
+          --KeyToKey--
+          KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::KEY_1, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::KEY_2, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::KEY_3, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::KEY_3, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::KEY_4, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::KEY_4, ModifierFlag::CONTROL_L
+        </autogen>
+        <!-- fix for ctrl-arrows -->
+        <autogen>
+          --KeyToKey--
+          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+
+      <item>
+        <name>Enable Window Movement Layer</name>
+        <identifier>private.wmove_layer</identifier>
+        <autogen>
+          --KeyToKey--
+          KeyCode::CONTROL_R,
+          KeyCode::VK_STICKY_EXTRA4
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::H, ModifierFlag::EXTRA4,
+          KeyCode::H, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::J, ModifierFlag::EXTRA4,
+          KeyCode::J, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::K, ModifierFlag::EXTRA4,
+          KeyCode::K, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::L, ModifierFlag::EXTRA4,
+          KeyCode::L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+    </item>
+  </list>
+</root>
