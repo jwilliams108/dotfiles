@@ -2,36 +2,23 @@
 export LC_CTYPE=C
 export LANG=C
 
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+# oh-my-zsh setup and config {{{
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/.zsh"
 export ZSH_THEME="scott"
-
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
 export DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# export DISABLE_AUTO_TITLE="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(virtualbox brew git macvim tmux autojump)
-
+plugins=(brew git tmux autojump aliases)
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# }}}
+
+# environment and path {{{
+
+export PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.perl5/perlbrew/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 
 # for rbenv
 #eval "$(rbenv init -)"
@@ -39,6 +26,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.perl5/perlbrew/bin:/opt/local/
 # for perlbrew
 if [ -d ~/.perl5/perlbrew ]; then
   source $HOME/.perl5/perlbrew/etc/bashrc
+  export PATH=$HOME/.perl5/perlbrew/bin:$PATH
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 fi
 
@@ -49,7 +37,6 @@ fi
 
 export EDITOR=vim
 export PAGER=less
-export NODE_PATH=/usr/local/lib/node
 export COPYFILE_DISABLE=1
 
 # history
@@ -57,7 +44,9 @@ HISTFILE=$HOME/.zsh-history
 HISTSIZE=1000
 SAVEHIST=1000
 
-#bindkey -v
+#}}}
+
+# key bindings {{{
 
 # vi style incremental search
 bindkey '^R' history-incremental-search-backward
@@ -67,7 +56,7 @@ bindkey '^N' history-search-forward
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-# bindkeys
+# command line movement
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 bindkey "^W" backward-delete-word
@@ -76,6 +65,16 @@ bindkey "^f" forward-word
 bindkey "^d" delete-word
 bindkey "^k" kill-line
 #bindkey "${key[Delete]}" delete-char
+
+#}}}
+
+# Source local configuration {{{
+
+if [ -f $HOME/.zshrc_local ];
+  then source $HOME/.zshrc_local
+fi
+
+# }}}
 
 # welcome message
 echo -e "Kernel Information: " `uname -smr`
