@@ -101,3 +101,6 @@
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = git://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/bundle/targets.vim"]
+	path = vim/bundle/targets.vim
+	url = https://github.com/wellle/targets.vim
