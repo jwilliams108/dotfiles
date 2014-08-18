@@ -49,13 +49,6 @@ Window::gridCurrentPosition = ->
     height: Math.round(frame.height / screen.height * GRID_HEIGHT)
   }
 
-Window::topLeft = ->
-  frame = @frame()
-  {
-    x: frame.x
-    y: frame.y
-  }
-
 Window::topRight = ->
   frame = @frame()
   {
