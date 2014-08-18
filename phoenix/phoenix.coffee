@@ -70,8 +70,35 @@ Window::toRight = ->
     win.topRight().x > p.x + 10
   .value()
 
-# Window moving and resizing
+# Window popout/focus
 lastFrames = {}
+
+Window::rememberFrame = -> lastFrames[this] = @frame()
+Window::forgetFrame = -> delete lastFrames[this]
+
+Window::toggleFibScreen = ->
+  grid_x      = Math.round(GRID_B_RATIO * GRID_WIDTH / 2.0)
+  grid_y      = Math.round(GRID_B_RATIO * GRID_HEIGHT / 2.0)
+  grid_width  = Math.round(GRID_A_RATIO * GRID_WIDTH)
+  grid_height = Math.round(GRID_A_RATIO * GRID_HEIGHT)
+
+  fullFrame = @calculateGrid(grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT)
+  unless _.isEqual(@frame(), fullFrame)
+    @rememberFrame()
+    @toGrid grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT
+  else if lastFrames[this]
+    @setFrame lastFrames[this]
+    @forgetFrame()
+
+Window::toggleAlmostFullScreen = ->
+  # make 1 grid unit border
+  fullFrame = @calculateGrid(1 / GRID_WIDTH, 1 / GRID_HEIGHT, (GRID_WIDTH - 2) / GRID_WIDTH, (GRID_HEIGHT - 2) / GRID_HEIGHT)
+  unless _.isEqual(@frame(), fullFrame)
+    @rememberFrame()
+    @toGrid 1 / GRID_WIDTH, 1 / GRID_HEIGHT, (GRID_WIDTH - 2) / GRID_WIDTH, (GRID_HEIGHT - 2) / GRID_HEIGHT
+  else if lastFrames[this]
+    @setFrame lastFrames[this]
+    @forgetFrame()
 
 Window::toggleFullScreen = ->
   fullFrame = @calculateGrid(0, 0, 1, 1)
@@ -81,9 +108,6 @@ Window::toggleFullScreen = ->
   else if lastFrames[this]
     @setFrame lastFrames[this]
     @forgetFrame()
-
-Window::rememberFrame = -> lastFrames[this] = @frame()
-Window::forgetFrame = -> delete lastFrames[this]
 
 # Window resizing
 Window::resizeWindow = (direction) ->
