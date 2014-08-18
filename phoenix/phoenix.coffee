@@ -194,16 +194,12 @@ Window::resizeWindow = (direction) ->
 
   @toGrid new_x, new_y, new_width / GRID_WIDTH, new_height / GRID_HEIGHT
 
+# Bindings
 # Binding alias
 key_binding = (key, modifier, fn) ->
   api.bind key, modifier, fn
 
-# Bindings
-
 # command keys
-ctrl       = ['ctrl']
-ctrlShift  = 'ctrl+shift'.split '+'
-ctrlCmd    = 'ctrl+cmd'.split '+'
 ctrlAlt    = 'ctrl+alt'.split '+'
 ctrlAltCmd = 'ctrl+alt+cmd'.split '+'
 
@@ -212,7 +208,9 @@ key_binding 'H', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('left')
 key_binding 'L', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('right')
 key_binding 'K', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('top')
 key_binding 'J', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('bottom')
-key_binding 'enter', ctrlAltCmd, -> Window.focusedWindow().toggleFullScreen()
+key_binding 'F', ctrlAltCmd, -> Window.focusedWindow().toggleFullScreen()
+key_binding 'D', ctrlAltCmd, -> Window.focusedWindow().toggleFibScreen()
+key_binding 'A', ctrlAltCmd, -> Window.focusedWindow().toggleAlmostFullScreen()
 
 # focus to direction
 key_binding 'H',  ctrlAlt, -> Window.focusedWindow().focusWindowLeft()
