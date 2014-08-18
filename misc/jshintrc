@@ -14,7 +14,7 @@
   "eqeqeq" : true,
   "trailing" : true,
   /*"indent": 2,*/
-  "undef": true,
-  "unused": true,
+  /*"undef": true,*/
+  /*"unused": true,*/
   "latedef": true
 }
