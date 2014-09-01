@@ -21,8 +21,8 @@ Window::calculateGrid = (x, y, width, height) ->
   screen = @screen().frameWithoutDockOrMenu()
   x: Math.round(x * screen.width) + MARGIN + screen.x
   y: Math.round(y * screen.height) + MARGIN + screen.y
-  width: Math.round(width * screen.width) - 2.0 * MARGIN
-  height: Math.round(height * screen.height) - 2.0 * MARGIN
+  width: Math.round(width * screen.width) - (2.0 * MARGIN)
+  height: Math.round(height * screen.height) - (2.0 * MARGIN)
 
 Window::toGrid = (x, y, width, height) ->
   rect = @calculateGrid(x, y, width, height)
@@ -90,12 +90,12 @@ Window::toggleFibScreen = ->
     @setFrame lastFrames[this]
     @forgetFrame()
 
-Window::toggleAlmostFullScreen = ->
-  # make 1 grid unit border
-  fullFrame = @calculateGrid(1 / GRID_WIDTH, 1 / GRID_HEIGHT, (GRID_WIDTH - 2) / GRID_WIDTH, (GRID_HEIGHT - 2) / GRID_HEIGHT)
+Window::toggleBorderedScreen = (border) ->
+  fullFrame = @calculateGrid(border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH,
+                             (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT)
   unless _.isEqual(@frame(), fullFrame)
     @rememberFrame()
-    @toGrid 1 / GRID_WIDTH, 1 / GRID_HEIGHT, (GRID_WIDTH - 2) / GRID_WIDTH, (GRID_HEIGHT - 2) / GRID_HEIGHT
+    @toGrid border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
   else if lastFrames[this]
     @setFrame lastFrames[this]
     @forgetFrame()
@@ -210,7 +210,7 @@ key_binding 'K', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('top')
 key_binding 'J', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('bottom')
 key_binding 'F', ctrlAltCmd, -> Window.focusedWindow().toggleFullScreen()
 key_binding 'D', ctrlAltCmd, -> Window.focusedWindow().toggleFibScreen()
-key_binding 'A', ctrlAltCmd, -> Window.focusedWindow().toggleAlmostFullScreen()
+key_binding 'A', ctrlAltCmd, -> Window.focusedWindow().toggleBorderedScreen(0.5)
 
 # focus to direction
 key_binding 'H',  ctrlAlt, -> Window.focusedWindow().focusWindowLeft()

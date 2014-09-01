@@ -112,12 +112,12 @@ Window.prototype.toggleFibScreen = function() {
   }
 };
 
-Window.prototype.toggleAlmostFullScreen = function() {
+Window.prototype.toggleBorderedScreen = function(border) {
   var fullFrame;
-  fullFrame = this.calculateGrid(1 / GRID_WIDTH, 1 / GRID_HEIGHT, (GRID_WIDTH - 2) / GRID_WIDTH, (GRID_HEIGHT - 2) / GRID_HEIGHT);
+  fullFrame = this.calculateGrid(border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT);
   if (!_.isEqual(this.frame(), fullFrame)) {
     this.rememberFrame();
-    return this.toGrid(1 / GRID_WIDTH, 1 / GRID_HEIGHT, (GRID_WIDTH - 2) / GRID_WIDTH, (GRID_HEIGHT - 2) / GRID_HEIGHT);
+    return this.toGrid(border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT);
   } else if (lastFrames[this]) {
     this.setFrame(lastFrames[this]);
     return this.forgetFrame();
@@ -254,7 +254,7 @@ key_binding('D', ctrlAltCmd, function() {
 });
 
 key_binding('A', ctrlAltCmd, function() {
-  return Window.focusedWindow().toggleAlmostFullScreen();
+  return Window.focusedWindow().toggleBorderedScreen(0.5);
 });
 
 key_binding('H', ctrlAlt, function() {
