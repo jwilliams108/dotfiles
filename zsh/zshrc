@@ -8,17 +8,31 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.zsh"
 export ZSH_THEME="scott"
 export DISABLE_AUTO_UPDATE="true"
-plugins=(brew git tmux autojump aliases zsh-syntax-highlighting)
+plugins=(brew git fasd aliases zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # }}}
 
 # environment and path {{{
 
-export PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
+
+# for XQuartz
+if [ -d /usr/X11 ]; then
+  export PATH=/usr/X11/bin:$PATH
+fi
+
+# for mactex
+if [ -d /usr/texlive ]; then
+  export PATH=/usr/texlive/bin/x86_64-darwin:$PATH
+fi
+
+
+# for autojump (plugin doesn't seem to work)
+if [ -f `/usr/local/bin/brew --prefix`/etc/autojump.zsh ]; then
+  source `/usr/local/bin/brew --prefix`/etc/autojump.zsh
+fi
 
 # for rbenv
 #eval "$(rbenv init -)"
@@ -26,7 +40,7 @@ export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 # for perlbrew
 if [ -d ~/.perl5/perlbrew ]; then
   source $HOME/.perl5/perlbrew/etc/bashrc
-  export PATH=$HOME/.perl5/perlbrew/bin:$PATH
+  #export PATH=$HOME/.perl5/perlbrew/bin:$PATH
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 fi
 
@@ -34,6 +48,9 @@ fi
 if [ -d ~/.phpbrew ]; then
   source $HOME/.phpbrew/bashrc
 fi
+
+# make sure local takes precendence
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 export EDITOR=vim
 export PAGER=less
