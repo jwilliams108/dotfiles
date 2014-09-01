@@ -2,95 +2,10 @@
 <root>
   <list>
     <item>
-      <name>Cmus Controls</name>
-      <appendix>Send commands to cmus-remote via keystrokes</appendix>
-
-      <!-- cmus commands -->
-      <vkopenurldef>
-        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_pause</name>
-        <url type="shell">
-          <![CDATA[  /usr/local/bin/cmus-remote -u  ]]>
-        </url>
-      </vkopenurldef>
-      <vkopenurldef>
-        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_next</name>
-        <url type="shell">
-          <![CDATA[  /usr/local/bin/cmus-remote -n  ]]>
-        </url>
-      </vkopenurldef>
-      <vkopenurldef>
-        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_prev</name>
-        <url type="shell">
-          <![CDATA[  /usr/local/bin/cmus-remote -r  ]]>
-        </url>
-      </vkopenurldef>
-
-      <!-- function key combinations -->
-      <item>
-        <name>Use F6 to execute cmus-remote -r</name>
-        <identifier>private.f6</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::F6,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
-        </autogen>
-      </item>
-      <item>
-        <name>Use F7 to execute cmus-remote -u</name>
-        <identifier>private.f7</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::F7,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
-        </autogen>
-      </item>
-      <item>
-        <name>Use F8 to execute cmus-remote -n</name>
-        <identifier>private.F8</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::F8,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_next
-        </autogen>
-      </item>
-
-      <!-- left option + arrow key combinations -->
-      <item>
-        <name>Use left-option + left arrow to execute cmus-remote -r</name>
-        <identifier>private.left_option_left_arrow</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
-        </autogen>
-      </item>
-      <item>
-        <name>Use left-option enter to execute cmus-remote -u</name>
-        <identifier>private.left_option_enter</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::RETURN, ModifierFlag::OPTION_L,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
-        </autogen>
-      </item>
-      <item>
-        <name>Use left-option + right arrow to execute cmus-remote -n</name>
-        <identifier>private.left_option_right_arrow</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_next
-        </autogen>
-      </item>
-    </item>
-  </list>
-
-  <list>
-    <item>
       <name>Additional Meta Controls</name>
-
       <item>
-        <name>Remap left-control (F19) to ctrl + option + command</name>
+        <name>Remap F19 to ctrl + option + command (HYPER)</name>
+        <appendix>Use Seil to map F19 to left/right ctrl</appendix>
         <identifier>private.left_control_to_hyper</identifier>
         <autogen>
           --KeyToKey--
@@ -136,7 +51,6 @@
           KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
         </autogen>
       </item>
-
       <item>
         <name>Enable Window Movement Layer</name>
         <identifier>private.wmove_layer</identifier>
@@ -164,6 +78,142 @@
           --KeyToKey--
           KeyCode::L, ModifierFlag::EXTRA4,
           KeyCode::L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+    </item>
+  </list>
+  <list>
+    <item>
+      <name>Cmus Controls</name>
+      <appendix>Send commands to cmus-remote via keystrokes</appendix>
+      <!-- cmus commands -->
+      <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_pause</name>
+        <url type="shell">
+          <![CDATA[  /usr/local/bin/cmus-remote -u  ]]>
+        </url>
+      </vkopenurldef>
+      <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_next</name>
+        <url type="shell">
+          <![CDATA[  /usr/local/bin/cmus-remote -n  ]]>
+        </url>
+      </vkopenurldef>
+      <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_prev</name>
+        <url type="shell">
+          <![CDATA[  /usr/local/bin/cmus-remote -r  ]]>
+        </url>
+      </vkopenurldef>
+      <!-- function key combinations -->
+      <item>
+        <name>Use F6 to execute cmus-remote -r</name>
+        <identifier>private.f6_prev</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F6,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
+        </autogen>
+      </item>
+      <item>
+        <name>Use F7 to execute cmus-remote -u</name>
+        <identifier>private.f7_pause</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F7,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
+        </autogen>
+      </item>
+      <item>
+        <name>Use F8 to execute cmus-remote -n</name>
+        <identifier>private.F8_next</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F8,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_next
+        </autogen>
+      </item>
+      <item>
+        <name>Use F7 to execute cmus-remote -r</name>
+        <identifier>private.f7_prev</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F7,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
+        </autogen>
+      </item>
+      <item>
+        <name>Use F8 to execute cmus-remote -u</name>
+        <identifier>private.f8_pause</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F8,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
+        </autogen>
+      </item>
+      <item>
+        <name>Use F9 to execute cmus-remote -n</name>
+        <identifier>private.F9_next</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F9,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_next
+        </autogen>
+      </item>
+      <!-- HYPER + arrow key combinations -->
+      <item>
+        <name>Use HYPER + left arrow to execute cmus-remote -r</name>
+        <identifier>private.hyper_left_arrow</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
+        </autogen>
+      </item>
+      <item>
+        <name>Use HYPER + enter to execute cmus-remote -u</name>
+        <identifier>private.hyper_enter</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
+        </autogen>
+      </item>
+      <item>
+        <name>Use HYPER + right arrow to execute cmus-remote -n</name>
+        <identifier>private.hyper_right_arrow</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_next
+        </autogen>
+      </item>
+      <!-- left ctrl + cmd + option + arrow key combinations -->
+      <item>
+        <name>Use left-option + left arrow to execute cmus-remote -r</name>
+        <identifier>private.left_option_left_arrow</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
+        </autogen>
+      </item>
+      <item>
+        <name>Use left-option enter to execute cmus-remote -u</name>
+        <identifier>private.left_option_enter</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::RETURN, ModifierFlag::OPTION_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
+        </autogen>
+      </item>
+      <item>
+        <name>Use left-option + right arrow to execute cmus-remote -n</name>
+        <identifier>private.left_option_right_arrow</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_next
         </autogen>
       </item>
     </item>
