@@ -107,3 +107,6 @@
 [submodule "vim/bundle/gundo.vim"]
 	path = vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim
+[submodule "vim/bundle/vim-gotham"]
+	path = vim/bundle/vim-gotham
+	url = https://github.com/whatyouhide/vim-gotham.git
