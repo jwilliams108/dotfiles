@@ -88,6 +88,12 @@
       <appendix>Send commands to cmus-remote via keystrokes</appendix>
       <!-- cmus commands -->
       <vkopenurldef>
+        <name>KeyCode::VK_OPEN_URL_SHELL_cmus_stop</name>
+        <url type="shell">
+          <![CDATA[  /usr/local/bin/cmus-remote -s  ]]>
+        </url>
+      </vkopenurldef>
+      <vkopenurldef>
         <name>KeyCode::VK_OPEN_URL_SHELL_cmus_pause</name>
         <url type="shell">
           <![CDATA[  /usr/local/bin/cmus-remote -u  ]]>
@@ -107,30 +113,21 @@
       </vkopenurldef>
       <!-- function key combinations -->
       <item>
-        <name>Use F6 to execute cmus-remote -r</name>
-        <identifier>private.f6_prev</identifier>
+        <name>Use F5 to execute cmus-remote -u</name>
+        <identifier>private.f5_play</identifier>
         <autogen>
           __KeyToKey__
-          KeyCode::F6,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
-        </autogen>
-      </item>
-      <item>
-        <name>Use F7 to execute cmus-remote -u</name>
-        <identifier>private.f7_pause</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::F7,
+          KeyCode::F5,
           KeyCode::VK_OPEN_URL_SHELL_cmus_pause
         </autogen>
       </item>
       <item>
-        <name>Use F8 to execute cmus-remote -n</name>
-        <identifier>private.F8_next</identifier>
+        <name>Use F6 to execute cmus-remote -s</name>
+        <identifier>private.f6_stop</identifier>
         <autogen>
           __KeyToKey__
-          KeyCode::F8,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_next
+          KeyCode::F6,
+          KeyCode::VK_OPEN_URL_SHELL_cmus_stop
         </autogen>
       </item>
       <item>
@@ -143,20 +140,11 @@
         </autogen>
       </item>
       <item>
-        <name>Use F8 to execute cmus-remote -u</name>
-        <identifier>private.f8_pause</identifier>
+        <name>Use F8 to execute cmus-remote -n</name>
+        <identifier>private.f8_next</identifier>
         <autogen>
           __KeyToKey__
           KeyCode::F8,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
-        </autogen>
-      </item>
-      <item>
-        <name>Use F9 to execute cmus-remote -n</name>
-        <identifier>private.F9_next</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::F9,
           KeyCode::VK_OPEN_URL_SHELL_cmus_next
         </autogen>
       </item>
