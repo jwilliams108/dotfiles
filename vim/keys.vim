@@ -82,10 +82,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 "display utilities {{{
 
 " toggle [i]nvisible characters
-nnoremap <F2> :set list!<CR>
+nnoremap <silent> <F2> :set list!<CR>
 
 " wrap
-nnoremap <F3> :set wrap!<CR>
+nnoremap <silent> <F3> :set wrap!<CR>
 
 " set text wrapping toggles
 nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
@@ -102,7 +102,13 @@ nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
 "whitespace utilities {{{
 
 " toggle expandtab
-nmap <F4> :set expandtab!<CR>
+nmap <silent> <F4> :set expandtab!<CR>
+
+" set 4 space tabs
+nmap <silent> <F5> :set ts=4 sw=4 sts=4<CR>
+
+" set (return to) 2 space tabs
+nmap <silent> <F6> :set ts=2 sw=2 sts=2<CR>
 
 " increase/decrease indentation
 vmap <leader>l >gv
