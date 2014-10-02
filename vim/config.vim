@@ -6,8 +6,8 @@ set hidden
 set autoindent
 set copyindent
 set laststatus=2
-set splitbelow
-set splitright
+"set splitbelow
+"set splitright
 set autowrite
 set autoread
 
