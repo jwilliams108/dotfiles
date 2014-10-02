@@ -16,7 +16,6 @@ source $ZSH/oh-my-zsh.sh
 # environment and path {{{
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export NODE_PATH=/usr/local/lib/node_modules:$NODE_PATH
 
 # for XQuartz
 if [ -d /usr/X11 ]; then
@@ -28,10 +27,15 @@ if [ -d /usr/texlive ]; then
   export PATH=/usr/texlive/bin/x86_64-darwin:$PATH
 fi
 
-
 # for autojump (plugin doesn't seem to work)
 if [ -f `/usr/local/bin/brew --prefix`/etc/autojump.zsh ]; then
   source `/usr/local/bin/brew --prefix`/etc/autojump.zsh
+fi
+
+# for nvm
+if [ -d ~/.nvm ]; then
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
 fi
 
 # for rbenv
