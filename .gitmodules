@@ -110,3 +110,6 @@
 [submodule "vim/bundle/vim-gotham"]
 	path = vim/bundle/vim-gotham
 	url = https://github.com/whatyouhide/vim-gotham.git
+[submodule "vim/bundle/vim-multiple-cursors"]
+	path = vim/bundle/vim-multiple-cursors
+	url = https://github.com/kristijanhusak/vim-multiple-cursors.git
