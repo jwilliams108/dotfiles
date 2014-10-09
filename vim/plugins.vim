@@ -20,10 +20,24 @@ imap <leader>n <Esc>:NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 
 " enable closing vim if NERDTree is the only open window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup AuNERDTreeCmd
 
-" don't open NERDTree if files are specified
-autocmd VimEnter * if argc() == 0 | NERDTree | endif
+" open NERDTree if no files are specified
+"autocmd AuNERDTreeCmd VimEnter * if argc() == 0 | NERDTree | endif
+autocmd AuNERDTreeCmd StdinReadPre * let s:std_in=1
+autocmd AuNERDTreeCmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" quit if nerdtree is only open buffer
+autocmd AuNERDTreeCmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+let g:NERDTreeChDirMode = 2
+
+"}}}
+
+"Ctrl-P {{{
+
+let g:ctrlp_dont_split = 'netrw\|nerdtree'
+let g:ctrlp_working_path_mode = 'rw'
 
 "}}}
 
