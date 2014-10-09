@@ -96,7 +96,7 @@ au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 "fugitive {{{
 
-nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>ga :Gadd<CR>
