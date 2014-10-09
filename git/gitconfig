@@ -1,23 +1,50 @@
+# user {{{
 [user]
 	name = ***REMOVED***
 	email = ***REMOVED***
+# }}}
+# core {{{
+[core]
+	excludesfile = /Users/***REMOVED***/.gitignore
+	pager = less -F -X
+# }}}
+# push/pull/help {{{
+[push]
+	default = upstream
+[pull]
+	default = current
+[help]
+	autocorrect = 1
+# }}}
+# alias {{{
 [alias]
 	co = checkout
 	ci = commit
+	cm = commit -m
+	cma = commit -a -m
 	ca = commit --amend
-	st = status
+	st = status -s
 	br = branch
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	hist = log --pretty=format:\"%h %cd | %s%d [%an]\" --graph --date=short
-	laa = add --all
-	ao = add --patch
 	cp = cherry-pick
+	diff = diff --word-diff
 	d = diff
 	dc = diff --cached
+	r = reset
+	rh = reset --hard
 	rc = rebase --continue
-	type = cat-file -t
-	dump = cat-file -p
-[core]
-	excludesfile = /Users/***REMOVED***/.gitignore
-[push]
-	default = upstream
+	sl = stash list
+	sa = stash apply
+	ss = stash save
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	le = log --oneline --decorate
+	fl = log -u
+	hist = log --color --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+	dl = "!git ll -1"
+	dlc = diff --cached HEAD^
+	lr  = "!f() { git ll "$1"^.."$1"; }; f"
+	dr  = "!f() { git diff "$1"^.."$1"; }; f"
+# }}}
