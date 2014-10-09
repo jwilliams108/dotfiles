@@ -123,6 +123,9 @@ nnoremap <leader>e :retab<CR>
 " convert 4 space indents to 2 spaces
 map <leader>r :set ts=4 noet<CR>:retab!<CR>:set et ts=2<CR>:retab<CR>
 
+" convert 2 space indents to 4 spaces
+map <leader>R :set ts=2 noet<CR>:retab!<CR>:set et ts=4<CR>:retab<CR>
+
 " insert spaces after colons (for css)
 map <leader>: :%s/: \@!/: /g<CR>
 
