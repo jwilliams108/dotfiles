@@ -5,19 +5,11 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 
 "}}}
 
-"buffergator {{{
-
-let g:buffergator_viewport_split_policy = 'R'
-let g:buffergator_split_size = '30'
-let g:buffergator_display_regime = 'bufname'
-
-"}}}
-
 "NERDTree {{{
 
 map <leader>n :NERDTreeToggle<CR>
 imap <leader>n <Esc>:NERDTreeToggle<CR>
-map <leader>f :NERDTreeFind<CR>
+map gf :NERDTreeFind<CR>
 
 " enable closing vim if NERDTree is the only open window
 augroup AuNERDTreeCmd
@@ -68,6 +60,8 @@ let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
 map <leader>sc :SyntasticCheck<CR>
 
+let g:syntastic_php_checkers = ['phpcs']
+let g:syntastic_php_phpcs_args = "--standard=/Users/***REMOVED***/.phpcs/phpcs.xml -n --report=csv"
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list=0
@@ -206,5 +200,16 @@ nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
 nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
+
+"}}}
+
+" EasyMotion {{{
+
+map <Leader> <Plug>(easymotion-prefix)
+
+map f <Plug>(easymotion-f)
+map F <Plug>(easymotion-F)
+map t <Plug>(easymotion-t)
+map T <Plug>(easymotion-T)
 
 "}}}

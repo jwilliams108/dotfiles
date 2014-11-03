@@ -8,12 +8,10 @@ nnoremap ; :
 nnoremap <leader>; ;
 nnoremap <leader><leader> ,
 
-imap ii <Esc>
-
-nnoremap Y y$
-noremap H ^
-noremap L $
-vnoremap L g_
+"nnoremap Y y$
+"noremap H ^
+"noremap L $
+"vnoremap L g_
 
 "}}}
 
@@ -24,6 +22,21 @@ nmap gh <C-w>h
 nmap gj <C-w>j
 nmap gk <C-w>k
 nmap gl <C-w>l
+
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
+" swap split
+nmap gH <C-w>r
+nmap gK <C-w>r
+
+" resize splits
+noremap <up>    <C-W>+
+noremap <down>  <C-W>-
+noremap <left>  3<C-W><
+noremap <right> 3<C-W>>
 
 " move tabs
 nmap <C-l> gt
@@ -41,6 +54,14 @@ imap <C-b> <Left>
 imap <C-a> <Home>
 imap <C-e> <End>
 imap <C-d> <Del>
+
+"}}}
+
+"copying {{{
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 "line joins/splits
 nmap <C-j> :join<CR>
@@ -65,6 +86,9 @@ nnoremap N Nzzzv
 nnoremap g; g;zz
 nnoremap g, g,zz
 "nnoremap <C-o> <C-o>zz
+
+" highlight last inserted text
+nmap gV `[v`]
 
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
@@ -110,15 +134,21 @@ nmap <silent> <F5> :set ts=4 sw=4 sts=4<CR>
 " set (return to) 2 space tabs
 nmap <silent> <F6> :set ts=2 sw=2 sts=2<CR>
 
+" set no width restriction
+nmap <silent> <F7> :set tw=0
+
+" set (return to) 120 column width
+nmap <silent> <F8> :set tw=120<CR>
+
 " increase/decrease indentation
 vmap <leader>l >gv
 vmap <leader>h <gv
 
 " trim trailing whitespace
-nnoremap <leader>w mz:%s/\s\+$//<CR>:let @/=''<CR>`z
+nnoremap <leader>h mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " convert tabs to spaces
-nnoremap <leader>e :retab<CR>
+nnoremap <leader>a :retab<CR>
 
 " convert 4 space indents to 2 spaces
 map <leader>r :set ts=4 noet<CR>:retab!<CR>:set et ts=2<CR>:retab<CR>
@@ -135,6 +165,22 @@ map <leader>: :%s/: \@!/: /g<CR>
 
 " list buffers then wait for input to switch
 nnoremap <leader>ls :ls<CR>:b<Space>
+nnoremap gb :ls<CR>:b<Space>
+nnoremap gB :ls<CR>:vert sb<Space>
+
+"nnoremap ,b :buffer <C-z><S-Tab>
+"nnoremap ,B :sbuffer <C-z><S-Tab>
+
+" Move to the previous/next buffer
+nnoremap <PageUp>   :bprevious<CR>
+nnoremap <PageDown> :bnext<CR>
+
+nnoremap H :bprevious<CR>
+nnoremap L :bnext<CR>
+
+" Replace remapped H and L
+nnoremap + H
+nnoremap _ L
 
 " cd to the directory containing the file in the buffer
 nmap <silent> <leader>cd :lcd %:h<CR>

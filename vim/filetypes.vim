@@ -3,15 +3,27 @@
 augroup ft_javascript
   au!
 
-  au FileType javascript setlocal foldmethod=marker
-  au FileType javascript setlocal foldmarker={,}
-
-  " Treat JSON files like JavaScript
-  au BufNewFile,BufRead *.json set ft=javascript
+  au FileType javascript setlocal foldmethod=marker foldmarker={,}
 
   " Prettify a hunk of JSON with <leader>p
   au FileType javascript nnoremap <buffer> <leader>p ^vg_:!python -m json.tool<cr>
   au FileType javascript vnoremap <buffer> <leader>p :!python -m json.tool<cr>
+augroup END
+
+"}}}
+
+"JSON {{{
+
+augroup ft_json
+  au!
+
+  au FileType json setlocal foldmethod=syntax
+
+  au BufNewFile,BufRead *.json set ft=json
+
+  " Prettify a hunk of JSON with <leader>p
+  au FileType json nnoremap <buffer> <leader>p ^vg_:!python -m json.tool<cr>
+  au FileType json vnoremap <buffer> <leader>p :!python -m json.tool<cr>
 augroup END
 
 "}}}
@@ -21,8 +33,7 @@ augroup END
 augroup ft_coffeescript
   au!
 
-  au FileType coffee setlocal foldmethod=marker
-  au FileType coffee setlocal foldmarker={,}
+  au FileType coffee setlocal foldmethod=marker foldermarker={,}
 
   " Treat litcoffee as coffeescript
   au BufNewFile,BufRead *.litcoffee set ft=coffee
@@ -38,8 +49,7 @@ augroup ft_css
   au BufNewFile,BufRead *.less setlocal filetype=less
   "au BufWritePost,FileWritePost *.less silent !lessc <afile> <afile>:r.css
 
-  au Filetype less,css setlocal foldmethod=marker
-  au Filetype less,css setlocal foldmarker={,}
+  au Filetype less,css setlocal foldmethod=marker foldemarker={,}
   au Filetype less,css setlocal omnifunc=csscomplete#CompleteCSS
   au Filetype less,css setlocal iskeyword+=-
 
@@ -116,8 +126,17 @@ augroup ft_php
   au!
 
   "au Filetype php,inc setlocal foldmethod=syntax
-  au Filetype php,inc setlocal foldmethod=marker
-  au Filetype php,inc setlocal foldmarker={,}
+  au Filetype php,inc setlocal foldmethod=marker foldmarker={,}
+augroup END
+
+"}}}
+
+"Java {{{
+
+augroup ft_java
+  au!
+
+  au FileType java,groovy setlocal foldmethod=marker foldmarker={,}
 augroup END
 
 "}}}
