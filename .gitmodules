@@ -61,12 +61,6 @@
 [submodule "vim/bundle/jshint2.vim"]
 	path = vim/bundle/jshint2.vim
 	url = https://github.com/Shutnik/jshint2.vim.git
-[submodule "vim/bundle/goyo.vim"]
-	path = vim/bundle/goyo.vim
-	url = https://github.com/junegunn/goyo.vim.git
-[submodule "vim/bundle/limelight.vim"]
-	path = vim/bundle/limelight.vim
-	url = https://github.com/junegunn/limelight.vim
 [submodule "vim/bundle/vim-jsbeautify"]
 	path = vim/bundle/vim-jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify
@@ -104,9 +98,6 @@
 [submodule "vim/bundle/gundo.vim"]
 	path = vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim
-[submodule "vim/bundle/vim-gotham"]
-	path = vim/bundle/vim-gotham
-	url = https://github.com/whatyouhide/vim-gotham.git
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
 	url = https://github.com/kristijanhusak/vim-multiple-cursors.git
