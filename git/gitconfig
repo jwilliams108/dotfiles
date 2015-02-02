@@ -21,11 +21,11 @@
 	co = checkout
 	ci = commit
 	cm = commit -m
-	cma = commit -a -m
 	ca = commit --amend
+	cma = commit --amend -m
 	st = status -s
 	br = branch
-	cp = cherry-pick
+	chp = cherry-pick
 	diff = diff --word-diff
 	d = diff
 	dc = diff --cached
