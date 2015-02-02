@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="PHP_CodeSniffer">
+  <description>The coding standard for PHP_CodeSniffer.</description>
+
+  <!-- Include most of the Squiz standard -->
+  <rule ref="Squiz">
+    <exclude name="Squiz.Files.FileExtension" />
+    <exclude name="Squiz.Classes.ClassFileName" />
+    <exclude name="Squiz.Classes.ValidClassName" />
+    <exclude name="Squiz.Commenting.FileComment" />
+    <exclude name="Squiz.PHP.DisallowInlineIf" />
+    <exclude name="Squiz.PHP.DisallowComparisonAssignment" />
+    <exclude name="Squiz.PHP.DisallowBooleanStatement" />
+    <exclude name="Squiz.Commenting.PostStatementComment" />
+  </rule>
+</ruleset>
