@@ -1,20 +1,22 @@
 {
   "predef": [
-    "window",
-    "navigator",
-    "$",
-    "jQuery",
     "_",
-    "SquizMapLIB",
     "Modernizr",
     "moment",
     "google"
   ],
-  "curly" : true,
-  "eqeqeq" : true,
-  "trailing" : true,
-  /*"indent": 2,*/
+  "strict": true,
+  "quotmark": true,
+  "curly": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  /*"funcscope": true,*/
   /*"undef": true,*/
   /*"unused": true,*/
-  "latedef": true
+  "latedef": true,
+  "indent": 2,
+  "trailing": true,
+  "maxlen": 120,
+  "browser": true,
+  "jquery": true
 }
