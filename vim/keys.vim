@@ -23,10 +23,10 @@ nmap gj <C-w>j
 nmap gk <C-w>k
 nmap gl <C-w>l
 
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+"noremap <C-h> <C-w>h
+"noremap <C-j> <C-w>j
+"noremap <C-k> <C-w>k
+"noremap <C-l> <C-w>l
 
 " swap split
 nmap gH <C-w>r
@@ -48,12 +48,14 @@ nmap K 5k
 xmap J 5j
 xmap K 5k
 
-" bash-like movement
-imap <C-f> <Right>
-imap <C-b> <Left>
-imap <C-a> <Home>
-imap <C-e> <End>
-imap <C-d> <Del>
+" bash/emacs-like movement
+cnoremap <C-A>      <Home>
+cnoremap <C-B>      <Left>
+cnoremap <C-E>      <End>
+cnoremap <C-F>      <Right>
+cnoremap <C-N>      <End>
+cnoremap <C-P>      <Up>
+cnoremap <C-D>      <Del>
 
 "}}}
 
@@ -64,8 +66,8 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 "line joins/splits
-nmap <C-j> :join<CR>
-nmap <C-s> i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+noremap <leader>j :join<CR>
+noremap <leader>s i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 "}}}
 
@@ -190,10 +192,13 @@ nmap <silent> <leader>cd :lcd %:h<CR>
 
 "clipboard {{{
 
+" toggle paste mode
+nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
+
 " copy to/replace with clipboard
 set clipboard=unnamed
-map <leader>c :%y+<CR>
-map <leader>v gg"_dGP
+map <silent> <leader>c :%y+<CR>
+map <silent> <leader>v gg"_dGP
 
 "}}}
 

@@ -33,7 +33,8 @@ augroup END
 augroup ft_coffeescript
   au!
 
-  au FileType coffee setlocal foldmethod=marker foldermarker={,}
+  au FileType coffee setlocal foldmethod=marker
+  au FileType coffee setlocal foldmarker={,}
 
   " Treat litcoffee as coffeescript
   au BufNewFile,BufRead *.litcoffee set ft=coffee
@@ -49,9 +50,10 @@ augroup ft_css
   au BufNewFile,BufRead *.less setlocal filetype=less
   "au BufWritePost,FileWritePost *.less silent !lessc <afile> <afile>:r.css
 
-  au Filetype less,css setlocal foldmethod=marker foldemarker={,}
-  au Filetype less,css setlocal omnifunc=csscomplete#CompleteCSS
-  au Filetype less,css setlocal iskeyword+=-
+  au Filetype less,css setlocal foldmethod=marker
+  au Filetype less,css setlocal foldmarker={,}
+  au FileType less,css setlocal omnifunc=csscomplete#CompleteCSS
+  au FileType less,css setlocal iskeyword+=-
 
   " Use <leader>S to sort properties.  Turns this:
   "

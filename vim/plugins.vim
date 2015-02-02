@@ -9,7 +9,7 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 
 map <leader>n :NERDTreeToggle<CR>
 imap <leader>n <Esc>:NERDTreeToggle<CR>
-map gf :NERDTreeFind<CR>
+map <leader>f :NERDTreeFind<CR>
 
 " enable closing vim if NERDTree is the only open window
 augroup AuNERDTreeCmd
@@ -23,10 +23,11 @@ autocmd AuNERDTreeCmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTre
 autocmd AuNERDTreeCmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 let g:NERDTreeChDirMode = 2
+let g:NERDTreeWinSize = 40
 
 "}}}
 
-"Ctrl-P {{{
+"Ctrl-DTreeWinSize = 40
 
 let g:ctrlp_dont_split = 'netrw\|nerdtree'
 let g:ctrlp_working_path_mode = 'rw'
@@ -41,8 +42,11 @@ map <leader>z :ZoomWin<CR>
 
 "syntastic {{{
 
+nmap <silent> <F9> :SyntasticToggleMode<CR>
+
 map <leader>sc :SyntasticCheck<CR>
 
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_php_checkers = ['phpcs']
 let g:syntastic_php_phpcs_args = "--standard=/Users/***REMOVED***/.phpcs/phpcs.xml -n --report=csv"
 let g:syntastic_error_symbol='✗'
@@ -65,9 +69,10 @@ cnoremap <leader>js JSHint
 
 "}}}
 
-"js-beautify {{{
+"json format/js-beautify {{{
 
-map <leader>jb :call JsBeautify()<CR>
+map <silent><leader>jf :%!python -m json.tool<CR>
+map <silent><leader>jb :call JsBeautify()<CR>
 
 ""}}}
 
@@ -123,8 +128,46 @@ let g:airline_symbols.linenr = '⭡'
 
 "}}}
 
+"cursor {{{
+
+" change shape of cursor in insert mode in iTerm 2
+let s:iterm   = exists('$ITERM_PROFILE') || exists('$ITERM_SESSION_ID') || filereadable(expand("~/.vim/.assume-iterm"))
+let s:tmux    = exists('$TMUX')
+
+function! s:EscapeEscapes(string)
+  " double each <Esc>
+  return substitute(a:string, "\<Esc>", "\<Esc>\<Esc>", "g")
+endfunction
+
+function! s:TmuxWrap(string)
+  if strlen(a:string) == 0
+    return ""
+  end
+
+  let tmux_begin  = "\<Esc>Ptmux;"
+  let tmux_end    = "\<Esc>\\"
+
+  return tmux_begin . s:EscapeEscapes(a:string) . tmux_end
+endfunction
+
+if s:iterm
+  let start_insert  = "\<Esc>]50;CursorShape=1\x7"
+  let end_insert    = "\<Esc>]50;CursorShape=2\x7"
+
+  if s:tmux
+    let start_insert  = s:TmuxWrap(start_insert)
+    let end_insert    = s:TmuxWrap(end_insert)
+  endif
+
+  let &t_SI = start_insert
+  let &t_EI = end_insert
+endif
+
+"}}}
+
 "indent guides {{{
 
+let g:indentguides_state = 0
 "let g:indent_guides_auto_colors = 0
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
@@ -135,9 +178,9 @@ let g:airline_symbols.linenr = '⭡'
 
 map <Leader> <Plug>(easymotion-prefix)
 
-map f <Plug>(easymotion-f)
-map F <Plug>(easymotion-F)
-map t <Plug>(easymotion-t)
-map T <Plug>(easymotion-T)
+map f <Plug>(easymotion-fl)
+map F <Plug>(easymotion-Fl)
+map t <Plug>(easymotion-tl)
+map T <Plug>(easymotion-Tl)
 
 "}}}
