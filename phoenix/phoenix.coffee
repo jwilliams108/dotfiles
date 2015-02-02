@@ -213,7 +213,7 @@ key_binding 'D', ctrlAltCmd, -> Window.focusedWindow().toggleFibScreen()
 key_binding 'A', ctrlAltCmd, -> Window.focusedWindow().toggleBorderedScreen(0.5)
 
 # focus to direction
-key_binding 'H',  ctrlAlt, -> Window.focusedWindow().focusWindowLeft()
-key_binding 'L',  ctrlAlt, -> Window.focusedWindow().focusWindowRight()
-key_binding 'K',  ctrlAlt, -> Window.focusedWindow().focusWindowUp()
-key_binding 'J',  ctrlAlt, -> Window.focusedWindow().focusWindowDown()
+#key_binding 'H',  ctrlAlt, -> Window.focusedWindow().focusWindowLeft()
+#key_binding 'L',  ctrlAlt, -> Window.focusedWindow().focusWindowRight()
+#key_binding 'K',  ctrlAlt, -> Window.focusedWindow().focusWindowUp()
+#key_binding 'J',  ctrlAlt, -> Window.focusedWindow().focusWindowDown()
