@@ -51,35 +51,6 @@
           KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
         </autogen>
       </item>
-      <item>
-        <name>Enable Window Movement Layer</name>
-        <identifier>private.wmove_layer</identifier>
-        <autogen>
-          --KeyToKey--
-          KeyCode::CONTROL_R,
-          KeyCode::VK_STICKY_EXTRA4
-        </autogen>
-        <autogen>
-          --KeyToKey--
-          KeyCode::H, ModifierFlag::EXTRA4,
-          KeyCode::H, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-        </autogen>
-        <autogen>
-          --KeyToKey--
-          KeyCode::J, ModifierFlag::EXTRA4,
-          KeyCode::J, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-        </autogen>
-        <autogen>
-          --KeyToKey--
-          KeyCode::K, ModifierFlag::EXTRA4,
-          KeyCode::K, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-        </autogen>
-        <autogen>
-          --KeyToKey--
-          KeyCode::L, ModifierFlag::EXTRA4,
-          KeyCode::L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-        </autogen>
-      </item>
     </item>
   </list>
   <list>
@@ -148,41 +119,13 @@
           KeyCode::VK_OPEN_URL_SHELL_cmus_next
         </autogen>
       </item>
-      <!-- HYPER + arrow key combinations -->
-      <item>
-        <name>Use HYPER + left arrow to execute cmus-remote -r</name>
-        <identifier>private.hyper_left_arrow</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_prev
-        </autogen>
-      </item>
-      <item>
-        <name>Use HYPER + enter to execute cmus-remote -u</name>
-        <identifier>private.hyper_enter</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::RETURN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_pause
-        </autogen>
-      </item>
-      <item>
-        <name>Use HYPER + right arrow to execute cmus-remote -n</name>
-        <identifier>private.hyper_right_arrow</identifier>
-        <autogen>
-          __KeyToKey__
-          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
-          KeyCode::VK_OPEN_URL_SHELL_cmus_next
-        </autogen>
-      </item>
       <!-- left ctrl + cmd + option + arrow key combinations -->
       <item>
         <name>Use left-option + left arrow to execute cmus-remote -r</name>
         <identifier>private.left_option_left_arrow</identifier>
         <autogen>
           __KeyToKey__
-          KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+          KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::NONE,
           KeyCode::VK_OPEN_URL_SHELL_cmus_prev
         </autogen>
       </item>
@@ -191,7 +134,7 @@
         <identifier>private.left_option_enter</identifier>
         <autogen>
           __KeyToKey__
-          KeyCode::RETURN, ModifierFlag::OPTION_L,
+          KeyCode::RETURN, ModifierFlag::OPTION_L | ModifierFlag::NONE,
           KeyCode::VK_OPEN_URL_SHELL_cmus_pause
         </autogen>
       </item>
@@ -200,7 +143,7 @@
         <identifier>private.left_option_right_arrow</identifier>
         <autogen>
           __KeyToKey__
-          KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+          KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::NONE,
           KeyCode::VK_OPEN_URL_SHELL_cmus_next
         </autogen>
       </item>
