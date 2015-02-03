@@ -17,20 +17,20 @@ debug = (message)->
   api.alert message, 10
 
 # Window grid
-Window::calculateGrid = (x, y, width, height) ->
+Window::_calculateGrid = (x, y, width, height) ->
   screen = @screen().frameWithoutDockOrMenu()
   x: Math.round(x * screen.width) + MARGIN + screen.x
   y: Math.round(y * screen.height) + MARGIN + screen.y
   width: Math.round(width * screen.width) - (2.0 * MARGIN)
   height: Math.round(height * screen.height) - (2.0 * MARGIN)
 
-Window::toGrid = (x, y, width, height) ->
-  rect = @calculateGrid(x, y, width, height)
+Window::_toGrid = (x, y, width, height) ->
+  rect = @_calculateGrid(x, y, width, height)
   @setFrame rect
   this
 
 # Window info/current_positions
-Window::gridCurrentPosition = ->
+Window::_gridCurrentPosition = ->
   screen = @screen().frameWithoutDockOrMenu()
   frame = @frame()
   x = frame.x
@@ -49,6 +49,7 @@ Window::gridCurrentPosition = ->
     height: Math.round(frame.height / screen.height * GRID_HEIGHT)
   }
 
+# expanded Window primitives
 Window::topRight = ->
   frame = @frame()
   {
@@ -70,44 +71,53 @@ Window::toRight = ->
     win.topRight().x > p.x + 10
   .value()
 
+Window.sortByMostRecent = (windows)->
+  allVisible = Window.visibleWindowsMostRecentFirst()
+
+  _.chain(windows)
+  .sortBy (win)->
+    _.map(allVisible, (w)-> w.title()).indexOf(win.title())
+  .value()
+
 # Window popout/focus
-lastFrames = {}
+_lastFrames = {}
 
-Window::rememberFrame = -> lastFrames[this] = @frame()
-Window::forgetFrame = -> delete lastFrames[this]
+Window::_rememberFrame = -> _lastFrames[this] = @frame()
+Window::_forgetFrame = -> delete _lastFrames[this]
 
+# Window positions
 Window::toggleFibScreen = ->
   grid_x      = Math.round(GRID_B_RATIO * GRID_WIDTH / 2.0)
   grid_y      = Math.round(GRID_B_RATIO * GRID_HEIGHT / 2.0)
   grid_width  = Math.round(GRID_A_RATIO * GRID_WIDTH)
   grid_height = Math.round(GRID_A_RATIO * GRID_HEIGHT)
 
-  fullFrame = @calculateGrid(grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT)
+  fullFrame = @_calculateGrid(grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT)
   unless _.isEqual(@frame(), fullFrame)
-    @rememberFrame()
-    @toGrid grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT
-  else if lastFrames[this]
-    @setFrame lastFrames[this]
-    @forgetFrame()
+    @_rememberFrame()
+    @_toGrid grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT
+  else if _lastFrames[this]
+    @setFrame _lastFrames[this]
+    @_forgetFrame()
 
 Window::toggleBorderedScreen = (border) ->
-  fullFrame = @calculateGrid(border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH,
+  fullFrame = @_calculateGrid(border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH,
                              (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT)
   unless _.isEqual(@frame(), fullFrame)
-    @rememberFrame()
-    @toGrid border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
-  else if lastFrames[this]
-    @setFrame lastFrames[this]
-    @forgetFrame()
+    @_rememberFrame()
+    @_toGrid border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
+  else if _lastFrames[this]
+    @setFrame _lastFrames[this]
+    @_forgetFrame()
 
 Window::toggleFullScreen = ->
-  fullFrame = @calculateGrid(0, 0, 1, 1)
+  fullFrame = @_calculateGrid(0, 0, 1, 1)
   unless _.isEqual(@frame(), fullFrame)
-    @rememberFrame()
-    @toGrid 0, 0, 1, 1
-  else if lastFrames[this]
-    @setFrame lastFrames[this]
-    @forgetFrame()
+    @_rememberFrame()
+    @_toGrid 0, 0, 1, 1
+  else if _lastFrames[this]
+    @setFrame _lastFrames[this]
+    @_forgetFrame()
 
 # Window resizing
 Window::resizeWindow = (direction) ->
@@ -120,7 +130,7 @@ Window::resizeWindow = (direction) ->
   fibb_width = Math.round(GRID_B_RATIO * GRID_WIDTH)
   fibb_height = Math.round(GRID_B_RATIO * GRID_HEIGHT)
 
-  current_position = @gridCurrentPosition()
+  current_position = @_gridCurrentPosition()
 
   new_x = current_position.x
   new_y = current_position.y
@@ -192,8 +202,44 @@ Window::resizeWindow = (direction) ->
   if new_y != 0
     new_y = new_y / GRID_HEIGHT
 
-  @toGrid new_x, new_y, new_width / GRID_WIDTH, new_height / GRID_HEIGHT
+  @_toGrid new_x, new_y, new_width / GRID_WIDTH, new_height / GRID_HEIGHT
 
+# toggle through stacked windows
+Window::toggleStackedWindows = ->
+  frame = @frame()
+  stackedWindows = []
+
+  allVisible = Window.visibleWindowsMostRecentFirst()
+
+  _.each allVisible, (window) ->
+    if _.isEqual(frame, window.frame())
+      stackedWindows.push(window)
+
+  topMostWindow = stackedWindows.pop()
+  topMostWindow.focusWindow()
+
+# focus to direction
+Window::focusToFrontLeft = ->
+  win = Window.focusedWindow()
+  targets = win.windowsToWest()
+
+  sortedTargets = Window.sortByMostRecent(targets)
+
+  if sortedTargets.length
+    topMostLeft = sortedTargets[0]
+    topMostLeft.focusWindow()
+
+Window::focusToFrontRight = ->
+  win = Window.focusedWindow()
+  targets = win.windowsToEast()
+
+  sortedTargets = Window.sortByMostRecent(targets)
+
+  if sortedTargets.length
+    topMostRight = sortedTargets[0]
+    topMostRight.focusWindow()
+
+Window::
 # Bindings
 # Binding alias
 key_binding = (key, modifier, fn) ->
@@ -212,8 +258,9 @@ key_binding 'F', ctrlAltCmd, -> Window.focusedWindow().toggleFullScreen()
 key_binding 'D', ctrlAltCmd, -> Window.focusedWindow().toggleFibScreen()
 key_binding 'A', ctrlAltCmd, -> Window.focusedWindow().toggleBorderedScreen(0.5)
 
+# toggle stacked windows
+key_binding '`', ctrlAltCmd, -> Window.focusedWindow().toggleStackedWindows()
+
 # focus to direction
-#key_binding 'H',  ctrlAlt, -> Window.focusedWindow().focusWindowLeft()
-#key_binding 'L',  ctrlAlt, -> Window.focusedWindow().focusWindowRight()
-#key_binding 'K',  ctrlAlt, -> Window.focusedWindow().focusWindowUp()
-#key_binding 'J',  ctrlAlt, -> Window.focusedWindow().focusWindowDown()
+key_binding 'H',  ctrlAlt, -> Window.focusedWindow().focusToFrontLeft()
+key_binding 'L',  ctrlAlt, -> Window.focusedWindow().focusToFrontRight()
