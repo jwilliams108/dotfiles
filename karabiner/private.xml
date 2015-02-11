@@ -50,6 +50,12 @@
           KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
           KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
         </autogen>
+        <!-- meta-d map for i3-like alfred menu toggle -->
+        <autogen>
+          --KeyToKey--
+          KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
       </item>
     </item>
   </list>
