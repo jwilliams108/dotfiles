@@ -86,20 +86,6 @@ Window::_rememberFrame = -> _lastFrames[this] = @frame()
 Window::_forgetFrame = -> delete _lastFrames[this]
 
 # Window positions
-Window::toggleFibScreen = ->
-  grid_x      = Math.round(GRID_B_RATIO * GRID_WIDTH / 2.0)
-  grid_y      = Math.round(GRID_B_RATIO * GRID_HEIGHT / 2.0)
-  grid_width  = Math.round(GRID_A_RATIO * GRID_WIDTH)
-  grid_height = Math.round(GRID_A_RATIO * GRID_HEIGHT)
-
-  fullFrame = @_calculateGrid(grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT)
-  unless _.isEqual(@frame(), fullFrame)
-    @_rememberFrame()
-    @_toGrid grid_x / GRID_WIDTH, grid_y / GRID_HEIGHT, grid_width / GRID_WIDTH, grid_height / GRID_HEIGHT
-  else if _lastFrames[this]
-    @setFrame _lastFrames[this]
-    @_forgetFrame()
-
 Window::toggleBorderedScreen = (border) ->
   fullFrame = @_calculateGrid(border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH,
                              (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT)
@@ -246,7 +232,7 @@ key_binding = (key, modifier, fn) ->
   api.bind key, modifier, fn
 
 # command keys
-ctrlAlt    = 'ctrl+alt'.split '+'
+shiftCmd    = 'shift+cmd'.split '+'
 ctrlAltCmd = 'ctrl+alt+cmd'.split '+'
 
 # resizing
@@ -255,12 +241,11 @@ key_binding 'L', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('right')
 key_binding 'K', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('top')
 key_binding 'J', ctrlAltCmd, -> Window.focusedWindow().resizeWindow('bottom')
 key_binding 'F', ctrlAltCmd, -> Window.focusedWindow().toggleFullScreen()
-key_binding 'D', ctrlAltCmd, -> Window.focusedWindow().toggleFibScreen()
 key_binding 'A', ctrlAltCmd, -> Window.focusedWindow().toggleBorderedScreen(0.5)
 
 # toggle stacked windows
 key_binding '`', ctrlAltCmd, -> Window.focusedWindow().toggleStackedWindows()
 
 # focus to direction
-key_binding 'H',  ctrlAlt, -> Window.focusedWindow().focusToFrontLeft()
-key_binding 'L',  ctrlAlt, -> Window.focusedWindow().focusToFrontRight()
+key_binding 'H',  shiftCmd, -> Window.focusedWindow().focusToFrontLeft()
+key_binding 'L',  shiftCmd, -> Window.focusedWindow().focusToFrontRight()
