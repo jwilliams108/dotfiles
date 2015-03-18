@@ -15,7 +15,8 @@ set go-=r
 set background=dark
 
 "colorscheme solarized
-colorscheme seoul256
+"colorscheme seoul256
+colorscheme hybrid
 
 "set transparency=2
 
