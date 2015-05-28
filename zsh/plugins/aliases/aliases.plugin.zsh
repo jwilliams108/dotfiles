@@ -10,6 +10,7 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias bi='brew -v install'
 alias bu='brew -v upgrade'
 alias bup='brew update'
+alias bcup='brew cleanup'
 alias bout='brew outdated'
 
 #tmux
