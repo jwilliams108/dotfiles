@@ -37,7 +37,7 @@ prompt_context () {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment 10 250 '%~'
+  prompt_segment 14 0 '%~'
 }
 
 # PROMPT
