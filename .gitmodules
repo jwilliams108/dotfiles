@@ -125,3 +125,6 @@
 [submodule "vim/bundle/ftl-vim-syntax"]
 	path = vim/bundle/ftl-vim-syntax
 	url = https://github.com/chaquotay/ftl-vim-syntax.git
+[submodule "vim/bundle/ag.vim"]
+	path = vim/bundle/ag.vim
+	url = https://github.com/rking/ag.vim
