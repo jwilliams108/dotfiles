@@ -10,6 +10,7 @@
     ~/.phoenix.js: phoenix/phoenix.js
     ~/.tmux: tmux/
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.ubersicht: ubersicht/
     ~/.vim: vim/
     ~/.vimrc: vim/vimrc
     ~/.zsh: zsh/
