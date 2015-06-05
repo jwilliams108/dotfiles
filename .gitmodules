@@ -71,9 +71,6 @@
 	path = vim/bundle/ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin
 	ignore = dirty
-[submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less
 [submodule "vim/bundle/vim-css-color"]
 	path = vim/bundle/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
