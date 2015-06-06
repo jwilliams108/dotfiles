@@ -1,7 +1,3 @@
-# export LANG
-export LC_CTYPE=C
-export LANG=C
-
 # antigen setup and config {{{
 
 local ZSH="$HOME/.zsh"
