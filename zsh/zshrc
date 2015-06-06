@@ -7,16 +7,22 @@ export LANG=C
 local ZSH="$HOME/.zsh"
 source $ZSH/plugins/antigen/antigen.zsh
 
+# prezto plugins
+antigen use prezto
+
+antigen bundle osx
+
+# oh-my-zsh plugins
 antigen use oh-my-zsh
 
-# load oh-my-zsh plugins
 antigen bundle brew
 antigen bundle git
 antigen bundle tmux
 antigen bundle fasd
 
 # local plugins
-antigen bundle $ZSH/plugins/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
 
 # theme
 antigen theme $ZSH/themes scott
