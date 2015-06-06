@@ -7,6 +7,7 @@
     ~/.gitignore: git/gitignore
     ~/.gvimrc: vim/gvimrc
     ~/.jshintrc: misc/jshintrc
+    ~/.eslintrc: misc/eslintrc
     ~/.phoenix.js: phoenix/phoenix.js
     ~/.tmux: tmux/
     ~/.tmux.conf: tmux/tmux.conf
