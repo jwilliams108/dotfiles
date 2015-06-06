@@ -4,7 +4,7 @@ export LANG=C
 
 # antigen setup and config {{{
 
-local ZSH="~/.zsh"
+local ZSH="$HOME/.zsh"
 source $ZSH/plugins/antigen/antigen.zsh
 
 antigen use oh-my-zsh
