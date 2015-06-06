@@ -2,91 +2,32 @@
 export LC_CTYPE=C
 export LANG=C
 
-# oh-my-zsh setup and config {{{
+# antigen setup and config {{{
 
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/.zsh"
-export ZSH_THEME="scott"
-export DISABLE_AUTO_UPDATE="true"
-plugins=(brew git tmux fasd aliases zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
+local ZSH="~/.zsh"
+source $ZSH/plugins/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+# load oh-my-zsh plugins
+antigen bundle brew
+antigen bundle git
+antigen bundle tmux
+antigen bundle fasd
+
+# local plugins
+antigen bundle $ZSH/plugins/zsh-syntax-highlighting
+
+# theme
+antigen theme $ZSH/themes scott
+
+antigen apply
 
 # }}}
 
-# environment and path {{{
+# modularised config {{{
 
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-export CLASSPATH=~/.java/lib:$CLASSPATH
-
-# for XQuartz
-if [ -d /usr/X11 ]; then
-  export PATH=/usr/X11/bin:$PATH
-fi
-
-# for mactex
-if [ -d /usr/texlive ]; then
-  export PATH=/usr/texlive/bin/x86_64-darwin:$PATH
-fi
-
-# for nvm
-if [ -d ~/.nvm ]; then
-  export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
-fi
-
-# for rbenv
-#eval "$(rbenv init -)"
-
-# for perlbrew
-if [ -d ~/.perl5/perlbrew ]; then
-  source $HOME/.perl5/perlbrew/etc/bashrc
-  #export PATH=$HOME/.perl5/perlbrew/bin:$PATH
-  export PERLBREW_ROOT=$HOME/.perl5/perlbrew
-fi
-
-# for phpbrew
-if [ -d ~/.phpbrew ]; then
-  source $HOME/.phpbrew/bashrc
-fi
-
-# for groovy
-if [ -d /usr/local/opt/groovy/libexec ]; then
-  export GROOVY_HOME=/usr/local/opt/groovy/libexec
-fi
-
-# make sure local takes precendence
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
-export EDITOR=vim
-export PAGER=less
-export COPYFILE_DISABLE=1
-
-# history
-HISTFILE=$HOME/.zsh-history
-HISTSIZE=1000
-SAVEHIST=1000
-
-#}}}
-
-# key bindings {{{
-
-# vi style incremental search
-bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
-bindkey '^P' history-search-backward
-bindkey '^N' history-search-forward
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-
-# command line movement
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-bindkey "^W" backward-delete-word
-bindkey "^b" backward-word
-bindkey "^f" forward-word
-bindkey "^d" delete-word
-bindkey "^k" kill-line
-#bindkey "${key[Delete]}" delete-char
+for config (~/.zsh/config/*.zsh) source $config
 
 #}}}
 
@@ -96,11 +37,14 @@ if [ -f $HOME/.zshrc_local ];
   then source $HOME/.zshrc_local
 fi
 
-# }}}
+#}}}
 
-# welcome message
+# welcome message {{{
+
 echo -e "Distro: OS X $(sw_vers -productVersion)"
 echo -e "Kernel: `uname -smr`"
 echo -e "Shell:  `zsh --version`"
 echo -e "Uptime:" `uptime | sed 's/^.*up/up/'`
 echo -ne "Current Time: "; date
+
+#}}}

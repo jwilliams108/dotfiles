@@ -125,3 +125,6 @@
 [submodule "vim/bundle/ag.vim"]
 	path = vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim
+[submodule "zsh/plugins/antigen"]
+	path = zsh/plugins/antigen
+	url = https://github.com/zsh-users/antigen.git
