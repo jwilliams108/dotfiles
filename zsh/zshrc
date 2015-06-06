@@ -16,7 +16,7 @@ antigen bundle git
 antigen bundle tmux
 antigen bundle fasd
 
-# local plugins
+# other plugins
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 
