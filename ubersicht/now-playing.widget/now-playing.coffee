@@ -67,7 +67,7 @@ style: """
     float: left
     padding-top: 32px
     font-size: 11px
-    font-weight: 110
+    font-weight: 500
     text-align: right
     color: rgba(#777, 0.5)
 
