@@ -22,31 +22,31 @@ update: (output, domEl) ->
     heading.find(".span#{i + 1}").text(component)
 
 style: """
-  left: 5px
-  bottom: 0
-  color: #999
-  font-family: San Francisco Display, Helvetica Neue
-  font-size: 16px
+  left 5px
+  bottom 0
+  color #999
+  font-family San Francisco Display, Helvetica Neue
+  font-size 16px
 
   h1
-    font-size: 5em
-    font-weight: 100
-    margin: 0
-    padding: 0
+    font-size 5em
+    font-weight 100
+    margin 0
+    padding 0
 
   #day
-    color: #777
-    margin-left: -12px
-    text-transform: lowercase
-    font-size: 64px
+    color #777
+    margin-left -12px
+    text-transform lowercase
+    font-size 64px
 
   #time
-    margin-left: -16px
-    color: rgba(#777, 0.8)
+    margin-left -16px
+    color rgba(#777, 0.8)
 
   #meridiem
-    text-transform: lowercase
-    margin-left: -21px
-    font-size: 32px
-    color: rgba(#777, 0.5)
+    text-transform lowercase
+    margin-left -21px
+    font-size 32px
+    color rgba(#777, 0.5)
 """

@@ -50,58 +50,58 @@ update: (output, domEl) ->
 
 # CSS Style
 style: """
-  left: 206px
-  bottom: 110px
-  background: rgba(#333, .1)
-  border: 1px solid rgba(#555, .25)
-  border-radius: 10px
-  font-family: San Francisco Display, Helvetica Neue
-  font-size: 11px
+  left 206px
+  bottom 110px
+  background rgba(#333, .1)
+  border 1px solid rgba(#555, .25)
+  border-radius 10px
+  font-family San Francisco Display, Helvetica Neue
+  font-size 11px
 
   #services
-    padding-top: 10px
+    padding-top 10px
 
   #wi-fi
-    background: url(/sys-mon-set.widget/network-info.widget/images/wi-fi.png)
+    background url(/sys-mon-set.widget/network-info.widget/images/wi-fi.png)
 
     &.disabled
-      background: url(/sys-mon-set.widget/network-info.widget/images/wi-fi_disabled.png)
+      background url(/sys-mon-set.widget/network-info.widget/images/wi-fi_disabled.png)
 
   #ethernet
-    background: url(/sys-mon-set.widget/network-info.widget/images/ethernet.png)
+    background url(/sys-mon-set.widget/network-info.widget/images/ethernet.png)
 
     &.disabled
-      background: url(/sys-mon-set.widget/network-info.widget/images/ethernet_disabled.png)
+      background url(/sys-mon-set.widget/network-info.widget/images/ethernet_disabled.png)
 
   #public-ip
-    background: url(/sys-mon-set.widget/network-info.widget/images/globe.png)
+    background url(/sys-mon-set.widget/network-info.widget/images/globe.png)
 
   #public-ip, #wi-fi, #ethernet, #wi-fi.disabled, #ethernet.disabled
-    padding: 40px 3px 0
-    min-height: 40px
-    width: 90px
-    background-position: center 5px
-    background-repeat: no-repeat
-    background-size: 32px 32px
+    padding 40px 3px 0
+    min-height 40px
+    width 90px
+    background-position center 5px
+    background-repeat no-repeat
+    background-size 32px 32px
 
   #public-ip
-    padding-bottom: 3px
+    padding-bottom 3px
 
   .service
-    text-align: center
+    text-align center
 
   .primaryInfo, .secondaryInfo
-    padding: 0px
-    margin: 2px
+    padding 0px
+    margin 2px
 
   .primaryInfo
-    font-size: 11px
-    color: rgba(#777, 1)
+    font-size 11px
+    color rgba(#777, 1)
 
   .secondaryInfo
     font-size:8pt
-    color: rgba(#777, 0.75)
+    color rgba(#777, 0.75)
 
   .disabled p
-    color: rgba(#777, 0.75)
+    color rgba(#777, 0.75)
 """

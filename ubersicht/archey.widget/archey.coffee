@@ -57,27 +57,27 @@ update: (output, domEl) ->
     $("tr#" + name.toLowerCase()).html(renderProcess(name, value))
 
 style: """
-  bottom: 520px
-  left: 5px
-  color: #777
-  font-family: San Francisco Display, Helvetica Neue
-  font-size: 11px
+  bottom 520px
+  left 5px
+  color #777
+  font-family San Francisco Display, Helvetica Neue
+  font-size 11px
 
   table
-    border-collapse: collapse
+    border-collapse collapse
 
   td
-    font-size: 11px
-    padding: 3px 3px 3px 5px
-    overflow: ellipsis
-    text-align: left
+    font-size 11px
+    padding 3px 3px 3px 5px
+    overflow ellipsis
+    text-align left
 
   td:first-child
-    padding-left: 0
-    text-align: right
-    border-right: 1px solid rgba(#777, 0.2)
-    color: rgba(#777, .7)
+    padding-left 0
+    text-align right
+    border-right 1px solid rgba(#777, 0.2)
+    color rgba(#777, .7)
 
   .wrapper
-    padding: 0 3px 5px
+    padding 0 3px 5px
 """

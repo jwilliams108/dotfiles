@@ -15,15 +15,15 @@ update: (output, domEl) ->
 
 
 style: """
-  bottom: 85px
-  left: 5px
-  color: #999
-  font-family: San Francisco Display, Helvetica Neue
-  font-size: 11px
+  bottom 85px
+  left 5px
+  color #999
+  font-family San Francisco Display, Helvetica Neue
+  font-size 11px
 
   div
-    display: block
-    color: rgba(#777, 0.7)
-    font-size: 14px
-    font-weight: 110
+    display block
+    color rgba(#777, 0.7)
+    font-size 14px
+    font-weight 110
 """

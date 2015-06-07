@@ -43,56 +43,56 @@ update: (output, domEl) ->
 
 # CSS Style
 style: """
-  left: 5px
-  top: 10px
-  font-family: San Francisco Display, Helvetica Neue
-  font-size: 11px
+  left 5px
+  top 5px
+  font-family San Francisco Display, Helvetica Neue
+  font-size 11px
 
   div
-    margin-top: 3px
-    margin-left: 5px
-    padding: 12px 0 6px 24px
-    border-left: 1px solid rgba(#777, 0.5)
+    margin-top 3px
+    margin-left 5px
+    padding 12px 0 6px 24px
+    border-left 1px solid rgba(#777, 0.5)
 
   p
-    margin: 0
-    padding: 0
+    margin 0
+    padding 0
 
   #now, .title, .artist, .album
-    font-size: 18px
-    color: rgba(#777, 1)
+    font-size 18px
+    color rgba(#777, 1)
 
   #now
-    display: block
-    float: left
-    padding-top: 32px
-    font-size: 11px
-    font-weight: 500
-    text-align: right
-    color: rgba(#777, 0.5)
+    display block
+    float left
+    padding-top 32px
+    font-size 11px
+    font-weight 500
+    text-align right
+    color rgba(#777, 0.5)
 
   #now_playing
-    display: inline-block
-    min-height: 42px
-    float: left
+    display inline-block
+    min-height 42px
+    float left
 
   .artist
-    font-size: 14px
-    color: rgba(#777, 0.7)
+    font-size 14px
+    color rgba(#777, 0.7)
 
   .album
-    font-size: 14px
-    color: rgba(#777, 0.5)
+    font-size 14px
+    color rgba(#777, 0.5)
 
   .playing
-    background: url(/now-playing.widget/images/play.png)
+    background url(/now-playing.widget/images/play.png)
 
   .paused
-    background: url(/now-playing.widget/images/paused.png)
+    background url(/now-playing.widget/images/paused.png)
 
   #now_playing.playing,
   #now_playing.paused
-    background-position: 5px 36px
-    background-repeat: no-repeat
-    background-size: 10px 12px
+    background-position 5px 36px
+    background-repeat no-repeat
+    background-size 10px 12px
 """

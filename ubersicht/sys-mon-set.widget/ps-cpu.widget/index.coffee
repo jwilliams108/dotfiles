@@ -39,45 +39,47 @@ update: (output, domEl) ->
 
 
 style: """
-  bottom: 315px
-  left: 5px
-  min-height: 200px
-  color: #777
-  background: rgba(#333, .1)
-  border: 1px solid rgba(#555, .25)
-  border-radius: 10px
-  font-family: San Francisco Display, Helvetica Neue
-  font-size: 11px
+  bottom 315px
+  left 5px
+  min-height 200px
+  color #777
+  background rgba(#333, .1)
+  border 1px solid rgba(#555, .25)
+  border-radius 10px
+  font-family San Francisco Display, Helvetica Neue
+  font-size 11px
 
   h1
-    font-size: 14px
-    margin: 3px 0
+    font-size 14px
+    margin 3px 0
 
   table
-    border-collapse: collapse
+    border-collapse collapse
 
   th
-    font-size: 12px
-    padding-right: 3px
-    text-align: right
-    border-bottom: 1px solid rgba(#333, 0.8)
-    padding-bottom: 3px
+    font-size 12px
+    padding-right 3px
+    text-align right
+    border-bottom 1px solid rgba(#333, 0.8)
+    padding-bottom 3px
 
   th:first-child
-    text-align: left
+    text-align left
 
   td
-    font-size: 11px
-    width: 24px
-    padding: 3px 3px 3px 0
-    overflow: ellipsis
-    text-shadow: 0 0 1px rgba(#000, 0.5)
-    text-align: right
+    font-size 11px
+    width 24px
+    padding 3px 3px 3px 0
+    overflow ellipsis
+    text-shadow 0 0 1px rgba(#000, 0.5)
+    text-align right
 
   td:first-child
-    width: 160px
-    text-align: left
+    width 160px
+    max-width 160px
+    overflow ellipsis
+    text-align left
 
   .wrapper
-    padding: 0 3px 5px
+    padding 0 3px 5px
 """
