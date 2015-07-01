@@ -105,9 +105,6 @@
 [submodule "vim/bundle/vim-json"]
 	path = vim/bundle/vim-json
 	url = https://github.com/elzr/vim-json
-[submodule "vim/bundle/Zenburn"]
-	path = vim/bundle/Zenburn
-	url = https://github.com/jnurmine/Zenburn.git
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
