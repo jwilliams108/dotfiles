@@ -114,3 +114,6 @@
 [submodule "zsh/plugins/antigen"]
 	path = zsh/plugins/antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "vim/bundle/papercolor-theme"]
+	path = vim/bundle/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme
