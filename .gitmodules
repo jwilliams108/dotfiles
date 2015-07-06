@@ -64,9 +64,6 @@
 [submodule "vim/bundle/vim-jsbeautify"]
 	path = vim/bundle/vim-jsbeautify
 	url = https://github.com/maksimr/vim-jsbeautify
-[submodule "vim/bundle/--force"]
-	path = vim/bundle/--force
-	url = https://github.com/vim-scripts/ZoomWin
 [submodule "vim/bundle/ZoomWin"]
 	path = vim/bundle/ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin
@@ -80,9 +77,6 @@
 [submodule "vim/bundle/vim-markdown-folding"]
 	path = vim/bundle/vim-markdown-folding
 	url = https://github.com/nelstrom/vim-markdown-folding
-[submodule "vim/bundle/tmuxline.vim"]
-	path = vim/bundle/tmuxline.vim
-	url = https://github.com/edkolev/tmuxline.vim.git
 [submodule "vim/bundle/vim-tmux-navigator"]
 	path = vim/bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
