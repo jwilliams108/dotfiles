@@ -1,2 +1,2 @@
 # dotfiles
-My .files for zsh, vim and others
+My .files for zsh, vim, git and others
