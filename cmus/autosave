@@ -48,7 +48,7 @@ set display_artist_sort_name=false
 set dsp.ao.buffer_size=16384
 set dsp.ao.driver=
 set dsp.ao.wav_counter=1
-set dsp.ao.wav_dir=/Users/***REMOVED***
+set dsp.ao.wav_dir=~
 set follow=false
 set format_current= %a - %l (%y) -%3n. %t
 set format_title=%a - %l (%y) - %t
@@ -83,7 +83,7 @@ set skip_track_info=false
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=0 0
-set status_display_program=/Users/***REMOVED***/.dotfiles/cmus/scripts/notify_cmus.sh
+set status_display_program=~/.dotfiles/cmus/scripts/notify_cmus.sh
 set wrap_search=true
 bind browser backspace browser-up
 bind browser i toggle show_hidden
