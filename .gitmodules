@@ -80,10 +80,6 @@
 [submodule "vim/bundle/targets.vim"]
 	path = vim/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim
-[submodule "vim/bundle/gundo.vim"]
-	path = vim/bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim
-	ignore = dirty
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
 	url = https://github.com/kristijanhusak/vim-multiple-cursors.git
