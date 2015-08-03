@@ -36,7 +36,7 @@ let g:ctrlp_working_path_mode = 'rw'
 
 "zoomwin {{{
 
-map <leader>z :ZoomWin<CR>
+map <bs> :ZoomWin<CR>
 
 "}}}
 
@@ -182,5 +182,11 @@ map f <Plug>(easymotion-fl)
 map F <Plug>(easymotion-Fl)
 map t <Plug>(easymotion-tl)
 map T <Plug>(easymotion-Tl)
+
+"}}}
+
+" FZF {{{
+
+set rtp+=~/.fzf
 
 "}}}
