@@ -5,7 +5,7 @@
 # }}}
 # core {{{
 [core]
-	excludesfile = /Users/***REMOVED***/.gitignore
+	excludesfile = ~/.gitignore
 	pager = less -F -X
 # }}}
 # push/pull/help {{{
