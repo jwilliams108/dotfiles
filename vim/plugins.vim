@@ -1,11 +1,17 @@
-"delimitMate {{{
+" ----------------------------------------------------------------------------
+" delimitMate
+" ----------------------------------------------------------------------------
+"{{{
 
 "imap <C-i> <CR><Esc>O
 imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 
 "}}}
 
-"NERDTree {{{
+" ----------------------------------------------------------------------------
+" NERDTree
+" ----------------------------------------------------------------------------
+"{{{
 
 map <leader>n :NERDTreeToggle<CR>
 imap <leader>n <Esc>:NERDTreeToggle<CR>
@@ -27,20 +33,29 @@ let g:NERDTreeWinSize = 40
 
 "}}}
 
-"Ctrl-DTreeWinSize = 40
+" ----------------------------------------------------------------------------
+" ctrlp
+" ----------------------------------------------------------------------------
+"{{{
 
 let g:ctrlp_dont_split = 'netrw\|nerdtree'
 let g:ctrlp_working_path_mode = 'rw'
 
 "}}}
 
-"zoomwin {{{
+" ----------------------------------------------------------------------------
+" zoomwin
+" ----------------------------------------------------------------------------
+"{{{
 
 map <bs> :ZoomWin<CR>
 
 "}}}
 
-"syntastic {{{
+" ----------------------------------------------------------------------------
+" syntastic
+" ----------------------------------------------------------------------------
+"{{{
 
 nmap <silent> <F9> :SyntasticToggleMode<CR>
 
@@ -56,7 +71,10 @@ let g:syntastic_auto_loc_list=0
 
 "}}}
 
-"jshint {{{
+" ----------------------------------------------------------------------------
+" jshint
+" ----------------------------------------------------------------------------
+"{{{
 
 " use node.js for javascript
 let $JS_CMD='node'
@@ -69,29 +87,33 @@ cnoremap <leader>js JSHint
 
 "}}}
 
-"json format/js-beautify {{{
+" ----------------------------------------------------------------------------
+" beautify
+" ----------------------------------------------------------------------------
+"{{{
 
 map <silent><leader>jf :%!python -m json.tool<CR>
 map <silent><leader>jb :call JsBeautify()<CR>
 
 ""}}}
 
-"lessc {{{
-
-"nnoremap <leader>lc :w <BAR> silent !lessc % > %:r.css<CR>
-nnoremap <silent> <leader>lc :silent !lessc % > %:r.css<CR>
-
-"}}}
-
-"coffeescript {{{
+" ----------------------------------------------------------------------------
+" coffeescript
+" ----------------------------------------------------------------------------
+"{{{
 
 au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 
 "}}}
 
-"fugitive {{{
+" ----------------------------------------------------------------------------
+" vim-fugitive
+" ----------------------------------------------------------------------------
+"{{{
 
+nmap     <Leader>g  :Gstatus<CR>gg<c-n>
+nnoremap <Leader>d  :Gvdiff<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
@@ -104,7 +126,10 @@ nnoremap <leader>gr :Gremove<CR>
 
 "}}}
 
-"gitgutter {{{
+" ----------------------------------------------------------------------------
+" gitgutter
+" ----------------------------------------------------------------------------
+"{{{
 
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
@@ -114,7 +139,10 @@ highlight GitGutterChangeDelete ctermfg=yellow
 
 "}}}
 
-"airline {{{
+" ----------------------------------------------------------------------------
+" airline
+" ----------------------------------------------------------------------------
+"{{{
 
 "let g:airline_powerline_fonts = 1
 let g:airline_left_sep = '⮀'
@@ -165,7 +193,10 @@ endif
 
 "}}}
 
-"indent guides {{{
+" ----------------------------------------------------------------------------
+" indentguides
+" ----------------------------------------------------------------------------
+"{{{
 
 let g:indentguides_state = 0
 "let g:indent_guides_auto_colors = 0
@@ -174,7 +205,10 @@ let g:indentguides_state = 0
 
 "}}}
 
-" EasyMotion {{{
+" ----------------------------------------------------------------------------
+" EasyMotion
+" ----------------------------------------------------------------------------
+"{{{
 
 map <Leader> <Plug>(easymotion-prefix)
 
@@ -185,7 +219,10 @@ map T <Plug>(easymotion-Tl)
 
 "}}}
 
-" FZF {{{
+" ----------------------------------------------------------------------------
+" FZF
+" ----------------------------------------------------------------------------
+"{{{
 
 set rtp+=~/.fzf
 

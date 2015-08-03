@@ -1,4 +1,7 @@
-" appearance {{{
+" ----------------------------------------------------------------------------
+" display tweaks
+" ----------------------------------------------------------------------------
+"{{{
 
 set lines=60 columns=180
 set guifont=Source\ Code\ Pro\ for\ Powerline:h13
@@ -20,10 +23,6 @@ colorscheme hybrid
 
 "set transparency=2
 
-"}}}
-
-" cursor styles {{{
-
 " Change cursor style when entering INSERT mode
 let s:tmux    = exists('$TMUX')
 
@@ -40,7 +39,10 @@ let &t_EI = end_insert
 
 "}}}
 
-" local overrides {{{
+" ----------------------------------------------------------------------------
+" Local overrides
+" ----------------------------------------------------------------------------
+"{{{
 
 if filereadable(glob("~/.gvimrc.local"))
   source ~/.gvimrc.local

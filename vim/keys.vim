@@ -1,7 +1,9 @@
-"leader
-let mapleader = ','
+" ----------------------------------------------------------------------------
+" key remaps
+" ----------------------------------------------------------------------------
+"{{{
 
-"key remaps {{{
+let mapleader = ','
 
 " remap colon
 noremap <Space> :
@@ -16,7 +18,10 @@ nnoremap <leader><leader> ,
 
 "}}}
 
-"movement {{{
+" ----------------------------------------------------------------------------
+" movement
+" ----------------------------------------------------------------------------
+"{{{
 
 " move splits
 nmap gh <C-w>h
@@ -60,7 +65,10 @@ cnoremap <C-D>      <Del>
 
 "}}}
 
-"copying {{{
+" ----------------------------------------------------------------------------
+" copying
+" ----------------------------------------------------------------------------
+"{{{
 
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
@@ -72,7 +80,10 @@ noremap <leader>s i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 "}}}
 
-"searching {{{
+" ----------------------------------------------------------------------------
+" searching
+" ----------------------------------------------------------------------------
+"{{{
 
 " matchit
 runtime macros/matchit.vim
@@ -106,7 +117,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 "}}}
 
-"display utilities {{{
+" ----------------------------------------------------------------------------
+" display
+" ----------------------------------------------------------------------------
+"{{{
 
 " toggle [i]nvisible characters
 nnoremap <silent> <F2> :set list!<CR>
@@ -123,7 +137,10 @@ nmap <silent> <leader><space> :noh<CR>:call clearmatches()<CR>
 
 "}}}
 
-"whitespace utilities {{{
+" ----------------------------------------------------------------------------
+" whitespace
+" ----------------------------------------------------------------------------
+"{{{
 
 " toggle expandtab
 nmap <silent> <F4> :set expandtab!<CR>
@@ -158,7 +175,10 @@ map <leader>R :set ts=2 noet<CR>:retab!<CR>:set et ts=4<CR>:retab<CR>
 
 "}}}
 
-"buffers {{{
+" ----------------------------------------------------------------------------
+" buffers
+" ----------------------------------------------------------------------------
+"{{{
 
 " list buffers then wait for input to switch
 nnoremap <leader>ls :ls<CR>:b<Space>
@@ -184,7 +204,10 @@ nmap <silent> <leader>cd :lcd %:h<CR>
 
 "}}}
 
-"clipboard {{{
+" ----------------------------------------------------------------------------
+" clipboard
+" ----------------------------------------------------------------------------
+"{{{
 
 " toggle paste mode
 nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
@@ -196,7 +219,10 @@ map <silent> <leader>v gg"_dGP
 
 "}}}
 
-"vimdiff {{{
+" ----------------------------------------------------------------------------
+" diff
+" ----------------------------------------------------------------------------
+"{{{
 
 " do vimdiff clipboard in new window
 nnoremap <leader>dt :vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
@@ -206,7 +232,10 @@ nnoremap <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
 
 "}}}
 
-"folding {{{
+" ----------------------------------------------------------------------------
+" folding
+" ----------------------------------------------------------------------------
+"{{{
 
 " Space to toggle folds.
 nnoremap z<space> za

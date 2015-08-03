@@ -1,4 +1,7 @@
-"basic config {{{
+" ----------------------------------------------------------------------------
+" basic config
+" ----------------------------------------------------------------------------
+"{{{
 
 set encoding=utf-8
 
@@ -13,13 +16,20 @@ set autoread
 
 "}}}
 
-"theme {{{
+" ----------------------------------------------------------------------------
+" theme
+" ----------------------------------------------------------------------------
+"{{{
 
 syntax on
 
 "}}}
 
-"searching {{{
+" ----------------------------------------------------------------------------
+" searching
+" ----------------------------------------------------------------------------
+"{{{
+
 set ignorecase
 set smartcase
 set incsearch
@@ -29,7 +39,10 @@ set gdefault
 
 "}}}
 
-"backups and swap {{{
+" ----------------------------------------------------------------------------
+" backups and swap
+" ----------------------------------------------------------------------------
+"{{{
 
 set noswapfile
 set backup
@@ -51,7 +64,10 @@ endif
 
 "}}}
 
-"display tweaks {{{
+" ----------------------------------------------------------------------------
+" display tweaks
+" ----------------------------------------------------------------------------
+"{{{
 
 " extra chars
 set list
@@ -74,15 +90,54 @@ set linebreak
 set textwidth=120
 set colorcolumn=+1
 
+" change shape of cursor in insert mode in iTerm 2
+let s:iterm   = exists('$ITERM_PROFILE') || exists('$ITERM_SESSION_ID') || filereadable(expand("~/.vim/.assume-iterm"))
+let s:tmux    = exists('$TMUX')
+
+function! s:EscapeEscapes(string)
+  " double each <Esc>
+  return substitute(a:string, "\<Esc>", "\<Esc>\<Esc>", "g")
+endfunction
+
+function! s:TmuxWrap(string)
+  if strlen(a:string) == 0
+    return ""
+  end
+
+  let tmux_begin  = "\<Esc>Ptmux;"
+  let tmux_end    = "\<Esc>\\"
+
+  return tmux_begin . s:EscapeEscapes(a:string) . tmux_end
+endfunction
+
+if s:iterm
+  let start_insert  = "\<Esc>]50;CursorShape=1\x7"
+  let end_insert    = "\<Esc>]50;CursorShape=2\x7"
+
+  if s:tmux
+    let start_insert  = s:TmuxWrap(start_insert)
+    let end_insert    = s:TmuxWrap(end_insert)
+  endif
+
+  let &t_SI = start_insert
+  let &t_EI = end_insert
+endif
+
 "}}}
 
-"folding {{{
+" ----------------------------------------------------------------------------
+" folding
+" ----------------------------------------------------------------------------
+"{{{
 
 set foldlevelstart=99
 
 " }}}
 
-"wildchar {{{
+" ----------------------------------------------------------------------------
+" wildchar
+" ----------------------------------------------------------------------------
+"{{{
 
 set wildchar=<Tab> wildmenu wildmode=full
 

@@ -1,4 +1,7 @@
-"Javascript {{{
+" ----------------------------------------------------------------------------
+" javascript
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_javascript
   au!
@@ -12,7 +15,10 @@ augroup END
 
 "}}}
 
-"JSON {{{
+" ----------------------------------------------------------------------------
+" JSON
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_json
   au!
@@ -28,7 +34,10 @@ augroup END
 
 "}}}
 
-"Coffeescript {{{
+" ----------------------------------------------------------------------------
+" CoffeScript
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_coffeescript
   au!
@@ -42,18 +51,18 @@ augroup END
 
 "}}}
 
-"CSS, Less and Sass {{{
+" ----------------------------------------------------------------------------
+" CSS
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_css
   au!
 
-  au BufNewFile,BufRead *.less setlocal filetype=less
-  "au BufWritePost,FileWritePost *.less silent !lessc <afile> <afile>:r.css
-
-  au Filetype less,css setlocal foldmethod=marker
-  au Filetype less,css setlocal foldmarker={,}
-  au FileType less,css setlocal omnifunc=csscomplete#CompleteCSS
-  au FileType less,css setlocal iskeyword+=-
+  au Filetype css setlocal foldmethod=marker
+  au Filetype css setlocal foldmarker={,}
+  au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  au FileType css setlocal iskeyword+=-
 
   " Use <leader>S to sort properties.  Turns this:
   "
@@ -74,16 +83,19 @@ augroup ft_css
   "
   "         ...
   "     }
-  au BufNewFile,BufRead *.less,*.css nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+  au BufNewFile,BufRead *.css nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
   " Make {<CR> insert a pair of brackets in such a way that the cursor is correctly
   " positioned inside of them AND the following code doesn't get unfolded.
-  au BufNewFile,BufRead *.less,*.css inoremap <buffer> {<CR> {}<left><CR><space><space><space><space>.<CR><Esc>kA<bs>
+  au BufNewFile,BufRead *.css inoremap <buffer> {<CR> {}<left><CR><space><space><space><space>.<CR><Esc>kA<bs>
 augroup END
 
 "}}}
 
-"XML {{{
+" ----------------------------------------------------------------------------
+" XML
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_xml
   au!
@@ -99,7 +111,10 @@ augroup END
 
 "}}}
 
-"VIM config files {{{
+" ----------------------------------------------------------------------------
+" Vim
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_vim
   au!
@@ -111,7 +126,10 @@ augroup END
 
 "}}}
 
-"Python {{{
+" ----------------------------------------------------------------------------
+" Python
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_python
   au!
@@ -122,7 +140,10 @@ augroup END
 
 "}}}
 
-"PHP {{{
+" ----------------------------------------------------------------------------
+" PHP
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_php
   au!
@@ -133,7 +154,10 @@ augroup END
 
 "}}}
 
-"Java {{{
+" ----------------------------------------------------------------------------
+" Java
+" ----------------------------------------------------------------------------
+"{{{
 
 augroup ft_java
   au!
