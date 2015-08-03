@@ -9,3 +9,7 @@ source ~/.vim/config.vim
 source ~/.vim/filetypes.vim
 source ~/.vim/keys.vim
 source ~/.vim/plugins.vim
+
+if filereadable(glob("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
