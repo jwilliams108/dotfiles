@@ -20,6 +20,9 @@ antigen bundle fasd
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 
+# local plugins
+antigen bundle $ZSH/plugins/fzf
+
 # theme
 antigen theme $ZSH/themes scott
 
@@ -30,6 +33,12 @@ antigen apply
 # modularised config {{{
 
 for config (~/.zsh/config/*.zsh) source $config
+
+#}}}
+
+# FZF config {{{
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #}}}
 
