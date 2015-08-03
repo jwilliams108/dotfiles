@@ -205,3 +205,14 @@ nnoremap <leader>dt :vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
 nnoremap <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
 
 "}}}
+
+"folding {{{
+
+" Space to toggle folds.
+nnoremap z<space> za
+vnoremap z<space> za
+
+" Make zO recursively open whatever fold we're in, even if it's partially open.
+nnoremap zO zczO
+
+"}}}

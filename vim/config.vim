@@ -80,13 +80,6 @@ set colorcolumn=+1
 
 set foldlevelstart=99
 
-" Space to toggle folds.
-nnoremap z<space> za
-vnoremap z<space> za
-
-" Make zO recursively open whatever fold we're in, even if it's partially open.
-nnoremap zO zczO
-
 " }}}
 
 "wildchar {{{
