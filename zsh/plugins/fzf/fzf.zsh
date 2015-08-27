@@ -35,8 +35,14 @@ function fda() {
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
-# ff - change to directory containg file (with fasd)
+# ff - change to directory containg file
 function ff() {
+  local dir
+  dir=$(find ${1:-.} -type f -not -path './.git/*' 2> /dev/null | fzf +m) && cd "$(dirname $dir)"
+}
+
+# ffa - change to directory containg file (with fasd)
+function ffa() {
   local dir
   dir=$(fasd -Rfl | fzf --no-sort) && cd "$(dirname $dir)"
 }
