@@ -23,16 +23,40 @@ nnoremap <leader><leader> ,
 " ----------------------------------------------------------------------------
 "{{{
 
-" move splits
+" larger moves
+nmap J 5j
+nmap K 5k
+xmap J 5j
+xmap K 5k
+
+" emacs-like movement
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
+cnoremap <C-B> <Left>
+cnoremap <C-F> <Right>
+cnoremap <C-D> <Del>
+
+" move tabs
+nmap <C-l> gt
+nmap <C-h> gT
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" splits
+" ----------------------------------------------------------------------------
+"{{{
+
+nnoremap s <C-W>
+autocmd filetype netrw nnoremap <buffer> s <C-W>
+
+" navigate splits
 nmap gh <C-w>h
 nmap gj <C-w>j
 nmap gk <C-w>k
 nmap gl <C-w>l
-
-"noremap <C-h> <C-w>h
-"noremap <C-j> <C-w>j
-"noremap <C-k> <C-w>k
-"noremap <C-l> <C-w>l
 
 " swap split
 nmap gH <C-w>r
@@ -43,25 +67,6 @@ noremap <up>    <C-W>+
 noremap <down>  <C-W>-
 noremap <left>  3<C-W><
 noremap <right> 3<C-W>>
-
-" move tabs
-nmap <C-l> gt
-nmap <C-h> gT
-
-" larger moves
-nmap J 5j
-nmap K 5k
-xmap J 5j
-xmap K 5k
-
-" bash/emacs-like movement
-cnoremap <C-A>      <Home>
-cnoremap <C-B>      <Left>
-cnoremap <C-E>      <End>
-cnoremap <C-F>      <Right>
-cnoremap <C-N>      <End>
-cnoremap <C-P>      <Up>
-cnoremap <C-D>      <Del>
 
 "}}}
 
@@ -74,7 +79,7 @@ cnoremap <C-D>      <Del>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-"line joins/splits
+" line joins/splits
 noremap <leader>j :join<CR>
 noremap <leader>s i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
@@ -103,6 +108,9 @@ nnoremap g, g,zz
 
 " highlight last inserted text
 nmap gV `[v`]
+
+" open a Quickfix window for the last search.
+nnoremap <silent> ,/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
@@ -181,7 +189,7 @@ map <leader>R :set ts=2 noet<CR>:retab!<CR>:set et ts=4<CR>:retab<CR>
 "{{{
 
 " list buffers then wait for input to switch
-nnoremap <leader>ls :ls<CR>:b<Space>
+nnoremap <leader>ll :ls<CR>:b<Space>
 nnoremap gb :ls<CR>:vert sb<Space>
 
 "nnoremap ,b :buffer <C-z><S-Tab>
@@ -197,10 +205,6 @@ nnoremap L :bnext<CR>
 " Replace remapped H and L
 nnoremap + H
 nnoremap _ L
-
-" cd to the directory containing the file in the buffer
-nmap <silent> <leader>cd :lcd %:h<CR>
-"nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
 
 "}}}
 

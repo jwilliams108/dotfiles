@@ -15,8 +15,18 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 
 let g:ctrlp_dont_split = 'netrw\|nerdtree'
 let g:ctrlp_working_path_mode = 'rw'
+nnoremap <leader>ls :CtrlPBuffer<CR>
 
 "}}}
+
+" ----------------------------------------------------------------------------
+" Autoformat
+" ----------------------------------------------------------------------------
+"{{{
+
+map <silent><leader>fm :Autoformat<CR>
+
+""}}}
 
 " ----------------------------------------------------------------------------
 " syntastic
@@ -52,16 +62,6 @@ vnoremap <silent><leader>js :JSHint<CR>
 cnoremap <leader>js JSHint
 
 "}}}
-
-" ----------------------------------------------------------------------------
-" beautify
-" ----------------------------------------------------------------------------
-"{{{
-
-map <silent><leader>jf :%!python -m json.tool<CR>
-map <silent><leader>jb :call JsBeautify()<CR>
-
-""}}}
 
 " ----------------------------------------------------------------------------
 " coffeescript
