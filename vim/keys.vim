@@ -224,6 +224,11 @@ map <silent> <leader>v gg"_dGP
 " ----------------------------------------------------------------------------
 "{{{
 
+nnoremap <Leader>dh :diffthis<CR>
+nnoremap <Leader>dg :diffget<CR>
+nnoremap <Leader>dp :diffput<CR>
+nnoremap <Leader>du :diffupdate<CR>
+
 " do vimdiff clipboard in new window
 nnoremap <leader>dt :vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
 
