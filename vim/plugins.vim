@@ -33,17 +33,16 @@ map <silent><leader>fm :Autoformat<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-nmap <silent> <F9> :SyntasticToggleMode<CR>
-
-map <leader>sc :SyntasticCheck<CR>
-
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
+let g:syntastic_auto_loc_list=0
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_php_checkers = ['phpcs']
 let g:syntastic_php_phpcs_args = "--standard=/Users/***REMOVED***/.phpcs/phpcs.xml -n --report=csv"
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
-let g:syntastic_auto_loc_list=0
-"let g:syntastic_auto_loc_list=1
+
+nmap <silent> <F9> :SyntasticToggleMode<CR>
+map <leader>sc :SyntasticCheck<CR>
 
 "}}}
 
