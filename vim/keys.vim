@@ -131,10 +131,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 "{{{
 
 " toggle [i]nvisible characters
-nnoremap <silent> <F2> :set list!<CR>
+nnoremap <silent> <F7> :set list!<CR>
 
 " wrap
-nnoremap <silent> <F3> :set wrap!<CR>
+nnoremap <silent> <F8> :set wrap!<CR>
 
 " set text wrapping toggles
 nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
@@ -150,20 +150,17 @@ nmap <silent> <leader><space> :noh<CR>:call clearmatches()<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-" toggle expandtab
-nmap <silent> <F4> :set expandtab!<CR>
+" set 2 space tabs
+nmap <silent> <F2> :set ts=2 sw=2 sts=2<CR>
 
 " set 4 space tabs
-nmap <silent> <F5> :set ts=4 sw=4 sts=4<CR>
-
-" set (return to) 2 space tabs
-nmap <silent> <F6> :set ts=2 sw=2 sts=2<CR>
+nmap <silent> <F4> :set ts=4 sw=4 sts=4<CR>
 
 " set no width restriction
-nmap <silent> <F7> :set tw=0
+nmap <silent> <F5> :set tw=0<CR>
 
-" set (return to) 120 column width
-nmap <silent> <F8> :set tw=120<CR>
+" set 120 column width
+nmap <silent> <F6> :set tw=120<CR>
 
 " increase/decrease indentation
 vmap <leader>l >gv
@@ -213,13 +210,13 @@ nnoremap _ L
 " ----------------------------------------------------------------------------
 "{{{
 
-" toggle paste mode
-nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
-
 " copy to/replace with clipboard
 set clipboard=unnamed
 map <silent> <leader>c :%y+<CR>
 map <silent> <leader>v gg"_dGP
+
+" toggle paste mode
+nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
 
 "}}}
 
