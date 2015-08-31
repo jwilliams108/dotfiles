@@ -7,10 +7,6 @@ augroup ft_javascript
   au!
 
   au FileType javascript setlocal foldmethod=marker foldmarker={,}
-
-  " Prettify a hunk of JSON with <leader>p
-  au FileType javascript nnoremap <buffer> <leader>p ^vg_:!python -m json.tool<cr>
-  au FileType javascript vnoremap <buffer> <leader>p :!python -m json.tool<cr>
 augroup END
 
 "}}}
@@ -24,12 +20,7 @@ augroup ft_json
   au!
 
   au FileType json setlocal foldmethod=syntax
-
   au BufNewFile,BufRead *.json set ft=json
-
-  " Prettify a hunk of JSON with <leader>p
-  au FileType json nnoremap <buffer> <leader>p ^vg_:!python -m json.tool<cr>
-  au FileType json vnoremap <buffer> <leader>p :!python -m json.tool<cr>
 augroup END
 
 "}}}

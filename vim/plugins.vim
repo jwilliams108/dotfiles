@@ -33,42 +33,19 @@ map <silent><leader>fm :Autoformat<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
-let g:syntastic_auto_loc_list=0
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_php_checkers = ['phpcs']
-let g:syntastic_php_phpcs_args = "--standard=/Users/***REMOVED***/.phpcs/phpcs.xml -n --report=csv"
+let g:syntastic_mode_map={'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
+let g:syntastic_auto_loc_list=1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_php_checkers=['phpcs']
+let g:syntastic_php_phpcs_args="--standard=/Users/***REMOVED***/.phpcs/phpcs.xml -n --report=csv"
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
-nmap <silent> <F9> :SyntasticToggleMode<CR>
-map <leader>sc :SyntasticCheck<CR>
-
-"}}}
-
-" ----------------------------------------------------------------------------
-" jshint
-" ----------------------------------------------------------------------------
-"{{{
-
-" use node.js for javascript
-let $JS_CMD='node'
-
-let jshint2_command = '/usr/local/bin/jshint'
-nnoremap <silent><leader>js :JSHint<CR>
-inoremap <silent><leader>js <C-O>:JSHint<CR>
-vnoremap <silent><leader>js :JSHint<CR>
-cnoremap <leader>js JSHint
-
-"}}}
-
-" ----------------------------------------------------------------------------
-" coffeescript
-" ----------------------------------------------------------------------------
-"{{{
-
-au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+nnoremap <silent> <F9> :SyntasticToggleMode<CR>
+nnoremap <leader>sc :SyntasticCheck<CR>
+nnoremap <leader>sn :lnext<CR>
+nnoremap <leader>sp :lprev<CR>
 
 "}}}
 
