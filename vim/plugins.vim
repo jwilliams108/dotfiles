@@ -1,10 +1,9 @@
 " ----------------------------------------------------------------------------
-" delimitMate
+" netrw
 " ----------------------------------------------------------------------------
 "{{{
 
-"imap <C-i> <CR><Esc>O
-imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
+let g:netrw_altfile = 1
 
 "}}}
 
@@ -33,14 +32,14 @@ map <silent><leader>fm :Autoformat<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-let g:syntastic_mode_map={'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
-let g:syntastic_auto_loc_list=1
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_php_checkers=['phpcs']
-let g:syntastic_php_phpcs_args="--standard=/Users/***REMOVED***/.phpcs/phpcs.xml -n --report=csv"
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_php_checkers = ['phpcs']
+let g:syntastic_php_phpcs_args = "--standard=/Users/***REMOVED***/.phpcs/phpcs.xml -n --report=csv"
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 
 nnoremap <silent> <F9> :SyntasticToggleMode<CR>
 nnoremap <leader>sc :SyntasticCheck<CR>
@@ -49,6 +48,15 @@ nnoremap <leader>sp :lprev<CR>
 
 "}}}
 
+" ----------------------------------------------------------------------------
+" delimitMate
+" ----------------------------------------------------------------------------
+"{{{
+
+"imap <C-i> <CR><Esc>O
+imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
+
+"}}}
 " ----------------------------------------------------------------------------
 " vim-fugitive
 " ----------------------------------------------------------------------------
