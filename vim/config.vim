@@ -37,6 +37,11 @@ set showmatch
 set hlsearch
 set gdefault
 
+" prefer silver search if available
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 "}}}
 
 " ----------------------------------------------------------------------------

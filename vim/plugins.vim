@@ -8,12 +8,28 @@ let g:netrw_altfile = 1
 "}}}
 
 " ----------------------------------------------------------------------------
+" Ag
+" ----------------------------------------------------------------------------
+"{{{
+
+nnoremap \ :Ag<SPACE>
+
+"}}}
+
+" ----------------------------------------------------------------------------
 " ctrlp
 " ----------------------------------------------------------------------------
 "{{{
 
+if executable('ag')
+  " prefer silver searcher
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 let g:ctrlp_dont_split = 'netrw\|nerdtree'
 let g:ctrlp_working_path_mode = 'rw'
+
 nnoremap <leader>ls :CtrlPBuffer<CR>
 
 "}}}
@@ -23,7 +39,7 @@ nnoremap <leader>ls :CtrlPBuffer<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-map <silent><leader>fm :Autoformat<CR>
+nnoremap <silent><leader>fm :Autoformat<CR>
 
 ""}}}
 
@@ -62,7 +78,7 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 " ----------------------------------------------------------------------------
 "{{{
 
-nmap     <Leader>g  :Gstatus<CR>gg<c-n>
+nnoremap <Leader>g  :Gstatus<CR>gg<c-n>
 nnoremap <Leader>d  :Gvdiff<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
