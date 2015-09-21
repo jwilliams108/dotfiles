@@ -5,7 +5,6 @@
 
 set lines=60 columns=180
 set guifont=Source\ Code\ Pro\ for\ Powerline:h13
-"set guifont=Consolas\ for\ Powerline:h14
 
 " remove toolbar
 set go-=T
@@ -17,8 +16,6 @@ set go-=r
 "set background=light
 set background=dark
 
-"colorscheme solarized
-"colorscheme seoul256
 colorscheme hybrid
 
 "set transparency=2
