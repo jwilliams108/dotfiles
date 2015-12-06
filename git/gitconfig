@@ -24,6 +24,7 @@
 	ca = commit --amend
 	cma = commit --amend -m
 	st = status -s
+	pl = pull --rebase
 	br = branch
 	chp = cherry-pick
 	diff = diff --word-diff
