@@ -1,3 +1,9 @@
+# set path first {{{
+
+source ~/.zsh/config/environment.zsh
+
+#}}}
+
 # antigen setup and config {{{
 
 local ZSH="$HOME/.zsh"

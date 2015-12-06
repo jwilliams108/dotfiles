@@ -1,3 +1,6 @@
+# make sure local takes precendence
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 # for local Python
 if [ -d /usr/local/lib/python2.7/site-packages ]; then
   export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
@@ -40,9 +43,6 @@ fi
 if [ -d /usr/local/opt/groovy/libexec ]; then
   export GROOVY_HOME=/usr/local/opt/groovy/libexec
 fi
-
-# make sure local takes precendence
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # editor and utils
 export EDITOR=vim
