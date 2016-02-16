@@ -1,12 +1,12 @@
 # incremental search
-bindkey '^R' history-incremental-search-backward
-bindkey '^S' history-incremental-search-forward
+#bindkey '^R' history-incremental-search-backward
+#bindkey '^S' history-incremental-search-forward
 
 # history search
 #bindkey "^[[A" history-beginning-search-backward
 #bindkey "^[[B" history-beginning-search-forward
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
 
 # emacs like command line movement
 bindkey "^A" beginning-of-line

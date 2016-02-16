@@ -44,7 +44,18 @@ if [ -d /usr/local/opt/groovy/libexec ]; then
   export GROOVY_HOME=/usr/local/opt/groovy/libexec
 fi
 
+# texlive
+if [ -d /usr/local/texlive/2015/bin/x86_64-darwin ]; then
+  export PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
+fi
+
 # editor and utils
 export EDITOR=vim
 export PAGER=less
 export COPYFILE_DISABLE=1
+
+# homebrew token
+export HOMEBREW_GITHUB_API_TOKEN=ea199008fc0ec8d298a04e26ac5da69d5528abad
+
+# for thefuck
+eval "$(thefuck --alias)"

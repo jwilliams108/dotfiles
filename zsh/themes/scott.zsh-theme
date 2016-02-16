@@ -55,7 +55,7 @@ prompt_segment_right() {
 # End the prompt, closing any open segments
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+    echo -n "%{%k%F{14}%}$SEGMENT_SEPARATOR"
   else
     echo -n "%{%k%}"
   fi
