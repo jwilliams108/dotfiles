@@ -10,6 +10,7 @@ set hidden
 set autoindent
 set copyindent
 set laststatus=2
+set noshowmode
 set splitbelow
 "set splitright
 set autowrite
