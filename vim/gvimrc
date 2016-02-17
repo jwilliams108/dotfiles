@@ -23,14 +23,14 @@ colorscheme hybrid
 "set transparency=2
 
 " Change cursor style when entering INSERT mode
-let s:tmux    = exists('$TMUX')
+let s:tmux = exists('$TMUX')
 
-let end_insert    = "\<Esc>]50;CursorShape=1\x7"
-let start_insert  = "\<Esc>]50;CursorShape=0\x7"
+let end_insert   = "\<Esc>]50;CursorShape=1\x7"
+let start_insert = "\<Esc>]50;CursorShape=0\x7"
 
 if s:tmux
-  let start_insert  = s:TmuxWrap(start_insert)
-  let end_insert    = s:TmuxWrap(end_insert)
+  let start_insert = s:TmuxWrap(start_insert)
+  let end_insert   = s:TmuxWrap(end_insert)
 endif
 
 let &t_SI = start_insert
