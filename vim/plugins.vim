@@ -4,6 +4,7 @@
 "{{{
 
 let g:netrw_altfile = 1
+let g:netrw_dirhistmax = 0
 
 "}}}
 
