@@ -152,7 +152,7 @@ let g:lightline = {
   \ 'component_type': {
   \   'syntastic': 'error',
   \ },
-  \ 'separator': { 'left': '⮀', 'right': '⮂' },
+  \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '|', 'right': '|' },
   \ }
 
@@ -161,7 +161,7 @@ function! LightLineModified()
 endfunction
 
 function! LightLineReadonly()
-  return &ft !~? 'help' && &readonly ? '⭤' : ''
+  return &ft !~? 'help' && &readonly ? '' : ''
 endfunction
 
 function! LightLineFilename()
@@ -175,7 +175,7 @@ endfunction
 function! LightLineFugitive()
   if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
     let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
+    return strlen(_) ? ' '._ : ''
   endif
   return ''
 endfunction
@@ -210,6 +210,30 @@ endfunction
 function! CtrlPStatusFunc_2(str)
   return lightline#statusline(0)
 endfunction
+
+" unicode symbols
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.crypt = '🔒'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
 
 "}}}
 
