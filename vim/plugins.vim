@@ -91,8 +91,8 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <Leader>g  :Gstatus<CR>gg<c-n>
-nnoremap <Leader>d  :Gvdiff<CR>
+nnoremap <leader>g  :Gstatus<CR>gg<c-n>
+nnoremap <leader>d  :Gvdiff<CR>
 nnoremap <leader>gd :Gvdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gw :Gwrite<CR>
@@ -255,12 +255,10 @@ let g:indentguides_state = 0
 " ----------------------------------------------------------------------------
 "{{{
 
-map <Leader> <Plug>(easymotion-prefix)
-
-map f <Plug>(easymotion-fl)
-map F <Plug>(easymotion-Fl)
-map t <Plug>(easymotion-tl)
-map T <Plug>(easymotion-Tl)
+map <leader>f <Plug>(easymotion-fl)
+map <leader>F <Plug>(easymotion-Fl)
+map <leader>t <Plug>(easymotion-tl)
+map <leader>T <Plug>(easymotion-Tl)
 
 "}}}
 
