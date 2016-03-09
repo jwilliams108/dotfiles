@@ -1,41 +1,3 @@
-# set path first {{{
-
-source ~/.zsh/config/environment.zsh
-
-#}}}
-
-# antigen setup and config {{{
-
-local ZSH="$HOME/.zsh"
-source $ZSH/plugins/antigen/antigen.zsh
-
-# prezto plugins
-antigen use prezto
-
-antigen bundle osx
-
-# oh-my-zsh plugins
-antigen use oh-my-zsh
-
-antigen bundle brew
-antigen bundle git
-antigen bundle tmux
-antigen bundle fasd
-
-# other plugins
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-
-# local plugins
-antigen bundle $ZSH/plugins/fzf
-
-# theme
-antigen theme $ZSH/themes scott
-
-antigen apply
-
-# }}}
-
 # modularised config {{{
 
 for config (~/.zsh/config/*.zsh) source $config
@@ -55,6 +17,38 @@ if [ -f $HOME/.zshrc_local ];
 fi
 
 #}}}
+
+# *gen setup and config {{{
+
+local ZSH="$HOME/.zsh"
+
+source $ZSH/plugins/antigen/antigen.zsh
+
+## prezto plugins
+#antigen use prezto
+#antigen bundle osx
+
+# oh-my-zsh plugins
+antigen use oh-my-zsh
+#antigen bundle brew
+antigen bundle git
+#antigen bundle tmux
+antigen bundle fasd
+
+# other plugins
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+
+# local plugins
+antigen bundle $ZSH/plugins/fzf
+antigen bundle $ZSH/plugins/zsh-git-prompt
+
+# theme
+antigen theme $ZSH/themes scott
+
+antigen apply
+
+# }}}
 
 # welcome message {{{
 
