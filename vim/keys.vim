@@ -6,15 +6,9 @@
 let mapleader = ','
 
 " remap colon
-noremap <Space> :
 nnoremap ; :
-nnoremap <leader>; ;
-nnoremap <leader><leader> ,
-
-"nnoremap Y y$
-"noremap H ^
-"noremap L $
-"vnoremap L g_
+noremap <space> ;
+noremap <leader><space> ,
 
 "}}}
 
@@ -65,8 +59,8 @@ nmap gK <C-w>r
 " resize splits
 noremap <up>    <C-W>+
 noremap <down>  <C-W>-
-noremap <left>  3<C-W><
-noremap <right> 3<C-W>>
+noremap <left>  <C-W><
+noremap <right> <C-W>>
 
 "}}}
 
@@ -130,18 +124,14 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " ----------------------------------------------------------------------------
 "{{{
 
-" toggle [i]nvisible characters
-nnoremap <silent> <F7> :set list!<CR>
+" toggle invisible characters
+"nnoremap <silent> <F7> :set list!<CR>
 
 " wrap
-nnoremap <silent> <F8> :set wrap!<CR>
-
-" set text wrapping toggles
-nmap <silent> <leader>ww :set invwrap<CR>:set wrap?<CR>
+nnoremap <silent> <F11> :set wrap!<CR>
 
 " turn off highlight search
-"nmap <silent> <leader><space> :nohls<CR>
-nmap <silent> <leader><space> :noh<CR>:call clearmatches()<CR>
+nmap <silent> <leader><leader> :noh<CR>:call clearmatches()<CR>
 
 "}}}
 
@@ -162,21 +152,21 @@ nmap <silent> <F5> :set tw=0<CR>
 " set 120 column width
 nmap <silent> <F6> :set tw=120<CR>
 
+" trim trailing whitespace
+nmap <silent> <F7> mz:%s/\s\+$//<CR>:let @/=''<CR>`z
+
+" convert tabs to spaces
+nmap <silent> <F8> :retab<CR>
+
+" convert 4 space indents to 2 spaces
+nmap <silent> <F9> :set ts=4 noet<CR>:retab!<CR>:set et ts=2<CR>:retab<CR>
+
+" convert 2 space indents to 4 spaces
+nmap <silent> <F10> :set ts=2 noet<CR>:retab!<CR>:set et ts=4<CR>:retab<CR>
+
 " increase/decrease indentation
 vmap <leader>l >gv
 vmap <leader>h <gv
-
-" trim trailing whitespace
-nnoremap <leader>w mz:%s/\s\+$//<CR>:let @/=''<CR>`z
-
-" convert tabs to spaces
-nnoremap <leader>e :retab<CR>
-
-" convert 4 space indents to 2 spaces
-map <leader>r :set ts=4 noet<CR>:retab!<CR>:set et ts=2<CR>:retab<CR>
-
-" convert 2 space indents to 4 spaces
-map <leader>R :set ts=2 noet<CR>:retab!<CR>:set et ts=4<CR>:retab<CR>
 
 "}}}
 
@@ -225,10 +215,10 @@ nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <Leader>dh :diffthis<CR>
-nnoremap <Leader>dg :diffget<CR>
-nnoremap <Leader>dp :diffput<CR>
-nnoremap <Leader>du :diffupdate<CR>
+nnoremap <leader>dh :diffthis<CR>
+nnoremap <leader>dg :diffget<CR>
+nnoremap <leader>dp :diffput<CR>
+nnoremap <leader>du :diffupdate<CR>
 
 " do vimdiff clipboard in new window
 nnoremap <leader>dt :vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
@@ -243,7 +233,7 @@ nnoremap <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-" Space to toggle folds.
+" z + space to toggle folds.
 nnoremap z<space> za
 vnoremap z<space> za
 

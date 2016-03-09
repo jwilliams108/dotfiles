@@ -40,9 +40,12 @@ nnoremap <leader>ls :CtrlPBuffer<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
+let g:buffergator_suppress_keymaps = 1
 let g:buffergator_viewport_split_policy = 'B'
 let g:buffergator_autoexpand_on_split = 0
 let g:buffergator_hsplit_size = 10
+
+nnoremap <silent> \b :BuffergatorToggle<CR>
 
 "}}}
 
@@ -51,7 +54,7 @@ let g:buffergator_hsplit_size = 10
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <silent><leader>fm :Autoformat<CR>
+nnoremap <silent> <leader>fm :Autoformat<CR>
 
 ""}}}
 
@@ -69,7 +72,7 @@ let g:syntastic_php_phpcs_args = "--standard=/Users/***REMOVED***/.phpcs/phpcs.x
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 
-nnoremap <silent> <F9> :SyntasticToggleMode<CR>
+nnoremap <silent> <F12> :SyntasticToggleMode<CR>
 nnoremap <leader>sc :SyntasticCheck<CR>
 nnoremap <leader>sn :lnext<CR>
 nnoremap <leader>sp :lprev<CR>
@@ -81,7 +84,6 @@ nnoremap <leader>sp :lprev<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-"imap <C-i> <CR><Esc>O
 imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 
 "}}}
@@ -91,17 +93,17 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <leader>g  :Gstatus<CR>gg<c-n>
-nnoremap <leader>d  :Gvdiff<CR>
-nnoremap <leader>gd :Gvdiff<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gw :Gwrite<CR>
-nnoremap <leader>ga :Gadd<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>g   :Gstatus<CR>gg<c-n>
+nnoremap <leader>d   :Gvdiff<CR>
+nnoremap <leader>gd  :Gvdiff<CR>
+nnoremap <leader>gs  :Gstatus<CR>
+nnoremap <leader>gw  :Gwrite<CR>
+nnoremap <leader>ga  :Gadd<CR>
+nnoremap <leader>gb  :Gblame<CR>
 nnoremap <leader>gco :Gcheckout<CR>
 nnoremap <leader>gci :Gcommit<CR>
-nnoremap <leader>gm :Gmove<CR>
-nnoremap <leader>gr :Gremove<CR>
+nnoremap <leader>gm  :Gmove<CR>
+nnoremap <leader>gr  :Gremove<CR>
 
 "}}}
 
@@ -212,6 +214,8 @@ function! CtrlPStatusFunc_2(str)
   return lightline#statusline(0)
 endfunction
 
+" symbols for reference
+
 " unicode symbols
 "let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'
@@ -255,10 +259,16 @@ let g:indentguides_state = 0
 " ----------------------------------------------------------------------------
 "{{{
 
-map <leader>f <Plug>(easymotion-fl)
-map <leader>F <Plug>(easymotion-Fl)
-map <leader>t <Plug>(easymotion-tl)
-map <leader>T <Plug>(easymotion-Tl)
+map <leader> <Plug>(easymotion-prefix)
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" CamelCaseMotion
+" ----------------------------------------------------------------------------
+"{{{
+
+call camelcasemotion#CreateMotionMappings('<leader>')
 
 "}}}
 
