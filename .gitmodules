@@ -88,9 +88,6 @@
 [submodule "vim/bundle/ag.vim"]
 	path = vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim
-[submodule "zsh/plugins/antigen"]
-	path = zsh/plugins/antigen
-	url = https://github.com/zsh-users/antigen.git
 [submodule "vim/bundle/undotree"]
 	path = vim/bundle/undotree
 	url = https://github.com/mbbill/undotree.git
@@ -121,3 +118,6 @@
 [submodule "zsh/plugins/zsh-git-prompt"]
 	path = zsh/plugins/zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
+[submodule "zsh/plugins/zgen"]
+	path = zsh/plugins/zgen
+	url = https://github.com/tarjoilija/zgen.git

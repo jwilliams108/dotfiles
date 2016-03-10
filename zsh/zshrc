@@ -6,37 +6,39 @@ for config (~/.zsh/config/*.zsh) source $config
 
 # Source local configuration {{{
 
-if [ -f $HOME/.zshrc_local ];
-  then source $HOME/.zshrc_local
+if [ -f $HOME/.zshrc.local ];
+  then source $HOME/.zshrc.local
 fi
 
 #}}}
 
 # *gen setup and config {{{
 
-local ZSH="$HOME/.zsh"
+ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc)
+source "${HOME}/.zsh/plugins/zgen/zgen.zsh"
 
-source $ZSH/plugins/antigen/antigen.zsh
+if ! zgen saved; then
+    zgen oh-my-zsh
 
-# oh-my-zsh plugins
-antigen use oh-my-zsh
+    # oh-my-zsh plugins
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/fasd
+    zgen oh-my-zsh plugins/brew
 
-antigen bundle git
-antigen bundle fasd
+    # zsh-users plugins
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
+    zgen load zsh-users/zsh-completions src
 
-# other plugins
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-completions
+    # local plugins
+    zgen load "${HOME}/.zsh/plugins/fzf"
+    zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
 
-# local plugins
-antigen bundle $ZSH/plugins/fzf
-antigen bundle $ZSH/plugins/zsh-git-prompt
+    # theme
+    zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
 
-# theme
-antigen theme $ZSH/themes scott
-
-antigen apply
+    zgen save
+fi
 
 # }}}
 
