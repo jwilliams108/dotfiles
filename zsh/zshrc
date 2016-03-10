@@ -4,12 +4,6 @@ for config (~/.zsh/config/*.zsh) source $config
 
 #}}}
 
-# FZF config {{{
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#}}}
-
 # Source local configuration {{{
 
 if [ -f $HOME/.zshrc_local ];
@@ -27,7 +21,6 @@ source $ZSH/plugins/antigen/antigen.zsh
 # oh-my-zsh plugins
 antigen use oh-my-zsh
 
-#antigen bundle brew
 antigen bundle git
 antigen bundle fasd
 
@@ -46,6 +39,13 @@ antigen theme $ZSH/themes scott
 antigen apply
 
 # }}}
+
+# FZF config {{{
+
+# do this last to ensure bindings aren't overwritten
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#}}}
 
 # welcome message {{{
 
