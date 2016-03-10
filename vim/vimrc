@@ -3,9 +3,8 @@
 " ----------------------------------------------------------------------------
 "{{{
 
-filetype off
 call pathogen#infect()
-call pathogen#helptags()
+syntax on
 filetype plugin indent on
 
 "}}}
@@ -14,8 +13,6 @@ filetype plugin indent on
 " modularised settings
 " ----------------------------------------------------------------------------
 "{{{
-
-set nocompatible
 
 source ~/.vim/config.vim
 source ~/.vim/filetypes.vim
