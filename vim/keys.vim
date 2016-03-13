@@ -127,6 +127,18 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " toggle invisible characters
 "nnoremap <silent> <F7> :set list!<CR>
 
+" toggle relative numbers
+function! NumberToggle()
+  if (&relativenumber == 1)
+    set norelativenumber
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <silent> <F3> :call NumberToggle()<CR>
+
 " wrap
 nnoremap <silent> <F11> :set wrap!<CR>
 
