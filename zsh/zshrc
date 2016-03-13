@@ -1,3 +1,5 @@
+#zmodload zsh/zprof
+
 # modularised config {{{
 
 for config (~/.zsh/config/*.zsh) source $config
@@ -18,26 +20,27 @@ ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc)
 source "${HOME}/.zsh/plugins/zgen/zgen.zsh"
 
 if ! zgen saved; then
-    zgen oh-my-zsh
+  zgen oh-my-zsh
 
-    # oh-my-zsh plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/fasd
-    zgen oh-my-zsh plugins/brew
+  # oh-my-zsh plugins
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/fasd
+  zgen oh-my-zsh plugins/brew
+  zgen oh-my-zsh plugins/osx
 
-    # zsh-users plugins
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-history-substring-search
-    zgen load zsh-users/zsh-completions src
+  # zsh-users plugins
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-history-substring-search
+  zgen load zsh-users/zsh-completions src
 
-    # local plugins
-    zgen load "${HOME}/.zsh/plugins/fzf"
-    zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
+  # local plugins
+  zgen load "${HOME}/.zsh/plugins/fzf"
+  zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
 
-    # theme
-    zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
+  # theme
+  zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
 
-    zgen save
+  zgen save
 fi
 
 # }}}
@@ -58,3 +61,5 @@ echo -e "Uptime:" `uptime | sed 's/^.*up/up/'`
 echo -ne "Current Time: "; date
 
 #}}}
+
+#zprof
