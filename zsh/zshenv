@@ -22,9 +22,9 @@ if [ -d /usr/texlive ]; then
 fi
 
 # for nvm
-if [ -d ~/.nvm ]; then
+if [ -d ~/.nvm ] && [ -d /usr/local/opt/nvm ]; then
   export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
+  source /usr/local/opt/nvm/nvm.sh
 fi
 
 # for perlbrew
