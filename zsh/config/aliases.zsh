@@ -5,6 +5,7 @@ alias h='history | grep'
 
 # cmus
 alias cmus='cmus 2>/dev/null'
+
 # chrome
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
