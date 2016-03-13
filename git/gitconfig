@@ -1,7 +1,6 @@
 # user {{{
-[user]
-	name = ***REMOVED***
-	email = ***REMOVED***
+[include]
+	path = ~/.gituser
 # }}}
 # core {{{
 [core]
