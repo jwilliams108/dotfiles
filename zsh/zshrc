@@ -1,5 +1,11 @@
 #zmodload zsh/zprof
 
+# environment (source here due to macvim issue) {{{
+
+source $HOME/.zsh/zshenv
+
+#}}}
+
 # modularised config {{{
 
 for config ($HOME/.zsh/config/*.zsh) source $config
