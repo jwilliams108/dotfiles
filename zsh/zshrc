@@ -2,7 +2,7 @@
 
 # modularised config {{{
 
-for config (~/.zsh/config/*.zsh) source $config
+for config ($HOME/.zsh/config/*.zsh) source $config
 
 #}}}
 
@@ -16,8 +16,8 @@ fi
 
 # *gen setup and config {{{
 
-ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc)
-source "${HOME}/.zsh/plugins/zgen/zgen.zsh"
+ZGEN_RESET_ON_CHANGE=($HOME/.zshrc)
+source $HOME/.zsh/plugins/zgen/zgen.zsh
 
 if ! zgen saved; then
   zgen oh-my-zsh
