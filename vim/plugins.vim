@@ -133,7 +133,7 @@ let g:lightline = {
   \             [ 'ctrlpmark' ] ],
   \   'right': [ [ 'syntastic' ],
   \              [ 'lineinfo', 'percent' ],
-  \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \              [ 'filetype', 'fileformat', 'fileencoding' ] ]
   \ },
   \ 'component': {
   \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
