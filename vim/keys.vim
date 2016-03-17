@@ -233,7 +233,7 @@ nnoremap <leader>dp :diffput<CR>
 nnoremap <leader>du :diffupdate<CR>
 
 " do vimdiff clipboard in new window
-nnoremap <leader>dt :vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
+nnoremap <leader>dt :lefta vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
 
 " close vimdiff clipboard new window
 nnoremap <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
