@@ -1,15 +1,82 @@
 <?xml version="1.0"?>
 <root>
+  <devicevendordef>
+    <vendorname>APPLE_1</vendorname>
+    <vendorid>0x004c</vendorid>
+  </devicevendordef>
+  <devicevendordef>
+    <vendorname>APPLE_2</vendorname>
+    <vendorid>0x05ac</vendorid>
+  </devicevendordef>
+  <deviceproductdef>
+    <productname>LAPTOP_KEYBOARD</productname>
+    <productid>0x0291</productid>
+  </deviceproductdef>
+  <deviceproductdef>
+    <productname>MAGIC_KEYBOARD</productname>
+    <productid>0x0267</productid>
+  </deviceproductdef>
+  <deviceproductdef>
+    <productname>MAGIC_TRACKPAD</productname>
+    <productid>0x030e</productid>
+  </deviceproductdef>
   <list>
+    <item>
+      <name>Laptop/Bluetooth Keyboard ONLY Changes</name>
+      <item>
+        <name>Remap FN to ctrl + option + command (HYPER)</name>
+        <identifier>private.fn_to_hyper</identifier>
+        <appendix>Use with Left Control to FN to swap keys</appendix>
+        <device_only>DeviceVendor::APPLE_1, DeviceProduct::MAGIC_KEYBOARD</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::FN,
+          KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Left Control to FN</name>
+        <identifier>private.left_control_to_FN</identifier>
+        <appendix>Use with FN to HYPER, also set left ctrl to F17 in Seil</appendix>
+        <device_only>DeviceVendor::APPLE_1, DeviceProduct::MAGIC_KEYBOARD</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F17,
+          KeyCode::FN
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Control-Space to HYPER-space</name>
+        <identifier>private.ctrl_space_to_hyper_space</identifier>
+        <appendix>Alternative to FN to ctrl + option + command (HYPER)</appendix>
+        <device_only>DeviceVendor::APPLE_1, DeviceProduct::MAGIC_KEYBOARD</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::SPACE, ModifierFlag::CONTROL_L,
+          KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+    </item>
     <item>
       <name>Additional Meta Controls</name>
       <item>
-        <name>Remap F19 to ctrl + option + command (HYPER)</name>
-        <appendix>Use Seil to map F19 to left/right ctrl</appendix>
+        <name>Remap (Alt) Left Control to HYPER</name>
+        <identifier>private.alt_left_control_to_hyper</identifier>
+        <appendix>Redirect (alt) left control to HYPER when set to F17 in Seil (Laptop Only)</appendix>
+        <device_only>DeviceVendor::APPLE_2, DeviceProduct::LAPTOP_KEYBOARD</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F17,
+          KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap F18 to ctrl + option + command (HYPER)</name>
+        <appendix>Use Seil to map F18 to left/right ctrl</appendix>
         <identifier>private.left_control_to_hyper</identifier>
         <autogen>
           --KeyToKey--
-          KeyCode::F19,
+          KeyCode::F18,
           KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
         </autogen>
         <!-- fix for ctrl-c -->
