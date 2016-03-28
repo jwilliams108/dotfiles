@@ -7,13 +7,17 @@
 	excludesfile = ~/.gitignore
 	pager = less -F -X
 # }}}
-# push/pull/help {{{
+# misc {{{
 [push]
 	default = upstream
 [pull]
 	default = current
 [help]
 	autocorrect = 1
+[diff]
+	tool = gvimdiff
+[difftool]
+	prompt = false
 # }}}
 # alias {{{
 [alias]
@@ -29,6 +33,8 @@
 	diff = diff --word-diff
 	d = diff
 	dc = diff --cached
+	vdiff = difftool
+	vd = difftool
 	r = reset
 	rh = reset --hard
 	rc = rebase --continue
