@@ -60,10 +60,9 @@
     <item>
       <name>Additional Meta Controls</name>
       <item>
-        <name>Remap (Alt) Left Control to HYPER</name>
+        <name>Remap F17 to ctrl + option + command (HYPER)</name>
         <identifier>private.alt_left_control_to_hyper</identifier>
-        <appendix>Redirect (alt) left control to HYPER when set to F17 in Seil (Laptop Only)</appendix>
-        <device_only>DeviceVendor::APPLE_2, DeviceProduct::LAPTOP_KEYBOARD</device_only>
+        <appendix>Redirect (alt) left control to HYPER when set to F17 in Seil</appendix>
         <autogen>
           __KeyToKey__
           KeyCode::F17,
@@ -72,8 +71,8 @@
       </item>
       <item>
         <name>Remap F18 to ctrl + option + command (HYPER)</name>
-        <appendix>Use Seil to map F18 to left/right ctrl</appendix>
         <identifier>private.left_control_to_hyper</identifier>
+        <appendix>Redirect left control to HYPER when set to F18 in Seil</appendix>
         <autogen>
           --KeyToKey--
           KeyCode::F18,
