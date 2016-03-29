@@ -140,3 +140,15 @@ set foldlevelstart=99
 set wildchar=<Tab> wildmenu wildmode=full
 
 "}}}
+
+" ----------------------------------------------------------------------------
+" theme
+" ----------------------------------------------------------------------------
+"{{{
+
+set background=dark
+colorscheme hybrid
+
+"set transparency=2
+
+"}}}

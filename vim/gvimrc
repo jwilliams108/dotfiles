@@ -15,13 +15,6 @@ set go-=T
 set go-=L
 set go-=r
 
-"set background=light
-set background=dark
-
-colorscheme hybrid
-
-"set transparency=2
-
 " Change cursor style when entering INSERT mode
 let s:tmux = exists('$TMUX')
 
