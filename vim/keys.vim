@@ -130,9 +130,10 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " toggle relative numbers
 function! NumberToggle()
   if (&relativenumber == 1)
-    set norelativenumber
     set number
+    set norelativenumber
   else
+    set number
     set relativenumber
   endif
 endfunc
