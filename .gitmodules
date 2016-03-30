@@ -102,3 +102,6 @@
 [submodule "zsh/plugins/zgen"]
 	path = zsh/plugins/zgen
 	url = https://github.com/tarjoilija/zgen.git
+[submodule "vim/bundle/gruvbox"]
+	path = vim/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
