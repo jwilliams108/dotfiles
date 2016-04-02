@@ -18,6 +18,8 @@
 	tool = gvimdiff
 [difftool]
 	prompt = false
+[merge]
+	tool = gvimdiff
 # }}}
 # alias {{{
 [alias]
