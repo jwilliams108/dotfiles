@@ -31,7 +31,11 @@ if [ "$ip" = "" ];then
     if networksetup -listallnetworkservices | grep -qEi '^USB Ethernet'; then
         service="USB Ethernet"
     else
-        service="Thunderbolt Ethernet"
+        if networksetup -listallnetworkservices | grep -qEi '^Apple USB Ethernet Adapter'; then
+            service="Apple USB Ethernet Adapter"
+        else
+            service="Thunderbolt Ethernet"
+        fi
     fi
 
     ip=$(networksetup -getinfo "$service" | grep -Ei '(^IP address:)' | awk '{print $3}')
