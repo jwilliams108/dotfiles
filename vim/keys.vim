@@ -86,7 +86,7 @@ noremap <leader>s i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " matchit
 runtime macros/matchit.vim
-map <Tab> %
+map <tab> %
 
 " don't move on *
 nnoremap * *<C-o>
@@ -242,13 +242,22 @@ nnoremap <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
 "}}}
 
 " ----------------------------------------------------------------------------
+" sorting
+" ----------------------------------------------------------------------------
+"{{{
+
+" TAB in visual mode: sort
+vnoremap <tab> :sort<cr>
+
+"}}}
+
+" ----------------------------------------------------------------------------
 " folding
 " ----------------------------------------------------------------------------
 "{{{
 
-" z + space to toggle folds.
-nnoremap z<space> za
-vnoremap z<space> za
+" TAB in normal mode: quick fold toggling
+nnoremap <tab><tab> za
 
 " Make zO recursively open whatever fold we're in, even if it's partially open.
 nnoremap zO zczO
