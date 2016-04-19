@@ -189,7 +189,8 @@ vmap <leader>h <gv
 "{{{
 
 " list buffers then wait for input to switch
-"nnoremap <leader>ll :ls<CR>:b<Space>
+nnoremap <leader>lb :ls<CR>:b<Space>
+nnoremap <leader>ld :ls<CR>:bd<Space>
 nnoremap gb :ls<CR>:vert sb<Space>
 
 "nnoremap ,b :buffer <C-z><S-Tab>
