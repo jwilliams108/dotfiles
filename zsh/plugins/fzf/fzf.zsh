@@ -50,7 +50,7 @@ function ffa() {
 # fj - changing directory with fasd
 function fj() {
   local dir
-  dir=$(fasd -Rdl | fzf --no-sort) && cd "$dir"
+  dir=$(fasd -Rdl | sed "s:$HOME:~:" | fzf --no-sort | sed "s:~:$HOME:") && cd "$dir"
 }
 
 # fh - repeat history
@@ -59,7 +59,7 @@ function fh() {
 }
 
 # vagrant
-function vs(){
+function vs() {
   #List all vagrant boxes available in the system including its status, and try to access the selected one via ssh
   cd $(cat ~/.vagrant.d/data/machine-index/index | jq '.machines[] | {name, vagrantfile_path, state}' | jq '.name + "," + .state  + "," + .vagrantfile_path'| sed 's/^"\(.*\)"$/\1/'| column -s, -t | sort -rk 2 | fzf | awk '{print $3}'); vagrant ssh
 }
@@ -105,3 +105,5 @@ function fstash() {
       fi
     done
 }
+
+# fasd helper
