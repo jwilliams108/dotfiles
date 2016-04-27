@@ -31,6 +31,7 @@ endif
 let g:ctrlp_dont_split = 'netrw'
 let g:ctrlp_working_path_mode = 'rw'
 
+nnoremap <leader>o :CtrlP<CR>
 nnoremap <leader>ls :CtrlPBuffer<CR>
 
 "}}}

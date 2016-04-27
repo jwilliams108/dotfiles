@@ -75,7 +75,16 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " line joins/splits
 noremap <leader>j :join<CR>
-noremap <leader>s i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+noremap <leader>p i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" saving
+" ----------------------------------------------------------------------------
+"{{{
+
+nnoremap <leader>s :w<CR>
 
 "}}}
 
@@ -104,7 +113,7 @@ nnoremap g, g,zz
 nmap gV `[v`]
 
 " open a Quickfix window for the last search.
-nnoremap <silent> ,/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
 " Visual Mode */# from Scrooloose
 function! s:VSetSearch()
@@ -220,7 +229,7 @@ map <silent> <leader>c :%y+<CR>
 map <silent> <leader>v gg"_dGP
 
 " toggle paste mode
-nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
+nmap <silent> <leader>pa :set invpaste<CR>:set paste?<CR>
 
 "}}}
 
