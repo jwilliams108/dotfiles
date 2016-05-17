@@ -3,7 +3,7 @@
 " ----------------------------------------------------------------------------
 "{{{
 
-let mapleader = ','
+let mapleader = "\<space>"
 
 " remap colon
 nnoremap ; :
