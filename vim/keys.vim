@@ -7,8 +7,7 @@ let mapleader = "\<space>"
 
 " remap colon
 nnoremap ; :
-noremap <space> ;
-noremap <leader><space> ,
+nnoremap : ;
 
 "}}}
 
@@ -226,7 +225,7 @@ nnoremap _ L
 
 " copy to/replace with clipboard
 set clipboard=unnamed
-map <silent> <leader>c :%y+<CR>
+map <silent> <leader>c ;%y+<CR> " need to use ; since we've remapped : to ;
 map <silent> <leader>v gg"_dGP
 
 " toggle paste mode
