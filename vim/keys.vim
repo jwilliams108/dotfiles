@@ -133,9 +133,6 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " ----------------------------------------------------------------------------
 "{{{
 
-" toggle invisible characters
-"nnoremap <silent> <F7> :set list!<CR>
-
 " toggle relative numbers
 function! NumberToggle()
   if (&relativenumber == 1)
