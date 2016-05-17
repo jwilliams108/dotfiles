@@ -36,6 +36,9 @@ cnoremap <C-D> <Del>
 nmap <C-l> gt
 nmap <C-h> gT
 
+" goto last file
+nnoremap <Backspace><Backspace> <C-^>
+
 "}}}
 
 " ----------------------------------------------------------------------------
