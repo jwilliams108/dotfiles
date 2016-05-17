@@ -74,6 +74,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " line joins/splits
+set formatoptions+=j " Delete comment character when joining commented lines
 noremap <leader>j :join<CR>
 noremap <leader>p i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
@@ -149,8 +150,8 @@ nnoremap <silent> <F3> :call NumberToggle()<CR>
 " wrap
 nnoremap <silent> <F11> :set wrap!<CR>
 
-" turn off highlight search
-nmap <silent> <leader><leader> :noh<CR>:call clearmatches()<CR>
+" turn off highlight search - from vim-sensible
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
 "}}}
 
