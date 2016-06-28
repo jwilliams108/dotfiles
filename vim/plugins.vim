@@ -5,6 +5,7 @@
 
 let g:netrw_altfile = 1
 let g:netrw_dirhistmax = 0
+let g:netrw_list_hide='.*\.swp$,\.DS_Store'
 
 "}}}
 
