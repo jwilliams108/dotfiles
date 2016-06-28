@@ -17,11 +17,6 @@ if [ -d /usr/X11 ]; then
   export PATH=/usr/X11/bin:$PATH
 fi
 
-# for mactex
-if [ -d /usr/texlive ]; then
-  export PATH=/usr/texlive/bin/x86_64-darwin:$PATH
-fi
-
 # for nvm
 if [ -d ~/.nvm ] && [ -d /usr/local/opt/nvm ]; then
   export NVM_DIR=~/.nvm
@@ -48,6 +43,11 @@ fi
 # texlive
 if [ -d /usr/local/texlive/2015/bin/x86_64-darwin ]; then
   export PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
+fi
+
+# for sqlite
+if [ -d /usr/local/opt/sqlite ]; then
+  export PATH=/usr/local/opt/sqlite/bin:$PATH
 fi
 
 # editor and utils
