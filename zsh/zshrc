@@ -42,6 +42,7 @@ if ! zgen saved; then
   # local plugins
   zgen load "${HOME}/.zsh/plugins/fzf"
   zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
+  zgen load "${HOME}/.zsh/plugins/zsh-autosuggestions"
 
   # theme
   zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
