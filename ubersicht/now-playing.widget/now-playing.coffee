@@ -45,7 +45,7 @@ update: (output, domEl) ->
 style: """
   left 5px
   top 5px
-  font-family San Francisco Display, Helvetica Neue
+  font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
 
   div

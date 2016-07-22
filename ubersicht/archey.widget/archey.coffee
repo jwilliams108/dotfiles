@@ -60,7 +60,7 @@ style: """
   bottom 520px
   left 5px
   color #777
-  font-family San Francisco Display, Helvetica Neue
+  font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
 
   table

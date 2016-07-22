@@ -25,8 +25,8 @@ style: """
   left 5px
   bottom 0
   color #999
-  font-family San Francisco Display, Helvetica Neue
-  font-size 16px
+  font-family 'San Francisco Display', 'Helvetica Neue'
+  font-size 11px
 
   h1
     font-size 5em
@@ -38,7 +38,7 @@ style: """
     color #777
     margin-left -12px
     text-transform lowercase
-    font-size 64px
+    font-size 48px
 
   #time
     margin-left -16px
@@ -46,7 +46,7 @@ style: """
 
   #meridiem
     text-transform lowercase
-    margin-left -21px
+    margin-left -16px
     font-size 32px
     color rgba(#777, 0.5)
 """
