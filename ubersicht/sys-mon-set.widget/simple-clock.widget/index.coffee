@@ -41,12 +41,12 @@ style: """
     font-size 48px
 
   #time
-    margin-left -16px
+    margin-left -10px
     color rgba(#777, 0.8)
 
   #meridiem
     text-transform lowercase
-    margin-left -16px
+    margin-left -14px
     font-size 32px
     color rgba(#777, 0.5)
 """
