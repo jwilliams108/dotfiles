@@ -161,13 +161,18 @@ Window::resizeWindow = (direction) ->
       new_height = full_height
       new_y = 0
     else if current_position.width == fibb_width || (current_position.width == half_width && current_position.x == 0)
-      new_width = half_width
+      new_width = half_width - 1 # take one unit off as the grid doesn't divide evenly
       new_x = half_width
       new_height = full_height
       new_y = 0
-    else if current_position.width == half_width && current_position.x != 0
-      new_width = fibb_width
-      new_x = fiba_width
+    else if current_position.width == (half_width - 1) && current_position.x == half_width
+      new_width = fiba_width
+      new_x = fibb_width
+      new_height = full_height
+      new_y = 0
+    else if current_position.width == fiba_width && current_position.x == fibb_width
+      new_width = 17 # not exactly fib, but whatever
+      new_x = GRID_WIDTH - new_width
       new_height = full_height
       new_y = 0
     else
