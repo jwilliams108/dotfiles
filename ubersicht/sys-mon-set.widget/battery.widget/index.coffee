@@ -18,6 +18,7 @@ style: """
   bottom 85px
   left 5px
   color #999
+  -webkit-font-smoothing antialiased
   font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
 

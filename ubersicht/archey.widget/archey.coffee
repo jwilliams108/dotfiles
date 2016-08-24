@@ -60,6 +60,7 @@ style: """
   bottom 520px
   left 5px
   color #777
+  -webkit-font-smoothing antialiased
   font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
 

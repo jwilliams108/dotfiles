@@ -46,6 +46,7 @@ style: """
   background rgba(#333, .1)
   border 1px solid rgba(#555, .25)
   border-radius 10px
+  -webkit-font-smoothing antialiased
   font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
 

@@ -25,6 +25,7 @@ style: """
   left 5px
   bottom 0
   color #999
+  -webkit-font-smoothing antialiased
   font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
 

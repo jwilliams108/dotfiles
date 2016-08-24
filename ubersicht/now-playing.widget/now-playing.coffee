@@ -44,7 +44,8 @@ update: (output, domEl) ->
 # CSS Style
 style: """
   left 5px
-  top 5px
+  top 30px
+  -webkit-font-smoothing antialiased
   font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
 
