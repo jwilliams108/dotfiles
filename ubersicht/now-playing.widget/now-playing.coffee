@@ -70,7 +70,7 @@ style: """
     font-size 11px
     font-weight 500
     text-align right
-    color rgba(#777, 0.5)
+    color rgba(#777, 0.6)
 
   #now_playing
     display inline-block

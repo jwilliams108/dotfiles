@@ -21,6 +21,7 @@ style: """
   -webkit-font-smoothing antialiased
   font-family 'San Francisco Display', 'Helvetica Neue'
   font-size 11px
+  font-weight 500
 
   div
     display block
