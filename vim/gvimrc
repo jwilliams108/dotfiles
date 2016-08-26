@@ -6,7 +6,7 @@ scriptencoding utf-8
 "{{{
 
 set lines=60 columns=180
-set guifont=Source\ Code\ Pro\ Light:h14
+set guifont=Source\ Code\ Pro:h14
 
 " remove toolbar
 set go-=T
