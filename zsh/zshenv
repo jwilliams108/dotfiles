@@ -7,6 +7,10 @@ if [ -d /usr/local/lib/python2.7/site-packages ]; then
   export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 fi
 
+if [ -d /usr/local/Frameworks/Python.framework/Versions/2.7/bin ]; then
+  export PATH=/usr/local/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+fi
+
 # local java
 if [ -d ~/.java/lib ]; then
   export CLASSPATH=~/.java/lib:$CLASSPATH
