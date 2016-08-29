@@ -157,7 +157,7 @@ highlight GitGutterChangeDelete ctermfg=yellow
 "{{{
 
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'hybrid',
   \ 'active': {
   \   'left': [ [ 'mode' ],
   \             [ 'fugitive', 'filename' ],
@@ -189,6 +189,8 @@ let g:lightline = {
   \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '|', 'right': '|' },
   \ }
+
+"let g:lightline_hybrid_style = 'plain'
 
 function! LightLineModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'

@@ -120,3 +120,6 @@
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/lightline-hybrid.vim"]
+	path = vim/bundle/lightline-hybrid.vim
+	url = https://github.com/cocopon/lightline-hybrid.vim.git
