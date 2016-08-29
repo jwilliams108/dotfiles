@@ -89,8 +89,8 @@ set textwidth=120
 set colorcolumn=+1
 
 " change shape of cursor in insert mode in iTerm 2
-let s:iterm   = exists('$ITERM_PROFILE') || exists('$ITERM_SESSION_ID') || filereadable(expand("~/.vim/.assume-iterm"))
-let s:tmux    = exists('$TMUX')
+let s:iterm = exists('$ITERM_PROFILE') || exists('$ITERM_SESSION_ID') || filereadable(expand("~/.vim/.assume-iterm"))
+let s:tmux = exists('$TMUX')
 
 function! s:EscapeEscapes(string)
   " double each <Esc>
