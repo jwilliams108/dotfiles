@@ -1,6 +1,11 @@
 # make sure local takes precendence
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+
+# for gnu bin on osx
+if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
+  export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+fi
 
 # for local Python
 if [ -d /usr/local/lib/python2.7/site-packages ]; then
