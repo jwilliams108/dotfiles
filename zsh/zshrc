@@ -14,8 +14,8 @@ for config ($HOME/.zsh/config/*.zsh) source $config
 
 # Source local configuration {{{
 
-if [ -f $HOME/.zshrc.local ];
-  then source $HOME/.zshrc.local
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
 fi
 
 #}}}
@@ -61,10 +61,14 @@ fi
 
 # welcome message {{{
 
-echo -e "Distro: OS X $(sw_vers -productVersion)"
-echo -e "Kernel: `uname -smr`"
-echo -e "Shell:  `zsh --version`"
-echo -e "Uptime:" `uptime | sed 's/^.*up/up/'`
+if [ "$(uname -o)" == 'Darwin' ]; then
+  echo -e "Distro: OS X $(sw_vers -productVersion)"
+else
+  echo -e "Distro: $(uname -io)"
+fi
+echo -e "Kernel: $(uname -smr)"
+echo -e "Shell:  $(zsh --version)"
+echo -e "Uptime: $(uptime | sed 's/^.*up/up/')"
 echo -ne "Current Time: "; date
 
 #}}}
