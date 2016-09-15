@@ -322,3 +322,25 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 set rtp+=~/.fzf
 
 "}}}
+
+" ----------------------------------------------------------------------------
+" neocomplete
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#auto_completion_start_length = 2
+
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" <BS>: close popup and delete backword char.
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+"}}}

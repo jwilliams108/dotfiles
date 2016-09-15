@@ -64,10 +64,6 @@
 [submodule "vim/bundle/undotree"]
 	path = vim/bundle/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-	ignore = dirty
 [submodule "vim/bundle/vim-perl"]
 	path = vim/bundle/vim-perl
 	url = https://github.com/vim-perl/vim-perl.git
@@ -123,3 +119,6 @@
 [submodule "vim/bundle/lightline-hybrid.vim"]
 	path = vim/bundle/lightline-hybrid.vim
 	url = https://github.com/cocopon/lightline-hybrid.vim.git
+[submodule "vim/bundle/neocomplete.vim"]
+	path = vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git
