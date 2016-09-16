@@ -6,8 +6,7 @@
 augroup ft_javascript
   au!
 
-  au FileType javascript setlocal foldmethod=marker
-  au FileType javascript setlocal foldmarker={,}
+  au FileType javascript setlocal foldmethod=marker foldmarker={,}
   au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 augroup END
 
@@ -35,8 +34,7 @@ augroup END
 augroup ft_css
   au!
 
-  au Filetype css setlocal foldmethod=marker
-  au Filetype css setlocal foldmarker={,}
+  au Filetype css setlocal foldmethod=marker foldmarker={,}
   au FileType css setlocal omnifunc=csscomplete#CompleteCSS
   au FileType css setlocal iskeyword+=-
 
