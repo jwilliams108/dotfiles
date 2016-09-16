@@ -15,7 +15,7 @@ let g:netrw_list_hide='.*\.swp$,\.DS_Store'
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap \ :Ag!<SPACE>
+nnoremap \ :Ag!<Space>
 
 "}}}
 
