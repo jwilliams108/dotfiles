@@ -287,14 +287,6 @@ let g:undotree_SetFocusWhenToggle = 1
 
 nnoremap <silent> <leader>u :UndotreeToggle<CR>
 
-if has('persistent_undo')
-  "set rtp+=~/configit/vim/modules/undotree
-  set undofile
-  set undodir=~/.undodir/
-  "set undolevels=1000
-  "set undoreload=10000
-endif
-
 "}}}
 
 " ----------------------------------------------------------------------------

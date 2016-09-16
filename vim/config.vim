@@ -39,25 +39,38 @@ endif
 "}}}
 
 " ----------------------------------------------------------------------------
-" backups and swap
+" clipboard
+" ----------------------------------------------------------------------------
+"{{{
+
+set clipboard=unnamed
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" swap, backups and undo
 " ----------------------------------------------------------------------------
 "{{{
 
 set noswapfile
 set backup
+set undofile
+set undolevels=1000
+set undoreload=10000
 
 set directory=~/.tmp/vim/swap//
 set backupdir=~/.tmp/vim/backup//
+set undodir=~/.tmp/vim/undo//
 
 " Make those folders automatically if they don't already exist.
-if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
 endif
 if !isdirectory(expand(&backupdir))
     call mkdir(expand(&backupdir), "p")
 endif
-if !isdirectory(expand(&directory))
-    call mkdir(expand(&directory), "p")
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
 endif
 
 "}}}
@@ -81,12 +94,13 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
-" text
+" whitespace/text
 set wrap
 set showbreak=↪
-set linebreak
+set linebreak         " no explicit linebreaks
+set nojoinspaces      " ensure J command doesn't add extra space
 set textwidth=120
-set colorcolumn=+1
+set colorcolumn=+1    " show visual indicator of textwidth limit
 
 " change shape of cursor in insert mode in iTerm 2
 let s:iterm = exists('$ITERM_PROFILE') || exists('$ITERM_SESSION_ID') || filereadable(expand("~/.vim/.assume-iterm"))
@@ -128,16 +142,24 @@ endif
 " ----------------------------------------------------------------------------
 "{{{
 
+set nofoldenable
+set foldlevel=99
 set foldlevelstart=99
 
 " }}}
 
 " ----------------------------------------------------------------------------
-" wildchar
+" wild and file globbing
 " ----------------------------------------------------------------------------
 "{{{
 
-set wildchar=<Tab> wildmenu wildmode=full
+set browsedir=buffer                  " browse files in same dir as open file
+set wildmenu                          " Enhanced command line completion.
+set wildmode=list:longest,full        " Complete files using a menu AND list
+
+" ignores
+set wildignore+=.git,.hg,.svn
+set wildignore+=*.swp,.lock,.DS_Store,._*
 
 "}}}
 

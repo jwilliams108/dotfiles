@@ -6,7 +6,8 @@
 augroup ft_javascript
   au!
 
-  au FileType javascript setlocal foldmethod=marker foldmarker={,}
+  au FileType javascript setlocal foldmethod=marker
+  au FileType javascript setlocal foldmarker={,}
   au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 augroup END
 

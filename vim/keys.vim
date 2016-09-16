@@ -225,7 +225,6 @@ nnoremap _ L
 "{{{
 
 " copy to/replace with clipboard
-set clipboard=unnamed
 map <silent> <leader>c ;%y+<CR> " need to use ; since we've remapped : to ;
 map <silent> <leader>v gg"_dGP
 
