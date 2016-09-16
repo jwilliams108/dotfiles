@@ -75,6 +75,7 @@ augroup ft_xml
   au!
 
   au FileType xml setlocal foldmethod=manual
+  au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
   " Use <localleader>f to fold the current tag.
   au FileType xml nnoremap <buffer> <localleader>f Vatzf
@@ -110,6 +111,7 @@ augroup ft_python
 
   " make Python follow PEP8 for whitespace (http://www.python.org/dev/peps/pep-0008/ )
   au FileType python setlocal softtabstop=4 tabstop=4 shiftwidth=4
+  au FileType python setlocal omnifunc=pythoncomplete#Complete
 augroup END
 
 "}}}
