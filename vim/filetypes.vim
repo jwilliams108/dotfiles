@@ -26,23 +26,6 @@ augroup END
 "}}}
 
 " ----------------------------------------------------------------------------
-" CoffeScript
-" ----------------------------------------------------------------------------
-"{{{
-
-augroup ft_coffeescript
-  au!
-
-  au FileType coffee setlocal foldmethod=marker
-  au FileType coffee setlocal foldmarker={,}
-
-  " Treat litcoffee as coffeescript
-  au BufNewFile,BufRead *.litcoffee set ft=coffee
-augroup END
-
-"}}}
-
-" ----------------------------------------------------------------------------
 " CSS
 " ----------------------------------------------------------------------------
 "{{{
