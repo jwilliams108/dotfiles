@@ -337,3 +337,13 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "}}}
+
+" ----------------------------------------------------------------------------
+" tern
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:tern_map_prefix = '<leader>'
+let g:tern_map_keys = 1
+
+"}}}
