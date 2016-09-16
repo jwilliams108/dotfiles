@@ -32,7 +32,7 @@ augroup END
 "{{{
 
 augroup ft_html
-  au !
+  au!
 
   au FileType html setlocal omnifunc=htmlcomplete#CompleteTags
 augroup END
