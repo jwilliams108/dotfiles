@@ -58,9 +58,6 @@
 [submodule "vim/bundle/ftl-vim-syntax"]
 	path = vim/bundle/ftl-vim-syntax
 	url = https://github.com/chaquotay/ftl-vim-syntax.git
-[submodule "vim/bundle/ag.vim"]
-	path = vim/bundle/ag.vim
-	url = https://github.com/rking/ag.vim
 [submodule "vim/bundle/undotree"]
 	path = vim/bundle/undotree
 	url = https://github.com/mbbill/undotree.git
@@ -128,3 +125,6 @@
 [submodule "vim/bundle/tern_for_vim"]
 	path = vim/bundle/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "vim/bundle/vim-grepper"]
+	path = vim/bundle/vim-grepper
+	url = https://github.com/mhinz/vim-grepper.git

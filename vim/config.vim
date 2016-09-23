@@ -30,12 +30,6 @@ set showmatch
 set hlsearch
 set gdefault
 
-" prefer silver search if available
-set grepformat^=%f:%l:%c:%m
-if executable('ag')
-  set grepprg=ag\ --vimgrep
-endif
-
 "}}}
 
 " ----------------------------------------------------------------------------
