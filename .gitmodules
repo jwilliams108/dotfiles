@@ -128,3 +128,9 @@
 [submodule "vim/bundle/vim-grepper"]
 	path = vim/bundle/vim-grepper
 	url = https://github.com/mhinz/vim-grepper.git
+[submodule "vim/bundle/ale"]
+	path = vim/bundle/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "vim/bundle/ListToggle"]
+	path = vim/bundle/ListToggle
+	url = https://github.com/sunaku/ListToggle.git

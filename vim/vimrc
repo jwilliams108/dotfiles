@@ -3,7 +3,7 @@
 " ----------------------------------------------------------------------------
 "{{{
 
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ['syntastic']
 call pathogen#infect()
 syntax on
 filetype plugin indent on

@@ -104,10 +104,32 @@ let g:syntastic_php_phpcs_args = "--standard=~/.phpcs/phpcs.xml -n --report=csv"
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 
-nnoremap <silent> <F12> :SyntasticToggleMode<CR>
-nnoremap <leader>sc :SyntasticCheck<CR>
-nnoremap <leader>sn :lnext<CR>
-nnoremap <leader>sp :lprev<CR>
+"nnoremap <silent> <F12> :SyntasticToggleMode<CR>
+"nnoremap <leader>sc :SyntasticCheck<CR>
+"nnoremap <leader>sn :lnext<CR>
+"nnoremap <leader>sp :lprev<CR>
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" ale
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:ale_linters = { 'javascript': ['eslint'], 'python': ['flake8'], }
+"let g:ale_set_signs = 0
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" ListToggle
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:lt_height = 10
+
+nnoremap <silent> <F12> :LToggle<CR>
+nnoremap <silent> <F11> :QToggle<CR>
 
 "}}}
 
