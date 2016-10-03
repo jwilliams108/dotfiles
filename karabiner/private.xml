@@ -20,6 +20,14 @@
     <productname>MAGIC_TRACKPAD</productname>
     <productid>0x030e</productid>
   </deviceproductdef>
+  <devicevendordef>
+    <vendorname>DASKEYBOARD</vendorname>
+    <vendorid>0x04d9</vendorid>
+  </devicevendordef>
+  <deviceproductdef>
+    <productname>MODEL_S_PROFESSIONAL</productname>
+    <productid>0x2013</productid>
+  </deviceproductdef>
   <list>
     <item>
       <name>Laptop/Bluetooth Keyboard ONLY Changes</name>
@@ -54,6 +62,31 @@
           __KeyToKey__
           KeyCode::SPACE, ModifierFlag::CONTROL_L,
           KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+    </item>
+    <item>
+      <name>daskeyboard ONLY Changes</name>
+      <item>
+        <name>Remap FN + F11 to F11</name>
+        <identifier>private.fnf11_to_f11</identifier>
+        <appendix>To allow F11 use in vim</appendix>
+        <device_only>DeviceVendor::DASKEYBOARD, DeviceProduct::MODEL_S_PROFESSIONAL</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F11, ModifierFlag::FN,
+          KeyCode::F11
+        </autogen>
+      </item>
+      <item>
+        <name>Remap FN + F12 to F12</name>
+        <identifier>private.fnf12_to_f12</identifier>
+        <appendix>To allow F12 use in vim</appendix>
+        <device_only>DeviceVendor::DASKEYBOARD, DeviceProduct::MODEL_S_PROFESSIONAL</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F12, ModifierFlag::FN,
+          KeyCode::F12
         </autogen>
       </item>
     </item>
