@@ -11,7 +11,7 @@ alias cmus='cmus 2>/dev/null'
 
 # homebrew
 alias bi='brew -v install'
-alias bu='brew -v upgrade --all'
+alias bu='brew -v upgrade'
 alias bup='brew update'
 alias bcup='brew cleanup'
 alias bout='brew outdated'
