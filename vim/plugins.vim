@@ -116,7 +116,15 @@ let g:syntastic_warning_symbol = '⚠'
 " ----------------------------------------------------------------------------
 "{{{
 
-let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint'], 'json': ['jsonlint'], 'python': ['flake8'], }
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint'],
+\   'json': ['jsonlint'],
+\   'python': ['flake8'],
+\}
+
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '●'
 
 "}}}
 
