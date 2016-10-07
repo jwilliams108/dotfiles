@@ -89,6 +89,17 @@
           KeyCode::F12
         </autogen>
       </item>
+      <item>
+        <name>Remap Control-Command to Option-Shift</name>
+        <identifier>private.ctrlcmdl_to_optshft</identifier>
+        <appendix>Remap due to unusable left FN key</appendix>
+        <device_only>DeviceVendor::DASKEYBOARD, DeviceProduct::MODEL_S_PROFESSIONAL</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CONTROL_L, ModifierFlag::COMMAND_L,
+          KeyCode::OPTION_L, ModifierFlag::SHIFT_L
+        </autogen>
+      </item>
     </item>
     <item>
       <name>Additional Meta Controls</name>
