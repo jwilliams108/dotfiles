@@ -69,7 +69,7 @@
       <name>daskeyboard ONLY Changes</name>
       <item>
         <name>Remap FN + F11 to F11</name>
-        <identifier>private.fnf11_to_f11</identifier>
+        <identifier>private.fn_f11_to_f11</identifier>
         <appendix>To allow F11 use in vim</appendix>
         <device_only>DeviceVendor::DASKEYBOARD, DeviceProduct::MODEL_S_PROFESSIONAL</device_only>
         <autogen>
@@ -80,7 +80,7 @@
       </item>
       <item>
         <name>Remap FN + F12 to F12</name>
-        <identifier>private.fnf12_to_f12</identifier>
+        <identifier>private.fnf_12_to_f12</identifier>
         <appendix>To allow F12 use in vim</appendix>
         <device_only>DeviceVendor::DASKEYBOARD, DeviceProduct::MODEL_S_PROFESSIONAL</device_only>
         <autogen>
@@ -90,14 +90,30 @@
         </autogen>
       </item>
       <item>
-        <name>Remap Control-Command to Option-Shift</name>
-        <identifier>private.ctrlcmdl_to_optshft</identifier>
+        <name>Remap control + left-command to option-shift</name>
+        <identifier>private.ctrl_left_cmd_to_opt_shift</identifier>
         <appendix>Remap due to unusable left FN key</appendix>
         <device_only>DeviceVendor::DASKEYBOARD, DeviceProduct::MODEL_S_PROFESSIONAL</device_only>
         <autogen>
           __KeyToKey__
           KeyCode::CONTROL_L, ModifierFlag::COMMAND_L,
           KeyCode::OPTION_L, ModifierFlag::SHIFT_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap HYPER + left-command + arrow keys to option-command + arrow keys</name>
+        <identifier>private.hyper_left_cmd_arrow_to_opt_cmd_arrow</identifier>
+        <appendix>Remap due to unusable left FN key</appendix>
+        <device_only>DeviceVendor::DASKEYBOARD, DeviceProduct::MODEL_S_PROFESSIONAL</device_only>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
         </autogen>
       </item>
     </item>
@@ -149,6 +165,17 @@
           KeyCode::KEY_4, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
           KeyCode::KEY_4, ModifierFlag::CONTROL_L
         </autogen>
+        <!-- meta-d map for i3-like alfred menu toggle -->
+        <autogen>
+          --KeyToKey--
+          KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+      <item>
+        <name>Remap Hyper + Left/Right Arrow to Ctrl + Left/Right Arrow</name>
+        <identifier>private.hyper_arrow_to_ctrl_arrow</identifier>
+        <appendix>Redirect HYPER + Arrow Keys to Ctrl + Arrow Keys</appendix>
         <!-- fix for ctrl-arrows -->
         <autogen>
           --KeyToKey--
@@ -159,12 +186,6 @@
           --KeyToKey--
           KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
           KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
-        </autogen>
-        <!-- meta-d map for i3-like alfred menu toggle -->
-        <autogen>
-          --KeyToKey--
-          KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
-          KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
         </autogen>
       </item>
     </item>
