@@ -118,13 +118,12 @@ let g:syntastic_warning_symbol = '⚠'
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tslint'],
-\   'json': ['jsonlint'],
-\   'python': ['flake8'],
+\   'php': ['phpcs'],
 \}
 
-let g:ale_sign_error = '✗'
+let g:ale_sign_error = '⨉'
 let g:ale_sign_warning = '●'
+let g:ale_php_phpcs_standard = '~/.phpcs/phpcs.xml'
 
 "}}}
 
