@@ -2,6 +2,13 @@
 <ruleset name="PHP_CodeSniffer">
   <description>The coding standard for PHP_CodeSniffer.</description>
 
+  <!-- 2 spaces instead of 4 -->
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
+
   <!-- Include most of the Squiz standard -->
   <rule ref="Squiz">
     <exclude name="Squiz.Files.FileExtension" />
