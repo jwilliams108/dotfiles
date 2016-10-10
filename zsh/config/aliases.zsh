@@ -20,7 +20,8 @@ alias bout='brew outdated'
 alias tmux='tmux -u'
 
 # macvim
-alias mtab='mvim -p --remote-tab'
+alias mrem='mvim --remote-silent'
+alias mtab='mvim -p --remote-tab-silent'
 
 # fasd
 alias j='z'
