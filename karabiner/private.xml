@@ -30,38 +30,21 @@
   </deviceproductdef>
   <list>
     <item>
-      <name>Laptop/Bluetooth Keyboard ONLY Changes</name>
+      <name>Bluetooth Keyboard ONLY Changes</name>
       <item>
-        <name>Remap FN to ctrl + option + command (HYPER)</name>
-        <identifier>private.fn_to_hyper</identifier>
-        <appendix>Use with Left Control to FN to swap keys</appendix>
-        <device_only>DeviceVendor::APPLE_1, DeviceProduct::MAGIC_KEYBOARD</device_only>
-        <autogen>
-          __KeyToKey__
-          KeyCode::FN,
-          KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-        </autogen>
-      </item>
-      <item>
-        <name>Remap Left Control to FN</name>
-        <identifier>private.left_control_to_FN</identifier>
-        <appendix>Use with FN to HYPER, also set left ctrl to F17 in Seil</appendix>
+        <name>Swap FN and F17 (left control)</name>
+        <identifier>private.fn_to_f17</identifier>
+        <appendix>Also sets swapped FN to HYPER (be sure to set left ctrl to F17 in Seil)</appendix>
         <device_only>DeviceVendor::APPLE_1, DeviceProduct::MAGIC_KEYBOARD</device_only>
         <autogen>
           __KeyToKey__
           KeyCode::F17,
           KeyCode::FN
         </autogen>
-      </item>
-      <item>
-        <name>Remap Control-Space to HYPER-space</name>
-        <identifier>private.ctrl_space_to_hyper_space</identifier>
-        <appendix>Alternative to FN to ctrl + option + command (HYPER)</appendix>
-        <device_only>DeviceVendor::APPLE_1, DeviceProduct::MAGIC_KEYBOARD</device_only>
         <autogen>
           __KeyToKey__
-          KeyCode::SPACE, ModifierFlag::CONTROL_L,
-          KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+          KeyCode::FN,
+          KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
         </autogen>
       </item>
     </item>
@@ -118,11 +101,11 @@
       </item>
     </item>
     <item>
-      <name>Additional Meta Controls</name>
+      <name>Meta Controls</name>
       <item>
         <name>Remap F17 to ctrl + option + command (HYPER)</name>
         <identifier>private.alt_left_control_to_hyper</identifier>
-        <appendix>Redirect (alt) left control to HYPER when set to F17 in Seil</appendix>
+        <appendix>Redirect left control to HYPER when set to F17 in Seil</appendix>
         <autogen>
           __KeyToKey__
           KeyCode::F17,
@@ -132,17 +115,33 @@
       <item>
         <name>Remap F18 to ctrl + option + command (HYPER)</name>
         <identifier>private.left_control_to_hyper</identifier>
-        <appendix>Redirect left control to HYPER when set to F18 in Seil</appendix>
+        <appendix>Redirect right control to HYPER when set to F18 in Seil</appendix>
         <autogen>
           --KeyToKey--
           KeyCode::F18,
           KeyCode::COMMAND_L, ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
         </autogen>
+      </item>
+      <item>
+        <name>HYPER fixes</name>
+        <identifier>private.hyper_fixes</identifier>
+        <appendix>Fix various HYPER/ctrl combinations</appendix>
         <!-- fix for ctrl-c -->
         <autogen>
           --KeyToKey--
           KeyCode::C, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
           KeyCode::C, ModifierFlag::CONTROL_L
+        </autogen>
+        <!-- fix for ctrl-arrows -->
+        <autogen>
+          --KeyToKey--
+          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+        </autogen>
+        <autogen>
+          --KeyToKey--
+          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+          KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
         </autogen>
         <!-- fix for ctrl-numbers -->
         <autogen>
@@ -173,19 +172,23 @@
         </autogen>
       </item>
       <item>
-        <name>Remap Hyper + Left/Right Arrow to Ctrl + Left/Right Arrow</name>
-        <identifier>private.hyper_arrow_to_ctrl_arrow</identifier>
-        <appendix>Redirect HYPER + Arrow Keys to Ctrl + Arrow Keys</appendix>
-        <!-- fix for ctrl-arrows -->
+        <name>Remap left-command + control to option-shift</name>
+        <identifier>private.alt_left_cmd_ctrl_to_opt_shift</identifier>
+        <appendix>Alternative to option-shift</appendix>
         <autogen>
-          --KeyToKey--
-          KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
-          KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+          __KeyToKey__
+          KeyCode::COMMAND_L, ModifierFlag::CONTROL_L,
+          KeyCode::OPTION_L, ModifierFlag::SHIFT_L
         </autogen>
+      </item>
+      <item>
+        <name>Remap control + space to HYPER + space</name>
+        <identifier>private.alt_ctrl_space_to_hyper_space</identifier>
+        <appendix>Alternative to HYPER + space</appendix>
         <autogen>
-          --KeyToKey--
-          KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
-          KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+          __KeyToKey__
+          KeyCode::SPACE, ModifierFlag::CONTROL_L,
+          KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
         </autogen>
       </item>
     </item>
@@ -267,7 +270,7 @@
         </autogen>
       </item>
       <item>
-        <name>Use left-option enter to execute cmus-remote -u</name>
+        <name>Use left-option + enter to execute cmus-remote -u</name>
         <identifier>private.left_option_enter</identifier>
         <autogen>
           __KeyToKey__
