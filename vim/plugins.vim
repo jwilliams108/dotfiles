@@ -121,9 +121,10 @@ let g:ale_linters = {
 \   'php': ['phpcs'],
 \}
 
-let g:ale_sign_error = '⨉'
-let g:ale_sign_warning = '●'
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
 let g:ale_php_phpcs_standard = '~/.phpcs/phpcs.xml'
+let g:ale_statusline_format = ['>> %d', '-- %d', '']
 
 "}}}
 
@@ -191,7 +192,7 @@ let g:lightline = {
   \   'left': [ [ 'mode' ],
   \             [ 'fugitive', 'filename' ],
   \             [ 'ctrlpmark' ] ],
-  \   'right': [ [ 'syntastic' ],
+  \   'right': [ [ 'ale' ],
   \              [ 'lineinfo', 'percent' ],
   \              [ 'filetype', 'fileformat', 'fileencoding' ] ]
   \ },
@@ -208,9 +209,7 @@ let g:lightline = {
   \   'filename': 'LightLineFilename',
   \   'fileencoding': 'LightLineFileencoding',
   \   'ctrlpmark': 'CtrlPMark',
-  \ },
-  \ 'component_expand': {
-  \   'syntastic': 'SyntasticStatuslineFlag',
+  \   'ale': 'ALEGetStatusLine',
   \ },
   \ 'component_type': {
   \   'syntastic': 'error',

@@ -7,7 +7,6 @@ let mapleader = "\<space>"
 
 " remap colon
 nnoremap ; :
-"nnoremap : ;
 nnoremap <leader>; ;
 
 "}}}
