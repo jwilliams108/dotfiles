@@ -82,6 +82,11 @@
           KeyCode::CONTROL_L, ModifierFlag::COMMAND_L,
           KeyCode::OPTION_L, ModifierFlag::SHIFT_L
         </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::COMMAND_L, ModifierFlag::CONTROL_L,
+          KeyCode::OPTION_L, ModifierFlag::SHIFT_L
+        </autogen>
       </item>
       <item>
         <name>Remap HYPER + left-command + arrow keys to option-command + arrow keys</name>
@@ -101,7 +106,22 @@
       </item>
     </item>
     <item>
-      <name>Meta Controls</name>
+      <name>General Controls</name>
+      <item>
+        <name>Remap left-command + control to option-shift</name>
+        <identifier>private.alt_left_cmd_ctrl_to_opt_shift</identifier>
+        <appendix>Alternative to option-shift</appendix>
+        <autogen>
+          __KeyToKey__
+          KeyCode::CONTROL_L, ModifierFlag::COMMAND_L,
+          KeyCode::OPTION_L, ModifierFlag::SHIFT_L
+        </autogen>
+        <autogen>
+          __KeyToKey__
+          KeyCode::COMMAND_L, ModifierFlag::CONTROL_L,
+          KeyCode::OPTION_L, ModifierFlag::SHIFT_L
+        </autogen>
+      </item>
       <item>
         <name>Remap F17 to ctrl + option + command (HYPER)</name>
         <identifier>private.alt_left_control_to_hyper</identifier>
@@ -169,16 +189,6 @@
           --KeyToKey--
           KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
           KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
-        </autogen>
-      </item>
-      <item>
-        <name>Remap left-command + control to option-shift</name>
-        <identifier>private.alt_left_cmd_ctrl_to_opt_shift</identifier>
-        <appendix>Alternative to option-shift</appendix>
-        <autogen>
-          __KeyToKey__
-          KeyCode::COMMAND_L, ModifierFlag::CONTROL_L,
-          KeyCode::OPTION_L, ModifierFlag::SHIFT_L
         </autogen>
       </item>
       <item>
