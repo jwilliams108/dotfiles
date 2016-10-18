@@ -91,27 +91,6 @@ let g:jsx_ext_required = 0
 "}}}
 
 " ----------------------------------------------------------------------------
-" syntastic
-" ----------------------------------------------------------------------------
-"{{{
-
-let g:syntastic_mode_map = {'mode':'passive','active_filetypes':[],'passive_filetypes':[]}
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_php_checkers = ['phpcs']
-let g:syntastic_php_phpcs_args = "--standard=~/.phpcs/phpcs.xml -n --report=csv"
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-
-"nnoremap <silent> <F12> :SyntasticToggleMode<CR>
-"nnoremap <leader>sc :SyntasticCheck<CR>
-"nnoremap <leader>sn :lnext<CR>
-"nnoremap <leader>sp :lprev<CR>
-
-"}}}
-
-" ----------------------------------------------------------------------------
 " ale
 " ----------------------------------------------------------------------------
 "{{{
