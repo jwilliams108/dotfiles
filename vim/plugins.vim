@@ -97,12 +97,14 @@ let g:jsx_ext_required = 0
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'perl': ['perlcritic'],
 \   'php': ['phpcs'],
 \}
 
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-let g:ale_php_phpcs_standard = '~/.phpcs/phpcs.xml'
+"let g:ale_php_phpcs_standard = '~/.phpcs/phpcs.xml'
+let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_statusline_format = ['>> %d', '-- %d', '']
 
 "}}}
