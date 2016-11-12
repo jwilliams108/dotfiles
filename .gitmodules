@@ -119,9 +119,6 @@
 [submodule "vim/bundle/vim-jsdoc"]
 	path = vim/bundle/vim-jsdoc
 	url = https://github.com/heavenshell/vim-jsdoc.git
-[submodule "vim/bundle/tern_for_vim"]
-	path = vim/bundle/tern_for_vim
-	url = https://github.com/ternjs/tern_for_vim.git
 [submodule "vim/bundle/vim-grepper"]
 	path = vim/bundle/vim-grepper
 	url = https://github.com/mhinz/vim-grepper.git
