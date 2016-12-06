@@ -197,24 +197,26 @@ vmap <leader>h <gv
 " ----------------------------------------------------------------------------
 "{{{
 
-" list buffers then wait for input to switch
-nnoremap <leader>lb :ls<CR>:b<Space>
-nnoremap <leader>ld :ls<CR>:bd<Space>
-nnoremap gb :ls<CR>:vert sb<Space>
+" using Ctrl-P buffer and BufExplorer to handle many of these now
 
-"nnoremap ,b :buffer <C-z><S-Tab>
-"nnoremap ,B :sbuffer <C-z><S-Tab>
+" list buffers then wait for input to switch
+"nnoremap <leader>lb :ls<CR>:b<Space>
+"nnoremap <leader>ld :ls<CR>:bd<Space>
+"nnoremap gb :ls<CR>:vert sb<Space>
+
+"nnoremap <leader>b :buffer <C-z><S-Tab>
+"nnoremap <leader>B :sbuffer <C-z><S-Tab>
 
 " Move to the previous/next buffer
 nnoremap <PageUp>   :bprevious<CR>
 nnoremap <PageDown> :bnext<CR>
 
-nnoremap H :bprevious<CR>
-nnoremap L :bnext<CR>
+"nnoremap H :bprevious<CR>
+"nnoremap L :bnext<CR>
 
 " Replace remapped H and L
-nnoremap + H
-nnoremap _ L
+"nnoremap + H
+"nnoremap _ L
 
 "}}}
 
