@@ -59,20 +59,6 @@ nnoremap <leader>ll :<C-u>Unite -start-insert -auto-resize line<CR>
 "}}}
 
 " ----------------------------------------------------------------------------
-" buffergator
-" ----------------------------------------------------------------------------
-"{{{
-
-let g:buffergator_suppress_keymaps = 1
-let g:buffergator_viewport_split_policy = 'B'
-let g:buffergator_autoexpand_on_split = 0
-let g:buffergator_hsplit_size = 10
-
-nnoremap <silent> \b :BuffergatorToggle<CR>
-
-"}}}
-
-" ----------------------------------------------------------------------------
 " Autoformat
 " ----------------------------------------------------------------------------
 "{{{
