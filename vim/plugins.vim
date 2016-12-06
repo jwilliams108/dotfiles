@@ -65,7 +65,7 @@ nnoremap <leader>ll :<C-u>Unite -start-insert -auto-resize line<CR>
 
 let g:bufExplorerSplitHorzSize = 15
 
-nnoremap <silent> <leader>lb :BufExplorerHorizontalSplit<CR>
+nnoremap <silent> <leader>ld :BufExplorerHorizontalSplit<CR>
 
 ""}}}
 
