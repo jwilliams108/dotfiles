@@ -96,6 +96,7 @@ let g:jsx_ext_required = 0
 "{{{
 
 let g:ale_linters = {
+\   'css': ['stylelint'],
 \   'javascript': ['eslint'],
 \   'perl': ['perlcritic'],
 \   'php': ['phpcs'],
