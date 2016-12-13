@@ -8,7 +8,9 @@ source $HOME/.zsh/zshenv
 
 # modularised config {{{
 
-for config ($HOME/.zsh/config/*.zsh) source $config
+for config_file (keybindings history coloured-man-pages); do
+  source $HOME/.zsh/config/$config_file.zsh
+done
 
 #}}}
 
@@ -26,13 +28,16 @@ ZGEN_RESET_ON_CHANGE=($HOME/.zshrc)
 source $HOME/.zsh/plugins/zgen/zgen.zsh
 
 if ! zgen saved; then
-  zgen oh-my-zsh
-
   # oh-my-zsh plugins
+  zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/brew
   zgen oh-my-zsh plugins/osx
+
+  # prezto plugins
+  #zgen prezto
+  #zgen prezto utility
 
   # zsh-users plugins
   zgen load zsh-users/zsh-syntax-highlighting
@@ -58,6 +63,9 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #}}}
+
+# aliases
+source $HOME/.zsh/config/aliases.zsh
 
 # welcome message {{{
 

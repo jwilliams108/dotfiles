@@ -1,5 +1,5 @@
 # coreutils
-alias ls=ls -N --color=tty
+alias ls='ls -N --color=auto'
 
 # misc
 alias vhosts='vi /etc/hosts'
