@@ -9,7 +9,7 @@ Resize windows based on half size or golden ratio
 
   Phoenix.set({
     daemon: false,
-    openAtLogin: false
+    openAtLogin: true
   });
 
   MARGIN_X = 3;

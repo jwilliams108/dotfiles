@@ -9,7 +9,7 @@ Resize windows based on half size or golden ratio
 # Preferences
 Phoenix.set
   daemon: false
-  openAtLogin: false
+  openAtLogin: true
 
 # Grid Settings
 MARGIN_X     = 3
