@@ -14,14 +14,6 @@ done
 
 #}}}
 
-# Source local configuration {{{
-
-if [ -f $HOME/.zshrc.local ]; then
-  source $HOME/.zshrc.local
-fi
-
-#}}}
-
 # *gen setup and config {{{
 
 ZGEN_RESET_ON_CHANGE=($HOME/.zshrc)
@@ -65,8 +57,19 @@ fi
 
 #}}}
 
-# aliases
+# aliases {{{
+
 source $HOME/.zsh/config/aliases.zsh
+
+#}}}
+
+# Source local configuration {{{
+
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
+
+#}}}
 
 # welcome message {{{
 
