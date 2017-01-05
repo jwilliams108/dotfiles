@@ -39,7 +39,7 @@ export COPYFILE_DISABLE=1
 export DISABLE_AUTO_UPDATE=true
 
 # homebrew stuff
-export HOMEBREW_TEMP=/usr/local/Cellar/temp
+#export HOMEBREW_TEMP=/usr/local/Cellar/temp
 export HOMEBREW_GITHUB_API_TOKEN=11ca618989be1b14bc1848a6f413350657e5068c
 export HOMEBREW_NO_ANALYTICS=1
 
