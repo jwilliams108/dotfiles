@@ -7,20 +7,6 @@ if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 fi
 
-# for local Python
-#if [ -d /usr/local/lib/python2.7/site-packages ]; then
-#  export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-#fi
-
-#if [ -d /usr/local/Frameworks/Python.framework/Versions/2.7/bin ]; then
-#  export PATH=/usr/local/Frameworks/Python.framework/Versions/2.7/bin:$PATH
-#fi
-
-# local java
-if [ -d ~/.java/lib ]; then
-  export CLASSPATH=~/.java/lib:$CLASSPATH
-fi
-
 # for XQuartz
 if [ -d /usr/X11 ]; then
   export PATH=/usr/X11/bin:$PATH
@@ -39,24 +25,9 @@ if [ -d ~/.perl5/perlbrew ]; then
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 fi
 
-# for phpbrew
-if [ -d ~/.phpbrew ]; then
-  source $HOME/.phpbrew/bashrc
-fi
-
-# for groovy
-if [ -d /usr/local/opt/groovy/libexec ]; then
-  export GROOVY_HOME=/usr/local/opt/groovy/libexec
-fi
-
 # texlive
-if [ -d /usr/local/texlive/2015/bin/x86_64-darwin ]; then
-  export PATH=/usr/local/texlive/2015/bin/x86_64-darwin:$PATH
-fi
-
-# for sqlite
-if [ -d /usr/local/opt/sqlite ]; then
-  export PATH=/usr/local/opt/sqlite/bin:$PATH
+if [ -d /usr/local/texlive/2016/bin/x86_64-darwin ]; then
+  export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
 fi
 
 # editor and utils
@@ -69,7 +40,7 @@ export DISABLE_AUTO_UPDATE=true
 
 # homebrew stuff
 export HOMEBREW_TEMP=/usr/local/Cellar/temp
-export HOMEBREW_GITHUB_API_TOKEN=ea199008fc0ec8d298a04e26ac5da69d5528abad
+export HOMEBREW_GITHUB_API_TOKEN=11ca618989be1b14bc1848a6f413350657e5068c
 export HOMEBREW_NO_ANALYTICS=1
 
 # for thefuck
