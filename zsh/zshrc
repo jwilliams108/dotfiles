@@ -6,14 +6,6 @@ source $HOME/.zsh/zshenv
 
 #}}}
 
-# modularised config {{{
-
-for config_file (keybindings history coloured-man-pages); do
-  source $HOME/.zsh/config/$config_file.zsh
-done
-
-#}}}
-
 # *gen setup and config {{{
 
 ZGEN_RESET_ON_CHANGE=($HOME/.zshrc)
@@ -23,10 +15,10 @@ if ! zgen saved; then
   # oh-my-zsh plugins
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
-  #zgen oh-my-zsh plugins/vi-mode
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/brew
   zgen oh-my-zsh plugins/osx
+  zgen oh-my-zsh plugins/vi-mode
 
   # other plugins
   zgen load Tarrasch/zsh-bd
@@ -50,9 +42,12 @@ fi
 
 # }}}
 
-# aliases and other config {{{
+# modularised config {{{
 
-source $HOME/.zsh/config/aliases.zsh
+for config_file (history coloured-man-pages keybindings aliases); do
+  source $HOME/.zsh/config/$config_file.zsh
+done
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] &&  source $HOME/.zshrc.local
 
