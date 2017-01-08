@@ -1,3 +1,7 @@
+# substring history search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
 # emacs like command line movement
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
@@ -6,4 +10,3 @@ bindkey "^B" backward-word
 bindkey "^F" forward-word
 bindkey "^D" delete-word
 bindkey "^K" kill-line
-#bindkey "${key[Delete]}" delete-char
