@@ -23,7 +23,7 @@ if ! zgen saved; then
   # oh-my-zsh plugins
   zgen oh-my-zsh
   zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/vi-mode
+  #zgen oh-my-zsh plugins/vi-mode
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/brew
   zgen oh-my-zsh plugins/osx
