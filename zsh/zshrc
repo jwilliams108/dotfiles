@@ -18,7 +18,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/fasd
   zgen oh-my-zsh plugins/brew
   zgen oh-my-zsh plugins/osx
-  zgen oh-my-zsh plugins/vi-mode
+  #zgen oh-my-zsh plugins/vi-mode
 
   # other plugins
   zgen load Tarrasch/zsh-bd
