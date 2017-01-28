@@ -343,3 +343,19 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "}}}
+
+" ----------------------------------------------------------------------------
+" misc functions
+" ----------------------------------------------------------------------------
+"{{{
+
+" from: http://vim.wikia.com/wiki/Making_a_list_of_numbers
+" Add argument (can be negative, default 1) to global variable x.
+" Return value of x before the change.
+function Inc(...)
+  let result = g:x
+  let g:x += a:0 > 0 ? a:1 : 1
+  return result
+endfunction
+
+"}}}
