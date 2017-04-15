@@ -41,5 +41,10 @@ export DISABLE_AUTO_UPDATE=true
 # homebrew stuff
 export HOMEBREW_NO_ANALYTICS=1
 
+# fzf options
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_OPTS="--inline-info"
+#export FZF_CTRL_R_OPTS="-e"
+
 # for thefuck
 eval "$(thefuck --alias)"

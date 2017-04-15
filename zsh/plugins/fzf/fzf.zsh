@@ -105,5 +105,3 @@ function fstash() {
       fi
     done
 }
-
-# fasd helper
