@@ -33,6 +33,8 @@ endif
 let g:ctrlp_dont_split = 'netrw'
 let g:ctrlp_working_path_mode = 'rw'
 
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
 nnoremap <leader>o :CtrlP<CR>
 nnoremap <leader>ls :CtrlPBuffer<CR>
 
