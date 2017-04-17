@@ -150,9 +150,6 @@ set foldlevelstart=99
 " ----------------------------------------------------------------------------
 "{{{
 
-set background=dark
 colorscheme hybrid
-
-"set transparency=2
 
 "}}}
