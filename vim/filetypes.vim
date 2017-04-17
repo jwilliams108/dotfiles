@@ -7,7 +7,7 @@ augroup ft_javascript
   au!
 
   au FileType javascript setlocal foldmethod=marker foldmarker={,}
-  au FileType javascript setlocal omnifunc=tern#Complete
+  au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   au CompleteDone * pclose " close preview window after leaving autocomplete
 augroup END
 
