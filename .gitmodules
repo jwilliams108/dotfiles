@@ -99,15 +99,9 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "vim/bundle/dart-vim-plugin"]
-	path = vim/bundle/dart-vim-plugin
-	url = https://github.com/dart-lang/dart-vim-plugin.git
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/lightline-hybrid.vim"]
 	path = vim/bundle/lightline-hybrid.vim
 	url = https://github.com/cocopon/lightline-hybrid.vim.git
