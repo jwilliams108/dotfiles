@@ -15,7 +15,7 @@ let g:netrw_list_hide='.*\.swp$,\.DS_Store'
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap \ :Grepper -tool ag -grepprg ag --vimgrep<CR>
+nmap \ :Grepper -tool ag -grepprg ag --vimgrep<CR>
 
 "}}}
 
@@ -37,9 +37,9 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 let g:ctrlp_extensions = ['tag']
 
-nnoremap <leader>o :CtrlP<CR>
-nnoremap <leader>ls :CtrlPBuffer<CR>
-nnoremap <leader>lt :CtrlPTag<CR>
+nmap <leader>o :CtrlP<CR>
+nmap <leader>ls :CtrlPBuffer<CR>
+" nmap <leader>lt :CtrlPTag<CR>
 
 "}}}
 
@@ -58,8 +58,17 @@ if executable('ag')
     let g:unite_source_grep_recursive_opt = ''
 endif
 
-nnoremap <leader>ll :<C-u>Unite -start-insert -auto-resize line<CR>
-"nnoremap <leader>ls :<C-u>Unite -start-insert -auto-resize buffer<CR>
+nmap <leader>ll :<C-u>Unite -start-insert -auto-resize line<CR>
+"nmap <leader>ls :<C-u>Unite -start-insert -auto-resize buffer<CR>
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" tagbar
+" ----------------------------------------------------------------------------
+"{{{
+
+nmap <leader>lt :TagbarToggle<CR>
 
 "}}}
 
@@ -70,18 +79,18 @@ nnoremap <leader>ll :<C-u>Unite -start-insert -auto-resize line<CR>
 
 let g:bufExplorerSplitHorzSize = 15
 
-nnoremap <silent> <leader>ld :BufExplorerHorizontalSplit<CR>
+nmap <silent> <leader>ld :BufExplorerHorizontalSplit<CR>
 
-""}}}
+"}}}
 
 " ----------------------------------------------------------------------------
 " Autoformat
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <silent> <leader>fm :Autoformat<CR>
+nmap <silent> <leader>fm :Autoformat<CR>
 
-""}}}
+"}}}
 
 " ----------------------------------------------------------------------------
 " vim-jsx
@@ -122,8 +131,8 @@ nmap <silent> ]r <Plug>(ale_next_wrap)
 
 let g:lt_height = 10
 
-nnoremap <silent> <F12> :LToggle<CR>
-nnoremap <silent> <F11> :QToggle<CR>
+nmap <silent> <F12> :LToggle<CR>
+nmap <silent> <F11> :QToggle<CR>
 
 "}}}
 
@@ -141,17 +150,17 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <leader>g   :Gstatus<CR>gg<c-n>
-nnoremap <leader>d   :Gvdiff<CR>
-nnoremap <leader>gd  :Gvdiff<CR>
-nnoremap <leader>gs  :Gstatus<CR>
-nnoremap <leader>gw  :Gwrite<CR>
-nnoremap <leader>ga  :Gadd<CR>
-nnoremap <leader>gb  :Gblame<CR>
-nnoremap <leader>gco :Gcheckout<CR>
-nnoremap <leader>gci :Gcommit<CR>
-nnoremap <leader>gm  :Gmove<CR>
-nnoremap <leader>gr  :Gremove<CR>
+nmap <leader>g   :Gstatus<CR>gg<c-n>
+nmap <leader>d   :Gvdiff<CR>
+nmap <leader>gd  :Gvdiff<CR>
+nmap <leader>gs  :Gstatus<CR>
+nmap <leader>gw  :Gwrite<CR>
+nmap <leader>ga  :Gadd<CR>
+nmap <leader>gb  :Gblame<CR>
+nmap <leader>gco :Gcheckout<CR>
+nmap <leader>gci :Gcommit<CR>
+nmap <leader>gm  :Gmove<CR>
+nmap <leader>gr  :Gremove<CR>
 
 "}}}
 
@@ -299,7 +308,7 @@ let g:undotree_DiffCommand = "diff -u"
 let g:undotree_WindowLayout = 2
 let g:undotree_SetFocusWhenToggle = 1
 
-nnoremap <silent> <leader>u :UndotreeToggle<CR>
+nmap <silent> <leader>u :UndotreeToggle<CR>
 
 "}}}
 
@@ -341,11 +350,11 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#auto_completion_start_length = 2
 
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
 
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " <BS>: close popup and delete backword char.
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
