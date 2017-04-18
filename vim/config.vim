@@ -57,6 +57,7 @@ set listchars=tab:▸\ ,eol:¬,trail:·,extends:❯,precedes:❮
 
 " line numbers
 set number
+set relativenumber
 set numberwidth=4
 
 " softtabs, 2 spaces
