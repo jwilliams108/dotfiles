@@ -235,9 +235,11 @@ nnoremap <PageDown> :bnext<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-" copy to/replace with clipboard
-map <silent> <leader>c ;%y+<CR> " need to use ; since we've remapped : to ;
-map <silent> <leader>v gg"_dGP
+" copy to/paste from system clipboard
+" (requires vim-textobj-entire and vim-system-copy)
+map <silent> <leader>c cpae
+map <silent> <leader>v cvggdd
+map <silent> <leader>V cvggddG
 
 " toggle paste mode
 nmap <silent> <leader>pa :set invpaste<CR>:set paste?<CR>
