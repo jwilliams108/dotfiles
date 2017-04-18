@@ -144,6 +144,9 @@
 [submodule "vim/bundle/tern_for_vim"]
 	path = vim/bundle/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "vim/bundle/vim-sort-motion"]
+	path = vim/bundle/vim-sort-motion
+	url = https://github.com/christoomey/vim-sort-motion.git
 [submodule "vim/bundle/ReplaceWithRegister"]
 	path = vim/bundle/ReplaceWithRegister
 	url = https://github.com/vim-scripts/ReplaceWithRegister.git
