@@ -110,6 +110,9 @@ let g:ale_sign_warning = '--'
 let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_statusline_format = ['>> %d', '-- %d', '']
 
+nmap <silent> [r <Plug>(ale_previous_wrap)
+nmap <silent> ]r <Plug>(ale_next_wrap)
+
 "}}}
 
 " ----------------------------------------------------------------------------
