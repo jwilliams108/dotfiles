@@ -35,8 +35,11 @@ let g:ctrlp_working_path_mode = 'rw'
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
+let g:ctrlp_extensions = ['tag']
+
 nnoremap <leader>o :CtrlP<CR>
 nnoremap <leader>ls :CtrlPBuffer<CR>
+nnoremap <leader>lt :CtrlPTag<CR>
 
 "}}}
 
