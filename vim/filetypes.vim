@@ -51,31 +51,6 @@ augroup ft_css
   au Filetype css setlocal foldmethod=marker foldmarker={,}
   au FileType css setlocal omnifunc=csscomplete#CompleteCSS
   au FileType css setlocal iskeyword+=-
-
-  " Use <leader>S to sort properties.  Turns this:
-  "
-  "     p {
-  "         width: 200px;
-  "         height: 100px;
-  "         background: red;
-  "
-  "         ...
-  "     }
-  "
-  " into this:
-
-  "     p {
-  "         background: red;
-  "         height: 100px;
-  "         width: 200px;
-  "
-  "         ...
-  "     }
-  au BufNewFile,BufRead *.css nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
-
-  " Make {<CR> insert a pair of brackets in such a way that the cursor is correctly
-  " positioned inside of them AND the following code doesn't get unfolded.
-  au BufNewFile,BufRead *.css inoremap <buffer> {<CR> {}<left><CR><space><space><space><space>.<CR><Esc>kA<bs>
 augroup END
 
 "}}}
