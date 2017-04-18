@@ -238,8 +238,8 @@ nnoremap <PageDown> :bnext<CR>
 " copy to/paste from system clipboard
 " (requires vim-textobj-entire and vim-system-copy)
 map <silent> <leader>c cpae
-map <silent> <leader>v cvggdd
-map <silent> <leader>V cvggddG
+map <silent> <leader>v cvgg"_dd
+map <silent> <leader>V cvgg"_ddG
 
 " toggle paste mode
 nmap <silent> <leader>pa :set invpaste<CR>:set paste?<CR>
