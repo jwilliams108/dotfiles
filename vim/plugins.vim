@@ -58,8 +58,8 @@ if executable('ag')
     let g:unite_source_grep_recursive_opt = ''
 endif
 
-nmap <leader>ll :<C-u>Unite -start-insert -auto-resize line<CR>
-"nmap <leader>ls :<C-u>Unite -start-insert -auto-resize buffer<CR>
+nmap <leader>ll :<C-u>Unite -start-insert -auto-resize buffer<CR>
+nmap <leader>la :<C-u>Unite -start-insert -auto-resize line<CR>
 
 "}}}
 
@@ -79,7 +79,7 @@ nmap <leader>lT :TagbarToggle<CR>
 
 let g:bufExplorerSplitHorzSize = 15
 
-nmap <silent> <leader>ld :BufExplorerHorizontalSplit<CR>
+nmap <silent> <leader>lS :BufExplorerHorizontalSplit<CR>
 
 "}}}
 
