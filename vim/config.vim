@@ -152,5 +152,6 @@ set foldlevelstart=99
 "{{{
 
 colorscheme hybrid
+set background=dark
 
 "}}}
