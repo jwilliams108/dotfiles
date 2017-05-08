@@ -165,3 +165,6 @@
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/vim-lion"]
+	path = vim/bundle/vim-lion
+	url = https://github.com/tommcdo/vim-lion.git
