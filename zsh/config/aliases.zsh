@@ -5,6 +5,7 @@ alias ls='ls -N --color=auto'
 alias vhosts='vi /etc/hosts'
 alias pwdcp="pwd | tr -d '\n' | pbcopy"
 alias h='history | grep'
+alias tldr='man'
 
 # cmus
 alias cmus='cmus 2>/dev/null'
@@ -32,5 +33,5 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
-# misc
-alias tldr='man'
+# dev
+alias gentags='find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort'

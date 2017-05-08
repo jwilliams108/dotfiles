@@ -35,11 +35,11 @@ let g:ctrlp_working_path_mode = 'rw'
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
-let g:ctrlp_extensions = ['tag']
+let g:ctrlp_extensions = ['tag', 'buffertag']
 
 nmap <leader>o :CtrlP<CR>
 nmap <leader>ls :CtrlPBuffer<CR>
-" nmap <leader>lt :CtrlPTag<CR>
+nmap <leader>lt :CtrlPBufTag<CR>
 
 "}}}
 
@@ -68,7 +68,7 @@ nmap <leader>ll :<C-u>Unite -start-insert -auto-resize line<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-nmap <leader>lt :TagbarToggle<CR>
+nmap <leader>lT :TagbarToggle<CR>
 
 "}}}
 
