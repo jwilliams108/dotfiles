@@ -378,6 +378,8 @@ omap cm <Plug>Commentary
 "{{{
 
 let b:lion_squeeze_spaces = 1
+let g:lion_map_right = '<leader>a'
+let g:lion_map_left = '<leader>A'
 
 "}}}
 
