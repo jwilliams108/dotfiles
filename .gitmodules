@@ -168,3 +168,6 @@
 [submodule "vim/bundle/vim-lion"]
 	path = vim/bundle/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
+[submodule "vim/bundle/vim-qf"]
+	path = vim/bundle/vim-qf
+	url = https://github.com/romainl/vim-qf
