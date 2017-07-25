@@ -119,6 +119,10 @@ let g:ale_sign_warning = '--'
 let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_statusline_format = ['>> %d', '-- %d', '']
 
+"fixers
+let g:ale_fixers = { 'javascript': ['prettier'] }
+let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma es5'
+
 nmap <silent> [r <Plug>(ale_previous_wrap)
 nmap <silent> ]r <Plug>(ale_next_wrap)
 
