@@ -62,9 +62,6 @@
 [submodule "vim/bundle/vim-vinegar"]
 	path = vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
-[submodule "vim/bundle/vim-autoformat"]
-	path = vim/bundle/vim-autoformat
-	url = https://github.com/Chiel92/vim-autoformat.git
 [submodule "vim/bundle/vim-mustache-handlebars"]
 	path = vim/bundle/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
@@ -129,9 +126,6 @@
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "vim/bundle/vdebug"]
-	path = vim/bundle/vdebug
-	url = https://github.com/joonty/vdebug.git
 [submodule "vim/bundle/ctrlp-py-matcher"]
 	path = vim/bundle/ctrlp-py-matcher
 	url = https://github.com/FelikZ/ctrlp-py-matcher.git
