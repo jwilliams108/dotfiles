@@ -383,6 +383,15 @@ let g:lion_map_left = '<leader>a'
 " ----------------------------------------------------------------------------
 "{{{
 
+" replace word under cursor; match only whole word
+nnoremap <leader>r yiw:%s/\<<C-r>0\>/
+
+" replace word under cursor
+nnoremap <leader>R yiw:%s/<C-r>0/
+
+" replace selected text
+vnoremap <leader>r y:%s/<C-r>0/
+
 " from: http://vim.wikia.com/wiki/Making_a_list_of_numbers
 " Add argument (can be negative, default 1) to global variable x.
 " Return value of x before the change.
