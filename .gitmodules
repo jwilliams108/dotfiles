@@ -165,3 +165,6 @@
 [submodule "vim/bundle/vim-qf"]
 	path = vim/bundle/vim-qf
 	url = https://github.com/romainl/vim-qf
+[submodule "vim/bundle/splitjoin.vim"]
+	path = vim/bundle/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim
