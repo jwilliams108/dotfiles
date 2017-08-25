@@ -145,7 +145,7 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 " ----------------------------------------------------------------------------
 "{{{
 
-nmap <leader>g   :Gstatus<CR>gg<c-n>
+nmap <leader>g   :Gstatus<CR>gg<C-n>
 nmap <leader>d   :Gvdiff<CR>
 nmap <leader>gd  :Gvdiff<CR>
 nmap <leader>gs  :Gstatus<CR>
