@@ -28,6 +28,14 @@
     <productname>MODEL_S_PROFESSIONAL</productname>
     <productid>0x2013</productid>
   </deviceproductdef>
+  <devicevendordef>
+    <vendorname>FILCO</vendorname>
+    <vendorid>0x04d9</vendorid>
+  </devicevendordef>
+  <deviceproductdef>
+    <productname>MAJESTOUCH_NINJA_TKL</productname>
+    <productid>0x4545</productid>
+  </deviceproductdef>
   <list>
     <item>
       <name>Bluetooth Keyboard ONLY Changes</name>
@@ -199,6 +207,39 @@
           __KeyToKey__
           KeyCode::SPACE, ModifierFlag::CONTROL_L,
           KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
+        </autogen>
+      </item>
+    </item>
+  </list>
+  <list>
+    <item>
+      <name>Music Controls</name>
+      <!-- FN + Fx for music controls -->
+      <item>
+        <name>Use FN + F5 to Music Play/Pause</name>
+        <identifier>private.fn_f5_play</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F5, ModifierFlag::FN,
+          ConsumerKeyCode::MUSIC_PLAY
+        </autogen>
+      </item>
+      <item>
+        <name>Use FN + F7 to Music Prev</name>
+        <identifier>private.fn_f7_prev</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F7, ModifierFlag::FN,
+          ConsumerKeyCode::MUSIC_PREV
+        </autogen>
+      </item>
+      <item>
+        <name>Use FN + F8 to Music Next</name>
+        <identifier>private.fn_f8_next</identifier>
+        <autogen>
+          __KeyToKey__
+          KeyCode::F8, ModifierFlag::FN,
+          ConsumerKeyCode::MUSIC_NEXT
         </autogen>
       </item>
     </item>
