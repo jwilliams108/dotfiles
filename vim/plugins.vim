@@ -20,46 +20,41 @@ nmap \ :Grepper -tool ag -grepprg ag --vimgrep<CR>
 "}}}
 
 " ----------------------------------------------------------------------------
-" ctrlp
+" denite
 " ----------------------------------------------------------------------------
 "{{{
 
+call denite#custom#option('default', {  'prompt': '❯'  })
+
 if executable('ag')
-  " prefer silver searcher
-  let g:ctrlp_use_caching = 0
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    call denite#custom#var('file_rec', 'command', ['ag', '-l', '--follow', '--nocolor', '--nogroup', '-g', ''])
 endif
 
-let g:ctrlp_dont_split = 'netrw'
-let g:ctrlp_working_path_mode = 'rw'
+" key maps
+call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>', 'noremap')
+call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
+call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
+call denite#custom#map('normal', '<Esc>', '<NOP>', 'noremap')
+call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
+call denite#custom#map('normal', '<C-e>', '<denite:do_action:execute>', 'noremap')
 
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+hi link deniteMatchedChar Special
 
-let g:ctrlp_extensions = ['tag', 'buffertag']
-
-nmap <leader>o :CtrlP<CR>
-nmap <leader>ls :CtrlPBuffer<CR>
-nmap <leader>lt :CtrlPBufTag<CR>
+nnoremap <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <leader>ls :<C-u>Denite buffer<CR>
+nnoremap <leader>ll :<C-u>Denite line<CR>
 
 "}}}
 
 " ----------------------------------------------------------------------------
-" unite
+" denite extras, git, etc.
 " ----------------------------------------------------------------------------
 "{{{
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-let g:unite_prompt = '❯ '
-
-if executable('ag')
-    let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --hidden -g ""'
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
-    let g:unite_source_grep_recursive_opt = ''
-endif
-
-nmap <leader>ll :<C-u>Unite -start-insert -auto-resize buffer<CR>
-nmap <leader>la :<C-u>Unite -start-insert -auto-resize line<CR>
+nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
+nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
+nnoremap <leader>gl :<C-u>Denite gitlog<CR>
 
 "}}}
 
@@ -68,7 +63,7 @@ nmap <leader>la :<C-u>Unite -start-insert -auto-resize line<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-nmap <leader>lT :TagbarToggle<CR>
+nmap <leader>lt :TagbarToggle<CR>
 
 "}}}
 
@@ -145,8 +140,6 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 " ----------------------------------------------------------------------------
 "{{{
 
-nmap <leader>g   :Gstatus<CR>gg<C-n>
-nmap <leader>d   :Gvdiff<CR>
 nmap <leader>gd  :Gvdiff<CR>
 nmap <leader>gs  :Gstatus<CR>
 nmap <leader>gw  :Gwrite<CR>
