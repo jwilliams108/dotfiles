@@ -41,9 +41,9 @@ call denite#custom#map('normal', '<C-e>', '<denite:do_action:execute>', 'noremap
 
 hi link deniteMatchedChar Special
 
-nnoremap <C-p> :<C-u>Denite file_rec<CR>
-nnoremap <leader>ls :<C-u>Denite buffer<CR>
-nnoremap <leader>ll :<C-u>Denite line<CR>
+nnoremap <C-p> :<C-u>Denite file_rec -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
+nnoremap <leader>ls :<C-u>Denite buffer -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
+nnoremap <leader>ll :<C-u>Denite line -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
 
 "}}}
 
@@ -52,9 +52,9 @@ nnoremap <leader>ll :<C-u>Denite line<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
-nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
-nnoremap <leader>gl :<C-u>Denite gitlog<CR>
+nnoremap <leader>hs :<C-u>Denite history:search -mode=normal -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
+nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
+nnoremap <leader>gl :<C-u>Denite gitlog -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
 
 "}}}
 
