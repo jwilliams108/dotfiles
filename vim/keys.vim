@@ -207,7 +207,7 @@ vmap <leader>h <gv
 " ----------------------------------------------------------------------------
 "{{{
 
-" using Ctrl-P buffer and BufExplorer to handle many of these now
+" using Denite buffer and BufExplorer to handle many of these now
 
 " list buffers then wait for input to switch
 "nnoremap <leader>lb :ls<CR>:b<Space>

@@ -105,7 +105,7 @@ let g:ale_sign_warning = '--'
 let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_statusline_format = ['>> %d', '-- %d', '']
 
-"fixers
+" fixers
 let g:ale_fixers = { 'javascript': ['prettier'] }
 let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma es5'
 
@@ -330,10 +330,10 @@ let g:lion_map_left = '<leader>a'
 " ----------------------------------------------------------------------------
 "{{{
 
-" replace word under cursor; match only whole word
+" replace word under cursor; match whole word
 nnoremap <leader>r yiw:%s/\<<C-r>0\>/
 
-" replace word under cursor
+" replace (partial) word under cursor
 nnoremap <leader>R yiw:%s/<C-r>0/
 
 " replace selected text
