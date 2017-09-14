@@ -339,6 +339,10 @@ nnoremap <leader>R yiw:%s/<C-r>0/
 " replace selected text
 vnoremap <leader>r y:%s/<C-r>0/
 
+" call  formatters
+nnoremap <silent> <leader>js :%!python -m json.tool<CR>
+nnoremap <silent> <leader>xm :%!xmllint --format -<CR>
+
 " from: http://vim.wikia.com/wiki/Making_a_list_of_numbers
 " Add argument (can be negative, default 1) to global variable x.
 " Return value of x before the change.
