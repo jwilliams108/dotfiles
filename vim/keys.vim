@@ -251,16 +251,16 @@ nmap <silent> <leader>pa :set invpaste<CR>:set paste?<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-nnoremap <leader>dh :diffthis<CR>
-nnoremap <leader>dg :diffget<CR>
-nnoremap <leader>dp :diffput<CR>
-nnoremap <leader>du :diffupdate<CR>
+nnoremap <silent> <leader>dh :diffthis<CR>
+nnoremap <silent> <leader>dg :diffget<CR>
+nnoremap <silent> <leader>dp :diffput<CR>
+nnoremap <silent> <leader>du :diffupdate<CR>
 
 " do vimdiff clipboard in new window
-nnoremap <leader>dt :lefta vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
+nnoremap <silent> <leader>dt :lefta vnew<CR>gg"_dGP:diffthis<CR><C-w>l:diffthis<CR>
 
 " close vimdiff clipboard new window
-nnoremap <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
+nnoremap <silent> <leader>dc <C-w>h:bd!<CR>:diffoff<CR>
 
 "}}}
 

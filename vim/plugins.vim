@@ -140,15 +140,15 @@ imap <expr><CR> pumvisible() ? "\<C-n>" : "<plug>delimitMateCR"
 " ----------------------------------------------------------------------------
 "{{{
 
-nmap <leader>gd  :Gvdiff<CR>
-nmap <leader>gs  :Gstatus<CR>
-nmap <leader>gw  :Gwrite<CR>
-nmap <leader>ga  :Gadd<CR>
-nmap <leader>gb  :Gblame<CR>
-nmap <leader>gco :Gcheckout<CR>
-nmap <leader>gci :Gcommit<CR>
-nmap <leader>gm  :Gmove<CR>
-nmap <leader>gr  :Gremove<CR>
+nmap <silent> <leader>gd  :Gvdiff<CR>
+nmap <silent> <leader>gs  :Gstatus<CR>
+nmap <silent> <leader>gw  :Gwrite<CR>
+nmap <silent> <leader>ga  :Gadd<CR>
+nmap <silent> <leader>gb  :Gblame<CR>
+nmap <silent> <leader>gco :Gcheckout<CR>
+nmap <silent> <leader>gci :Gcommit<CR>
+nmap <silent> <leader>gm  :Gmove<CR>
+nmap <silent> <leader>gr  :Gremove<CR>
 
 "}}}
 
