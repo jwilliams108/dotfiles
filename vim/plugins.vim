@@ -105,12 +105,14 @@ let g:ale_sign_warning = '--'
 let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_statusline_format = ['>> %d', '-- %d', '']
 
-" fixers
-let g:ale_fixers = { 'javascript': ['prettier'] }
-let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma es5'
-
 nmap <silent> [r <Plug>(ale_previous_wrap)
 nmap <silent> ]r <Plug>(ale_next_wrap)
+
+" fixers
+let g:ale_fixers = { 'javascript': ['prettier'] }
+let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma all'
+
+nmap <silent> <leader>fm :ALEFix<CR>
 
 "}}}
 
@@ -342,6 +344,7 @@ vnoremap <leader>r y:%s/<C-r>0/
 " call  formatters
 nnoremap <silent> <leader>js :%!python -m json.tool<CR>
 nnoremap <silent> <leader>xm :%!xmllint --format -<CR>
+nnoremap <silent> <leader>pt :%!prettier --print-width 120 --single-quote --trailing-comma all<CR>
 
 " from: http://vim.wikia.com/wiki/Making_a_list_of_numbers
 " Add argument (can be negative, default 1) to global variable x.
