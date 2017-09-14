@@ -9,11 +9,11 @@ set lines=60 columns=180
 set guifont=Source\ Code\ Pro:h14
 
 " remove toolbar
-set go-=T
+set guioptions-=T
 
 " remove scrollbars
-set go-=L
-set go-=r
+set guioptions-=L
+set guioptions-=r
 
 " Change cursor style when entering INSERT mode
 let s:tmux = exists('$TMUX')
@@ -36,7 +36,7 @@ let &t_EI = end_insert
 " ----------------------------------------------------------------------------
 "{{{
 
-if filereadable(glob("~/.gvimrc.local"))
+if filereadable(glob('~/.gvimrc.local'))
   source ~/.gvimrc.local
 endif
 

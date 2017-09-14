@@ -27,7 +27,7 @@ source ~/.vim/plugins.vim
 " ----------------------------------------------------------------------------
 "{{{
 
-if filereadable(glob("~/.vimrc.local"))
+if filereadable(glob('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
 

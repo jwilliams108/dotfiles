@@ -39,7 +39,7 @@ call denite#custom#map('normal', '<Esc>', '<NOP>', 'noremap')
 call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
 call denite#custom#map('normal', '<C-e>', '<denite:do_action:execute>', 'noremap')
 
-hi link deniteMatchedChar Special
+highlight link deniteMatchedChar Special
 
 nnoremap <C-p> :<C-u>Denite file_rec -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
 nnoremap <leader>ls :<C-u>Denite buffer -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
