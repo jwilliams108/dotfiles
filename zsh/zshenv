@@ -12,6 +12,11 @@ if [ -d /usr/X11 ]; then
   export PATH=/usr/X11/bin:$PATH
 fi
 
+# texlive
+if [ -d /usr/local/texlive/2016/bin/x86_64-darwin ]; then
+  export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
+fi
+
 # for nvm
 if [ -d ~/.nvm ] && [ -d /usr/local/opt/nvm ]; then
   export NVM_DIR=~/.nvm
@@ -25,9 +30,14 @@ if [ -d ~/.perl5/perlbrew ]; then
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 fi
 
-# texlive
-if [ -d /usr/local/texlive/2016/bin/x86_64-darwin ]; then
-  export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
+# for homebrew python
+if [ -d /usr/local/opt/python ]; then
+  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+fi
+
+# for groovy
+if [ -d /usr/local/opt/groovy ]; then
+   export GROOVY_HOME=/usr/local/opt/groovy/libexec
 fi
 
 # editor and utils
