@@ -15,6 +15,9 @@ set guioptions-=T
 set guioptions-=L
 set guioptions-=r
 
+" remove menu
+set guioptions-=m
+
 " Change cursor style when entering INSERT mode
 let s:tmux = exists('$TMUX')
 
