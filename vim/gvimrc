@@ -6,7 +6,11 @@ scriptencoding utf-8
 "{{{
 
 set lines=60 columns=180
-set guifont=Source\ Code\ Pro:h14
+
+" font
+" set guifont=Source\ Code\ Pro:h14
+set guifont=Hasklig:h14
+set macligatures
 
 " remove toolbar
 set guioptions-=T
