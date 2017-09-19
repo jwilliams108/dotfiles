@@ -175,26 +175,26 @@ nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR
 " set 2 space tabs
 nmap <silent> <F2> :set ts=2 sw=2 sts=2<CR>
 
+" convert 4 space indents to 2 spaces
+nmap <silent> <leader><F2> :set ts=4 noet<CR>:retab!<CR>:set et ts=2<CR>:retab<CR>
+
+" convert tabs to spaces
+nmap <silent> <F3> :retab<CR>
+
 " set 4 space tabs
 nmap <silent> <F4> :set ts=4 sw=4 sts=4<CR>
 
+" convert 2 space indents to 4 spaces
+nmap <silent> <leader><F4> :set ts=2 noet<CR>:retab!<CR>:set et ts=4<CR>:retab<CR>
+
 " set no width restriction
-nmap <silent> <F5> :set tw=0<CR>
+nmap <silent> <leader>nw :set tw=0<CR>
 
 " set 120 column width
-nmap <silent> <F6> :set tw=120<CR>
+nmap <silent> <leader>sw :set tw=120<CR>
 
 " trim trailing whitespace
-nmap <silent> <F7> mz:%s/\s\+$//<CR>:let @/=''<CR>`z
-
-" convert tabs to spaces
-nmap <silent> <F8> :retab<CR>
-
-" convert 4 space indents to 2 spaces
-nmap <silent> <F9> :set ts=4 noet<CR>:retab!<CR>:set et ts=2<CR>:retab<CR>
-
-" convert 2 space indents to 4 spaces
-nmap <silent> <F10> :set ts=2 noet<CR>:retab!<CR>:set et ts=4<CR>:retab<CR>
+nmap <silent> <leader>tw mz:%s/\s\+$//<CR>:let @/=''<CR>`z
 
 " increase/decrease indentation
 vmap <leader>l >gv
