@@ -169,3 +169,9 @@
 [submodule "vim/bundle/vim-easygit"]
 	path = vim/bundle/vim-easygit
 	url = https://github.com/neoclide/vim-easygit.git
+[submodule "vim/bundle/vim-textobj-comment"]
+	path = vim/bundle/vim-textobj-comment
+	url = https://github.com/glts/vim-textobj-comment.git
+[submodule "vim/bundle/vim-textobj-brace"]
+	path = vim/bundle/vim-textobj-brace
+	url = https://github.com/Julian/vim-textobj-brace
