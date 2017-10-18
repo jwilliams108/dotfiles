@@ -175,3 +175,6 @@
 [submodule "vim/bundle/vim-textobj-brace"]
 	path = vim/pack/bundle/start/vim-textobj-brace
 	url = https://github.com/Julian/vim-textobj-brace
+[submodule "vim/pack/bundle/opt/fzf.vim"]
+	path = vim/pack/bundle/opt/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
