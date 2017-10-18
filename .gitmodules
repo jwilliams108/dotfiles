@@ -14,7 +14,7 @@
 	path = vim/pack/bundle/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat
 [submodule "vim/bundle/delimitMate"]
-	path = vim/pack/bundle/opt/delimitMate
+	path = vim/pack/bundle/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/vim-css3-syntax"]
 	path = vim/bundle/vim-css3-syntax
