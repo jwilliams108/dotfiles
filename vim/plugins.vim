@@ -311,6 +311,10 @@ endfunction
 " <BS>: close popup and delete backword char.
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
+" Movement within 'ins-completion-menu'
+inoremap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-j>"
+inoremap <expr><C-k> pumvisible() ? "\<Up>" : "\<C-k>"
+
 "}}}
 
 " ----------------------------------------------------------------------------
