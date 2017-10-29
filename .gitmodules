@@ -90,9 +90,6 @@
 [submodule "vim/bundle/lightline-hybrid.vim"]
 	path = vim/pack/bundle/start/lightline-hybrid.vim
 	url = https://github.com/cocopon/lightline-hybrid.vim.git
-[submodule "vim/bundle/neocomplete.vim"]
-	path = vim/bundle/neocomplete.vim
-	url = https://github.com/Shougo/neocomplete.vim.git
 [submodule "vim/bundle/vim-jsdoc"]
 	path = vim/bundle/vim-jsdoc
 	url = https://github.com/heavenshell/vim-jsdoc.git
@@ -120,10 +117,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/pack/bundle/opt/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/bundle/tern_for_vim"]
-	path = vim/bundle/tern_for_vim
-	url = https://github.com/ternjs/tern_for_vim.git
-  ignore = dirty
 [submodule "vim/bundle/vim-sort-motion"]
 	path = vim/pack/bundle/start/vim-sort-motion
 	url = https://github.com/christoomey/vim-sort-motion.git
@@ -178,3 +171,15 @@
 [submodule "vim/pack/bundle/opt/fzf.vim"]
 	path = vim/pack/bundle/opt/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/bundle/nvim-yarp"]
+	path = vim/bundle/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp.git
+[submodule "vim/bundle/vim-hug-neovim-rpc"]
+	path = vim/bundle/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc.git
+[submodule "vim/bundle/deoplete.nvim"]
+	path = vim/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "vim/bundle/deoplete-ternjs"]
+	path = vim/bundle/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs.git

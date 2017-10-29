@@ -284,24 +284,42 @@ map <leader> <Plug>(easymotion-prefix)
 "}}}
 
 " ----------------------------------------------------------------------------
-" neocomplete
+" deoplete
 " ----------------------------------------------------------------------------
 "{{{
 
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#auto_completion_start_length = 2
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_yarp = 1
+" let g:deoplete#disable_auto_complete = 1
+let g:deoplete#enable_smart_case = 1
 
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-l> neocomplete#complete_common_string()
+inoremap <expr><C-g> deoplete#undo_completion()
+inoremap <expr><C-l> deoplete#complete_common_string()
 
 " <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#manual_complete()
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#mappings#manual_complete()
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
 " <BS>: close popup and delete backword char.
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" deoplete ternjs
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:deoplete#sources#ternjs#tern_bin = '/usr/local/bin/tern'
+let g:deoplete#sources#ternjs#filetypes = [ 'jsx', 'javascript.jsx' ]
 
 "}}}
 
