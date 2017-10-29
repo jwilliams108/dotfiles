@@ -318,7 +318,6 @@ inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 " ----------------------------------------------------------------------------
 "{{{
 
-let g:deoplete#sources#ternjs#tern_bin = '/usr/local/bin/tern'
 let g:deoplete#sources#ternjs#filetypes = [ 'jsx', 'javascript.jsx' ]
 
 "}}}
