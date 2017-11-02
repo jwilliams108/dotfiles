@@ -39,6 +39,7 @@
 	vd = difftool
 	r = reset
 	rh = reset --hard
+	rhe = reset HEAD
 	rc = rebase --continue
 	sl = stash list
 	sa = stash apply
