@@ -339,6 +339,24 @@ let g:deoplete#sources#ternjs#filetypes = [ 'jsx', 'javascript.jsx' ]
 "}}}
 
 " ----------------------------------------------------------------------------
+" languageclient
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript.jsx': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+    \ }
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 0
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
+
+"}}}
+
+" ----------------------------------------------------------------------------
 " Commentary
 " ----------------------------------------------------------------------------
 "{{{
