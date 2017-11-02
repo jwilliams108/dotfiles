@@ -143,10 +143,10 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <silent> <F3> :call NumberToggle()<CR>
+nnoremap <silent> <F9> :call NumberToggle()<CR>
 
 " wrap
-nnoremap <silent> <F11> :set wrap!<CR>
+nnoremap <silent> <F10> :set wrap!<CR>
 
 " turn off highlight search - from vim-sensible
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
