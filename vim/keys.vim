@@ -110,9 +110,6 @@ nnoremap <leader>s :w<CR>
 runtime macros/matchit.vim
 map <tab> %
 
-" don't move on *
-nnoremap * *<C-o>
-
 " keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -127,17 +124,6 @@ nmap gV `[v`]
 
 " open a Quickfix window for the last search.
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-
-" Visual Mode */# from Scrooloose
-function! s:VSetSearch()
-  let l:temp = @@
-  norm! gvy
-  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-  let @@ = l:temp
-endfunction
-
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 "}}}
 

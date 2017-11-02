@@ -183,3 +183,6 @@
 [submodule "vim/bundle/deoplete-ternjs"]
 	path = vim/bundle/deoplete-ternjs
 	url = https://github.com/carlitux/deoplete-ternjs.git
+[submodule "vim/pack/bundle/start/vim-asterisk"]
+	path = vim/pack/bundle/start/vim-asterisk
+	url = https://github.com/haya14busa/vim-asterisk
