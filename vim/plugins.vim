@@ -196,9 +196,6 @@ let g:lightline = {
   \   'fileencoding': 'LightLineFileencoding',
   \   'ale': 'ALEGetStatusLine',
   \ },
-  \ 'component_type': {
-  \   'syntastic': 'error',
-  \ },
   \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '|', 'right': '|' },
   \ }
