@@ -37,7 +37,12 @@ fi
 
 # for groovy
 if [ -d /usr/local/opt/groovy ]; then
-   export GROOVY_HOME=/usr/local/opt/groovy/libexec
+  export GROOVY_HOME=/usr/local/opt/groovy/libexec
+fi
+
+# for postgresql@9.5 (homebrew)
+if [ -d /usr/local/opt/postgresql@9.5/bin ]; then
+  export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 fi
 
 # editor and utils
