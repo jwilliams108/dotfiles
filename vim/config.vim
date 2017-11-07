@@ -1,22 +1,21 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-syntax on
 filetype plugin indent on
+syntax on
 
 " ----------------------------------------------------------------------------
 " basic config
 " ----------------------------------------------------------------------------
 "{{{
 
+set backspace=indent,eol,start
 set hidden
-set autoindent
-set copyindent
 set laststatus=2
-set noshowmode
 set splitbelow
 set splitright
-set autowrite
+set breakindent
+set autoindent
 set autoread
 
 "}}}
@@ -84,12 +83,12 @@ set colorcolumn=+1    " show visual indicator of textwidth limit
 " ----------------------------------------------------------------------------
 "{{{
 
+set gdefault
+set incsearch
 set ignorecase
 set smartcase
-set incsearch
 set showmatch
 set hlsearch
-set gdefault
 
 "}}}
 
@@ -99,8 +98,8 @@ set gdefault
 "{{{
 
 if executable('ag')
-    set grepprg=ag\ --vimgrep
-    set grepformat=%f:%l:%c:%m,%f:%l:%m
+    set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --vimgrep
+    set grepformat^=%f:%l:%c:%m
 endif
 
 " }}}
@@ -115,8 +114,10 @@ set wildmenu                          " Enhanced command line completion.
 set wildmode=list:longest,full        " Complete files using a menu AND list
 
 " ignores
-set wildignore+=.git,.hg,.svn
-set wildignore+=*.swp,.lock,.DS_Store,._*
+set wildignore+=*.swp,*.bak,.DS_Store,._*
+set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=*/node_modules/*,*/bower_components/*
+set wildignore+=*/vendor/*
 
 "}}}
 
@@ -125,7 +126,8 @@ set wildignore+=*.swp,.lock,.DS_Store,._*
 " ----------------------------------------------------------------------------
 "{{{
 
-set completeopt-=preview
+set completeopt=menu,menuone,noselect,noinsert
+set complete=.,w,b,u,U,i,t
 
 "}}}
 

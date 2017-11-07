@@ -3,7 +3,7 @@
 " ----------------------------------------------------------------------------
 "{{{
 
-let mapleader = "\<space>"
+let g:mapleader = "\<space>"
 
 " remap colon
 nnoremap ; :
