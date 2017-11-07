@@ -84,11 +84,11 @@ set colorcolumn=+1    " show visual indicator of textwidth limit
 "{{{
 
 set gdefault
-set incsearch
-set ignorecase
 set smartcase
 set showmatch
 set hlsearch
+set ignorecase
+set incsearch
 
 "}}}
 
@@ -114,10 +114,11 @@ set wildmenu                          " Enhanced command line completion.
 set wildmode=list:longest,full        " Complete files using a menu AND list
 
 " ignores
-set wildignore+=*.swp,*.bak,.DS_Store,._*
-set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=*.swp,*.bak,.DS_Store
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 set wildignore+=*/node_modules/*,*/bower_components/*
 set wildignore+=*/vendor/*
+set wildignore+=*.pyc,*.pyo
 
 "}}}
 
@@ -145,9 +146,10 @@ set tags=./tags;,tags;
 " ----------------------------------------------------------------------------
 "{{{
 
-set nofoldenable
+set foldenable
 set foldlevel=99
-set foldlevelstart=99
+set foldmethod=indent
+set foldopen=all
 
 " }}}
 
