@@ -5,3 +5,5 @@ yarn.lock
 tags
 __pycache__
 .vscode
+*.code-workspace
+.tern-port
