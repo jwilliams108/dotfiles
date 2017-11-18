@@ -39,6 +39,7 @@
                         ]
                     },
                     {
+                        "description": "HYPER changes",
                         "manipulators": [
                             {
                                 "description": "Change left_control to HYPER",
@@ -60,11 +61,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change HYPER + C to left_control + C",
                                 "from": {
@@ -86,11 +83,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change HYPER + 1 to left_control + 1",
                                 "from": {
@@ -112,11 +105,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change HYPER + 2 to left_control + 2",
                                 "from": {
@@ -138,11 +127,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change HYPER + 3 to left_control + 3",
                                 "from": {
@@ -164,11 +149,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change HYPER + left_arrow to left_control + left_arrow",
                                 "from": {
@@ -190,11 +171,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change HYPER + right_arrow to left_control + right_arrow",
                                 "from": {
@@ -220,6 +197,7 @@
                         ]
                     },
                     {
+                        "description": "cmus to Media Keys next/play_pause/prev controls",
                         "manipulators": [
                             {
                                 "description": "Change f5 to cmus play/pause",
@@ -232,11 +210,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change f7 to cmus prev",
                                 "from": {
@@ -248,11 +222,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change f8 to cmus next",
                                 "from": {
@@ -268,6 +238,7 @@
                         ]
                     },
                     {
+                        "description": "cmus to alternate next/play_pause/prev controls",
                         "manipulators": [
                             {
                                 "description": "Change left_option + enter to cmus play/pause",
@@ -285,11 +256,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change left_option + left_arrow to cmus prev",
                                 "from": {
@@ -306,11 +273,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change left_option + right_arrow to cmus next",
                                 "from": {
@@ -331,6 +294,7 @@
                         ]
                     },
                     {
+                        "description": "cmus to Pok3r-like Media Keys (right_option + qwe to Previous/Play-Pause/Next)",
                         "manipulators": [
                             {
                                 "description": "Change right_option + w to cmus play/pause",
@@ -348,11 +312,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change right_option + q to cmus prev",
                                 "from": {
@@ -369,11 +329,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "manipulators": [
+                            },
                             {
                                 "description": "Change right_option + e to cmus next",
                                 "from": {
@@ -394,7 +350,7 @@
                         ]
                     },
                     {
-                        "description": "Map fn + number keys to their corresponding function keys.",
+                        "description": "Pok3r Map fn + number keys to their corresponding function keys.",
                         "manipulators": [
                             {
                                 "from": {
@@ -591,7 +547,88 @@
                         ]
                     },
                     {
-                        "description": "Pok3r Media Keys (fn + qwe to Previous Title/Play-Pause/Next)",
+                        "description": "Pok3r Arrow Keys (fn + ijkl to arrow up/left/down/right)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Pok3r Media Keys (fn + qwe to Previous/Play-Pause/Next)",
                         "manipulators": [
                             {
                                 "from": {
