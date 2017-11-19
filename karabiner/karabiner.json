@@ -576,15 +576,15 @@
                         "manipulators": [
                             {
                                 "conditions": [
-                                  {
-                                    "type": "device_unless",
-                                    "identifiers": [
-                                      {
-                                        "vendor_id": 1241,
-                                        "product_id": 17733
-                                      }
-                                    ]
-                                  }
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 17733,
+                                                "vendor_id": 1241
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
                                 ],
                                 "from": {
                                     "key_code": "q",
@@ -606,15 +606,15 @@
                             },
                             {
                                 "conditions": [
-                                  {
-                                    "type": "device_unless",
-                                    "identifiers": [
-                                      {
-                                        "vendor_id": 1241,
-                                        "product_id": 17733
-                                      }
-                                    ]
-                                  }
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 17733,
+                                                "vendor_id": 1241
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
                                 ],
                                 "from": {
                                     "key_code": "w",
@@ -636,15 +636,15 @@
                             },
                             {
                                 "conditions": [
-                                  {
-                                    "type": "device_unless",
-                                    "identifiers": [
-                                      {
-                                        "vendor_id": 1241,
-                                        "product_id": 17733
-                                      }
-                                    ]
-                                  }
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 17733,
+                                                "vendor_id": 1241
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
                                 ],
                                 "from": {
                                     "key_code": "e",
@@ -666,15 +666,15 @@
                             },
                             {
                                 "conditions": [
-                                  {
-                                    "type": "device_if",
-                                    "identifiers": [
-                                      {
-                                        "vendor_id": 1241,
-                                        "product_id": 17733
-                                      }
-                                    ]
-                                  }
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 17733,
+                                                "vendor_id": 1241
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
                                 ],
                                 "from": {
                                     "key_code": "q",
@@ -696,15 +696,15 @@
                             },
                             {
                                 "conditions": [
-                                  {
-                                    "type": "device_if",
-                                    "identifiers": [
-                                      {
-                                        "vendor_id": 1241,
-                                        "product_id": 17733
-                                      }
-                                    ]
-                                  }
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 17733,
+                                                "vendor_id": 1241
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
                                 ],
                                 "from": {
                                     "key_code": "w",
@@ -726,15 +726,15 @@
                             },
                             {
                                 "conditions": [
-                                  {
-                                    "type": "device_if",
-                                    "identifiers": [
-                                      {
-                                        "vendor_id": 1241,
-                                        "product_id": 17733
-                                      }
-                                    ]
-                                  }
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 17733,
+                                                "vendor_id": 1241
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
                                 ],
                                 "from": {
                                     "key_code": "e",
