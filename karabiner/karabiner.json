@@ -294,62 +294,6 @@
                         ]
                     },
                     {
-                        "description": "cmus to Pok3r-like Media Keys (right_option + qwe to Previous/Play-Pause/Next)",
-                        "manipulators": [
-                            {
-                                "description": "Change right_option + w to cmus play/pause",
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/cmus-remote -u"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Change right_option + q to cmus prev",
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/cmus-remote -r"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "description": "Change right_option + e to cmus next",
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_option"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "shell_command": "/usr/local/bin/cmus-remote -n"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Pok3r Map fn + number keys to their corresponding function keys.",
                         "manipulators": [
                             {
@@ -631,6 +575,17 @@
                         "description": "Pok3r Media Keys (fn + qwe to Previous/Play-Pause/Next)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                  {
+                                    "type": "device_unless",
+                                    "identifiers": [
+                                      {
+                                        "vendor_id": 1241,
+                                        "product_id": 17733
+                                      }
+                                    ]
+                                  }
+                                ],
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
@@ -650,6 +605,17 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                  {
+                                    "type": "device_unless",
+                                    "identifiers": [
+                                      {
+                                        "vendor_id": 1241,
+                                        "product_id": 17733
+                                      }
+                                    ]
+                                  }
+                                ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -669,6 +635,17 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                  {
+                                    "type": "device_unless",
+                                    "identifiers": [
+                                      {
+                                        "vendor_id": 1241,
+                                        "product_id": 17733
+                                      }
+                                    ]
+                                  }
+                                ],
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
@@ -683,6 +660,96 @@
                                 "to": [
                                     {
                                         "key_code": "fastforward"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                  {
+                                    "type": "device_if",
+                                    "identifiers": [
+                                      {
+                                        "vendor_id": 1241,
+                                        "product_id": 17733
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/cmus-remote -r"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                  {
+                                    "type": "device_if",
+                                    "identifiers": [
+                                      {
+                                        "vendor_id": 1241,
+                                        "product_id": 17733
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/cmus-remote -u"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                  {
+                                    "type": "device_if",
+                                    "identifiers": [
+                                      {
+                                        "vendor_id": 1241,
+                                        "product_id": 17733
+                                      }
+                                    ]
+                                  }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "/usr/local/bin/cmus-remote -n"
                                     }
                                 ],
                                 "type": "basic"
@@ -734,6 +801,46 @@
                                             "left_shift",
                                             "left_option"
                                         ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "volume_decrement"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "fn",
+                                            "shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "volume_increment"
                                     }
                                 ],
                                 "type": "basic"
