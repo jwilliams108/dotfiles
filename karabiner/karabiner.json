@@ -13,6 +13,7 @@
                 },
                 "rules": [
                     {
+                        "description": "Tap/hold behaviour changes",
                         "manipulators": [
                             {
                                 "description": "Change caps_lock to control/escape",
@@ -32,6 +33,106 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Tap left shift for (",
+                                "from": {
+                                    "key_code": "left_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Tap right shift for )",
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_shift"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": [
+                                            "right_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Tap left command for {",
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_command"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Tap right command for }",
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_command"
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "right_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
