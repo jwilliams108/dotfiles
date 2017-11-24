@@ -592,110 +592,9 @@
                         ]
                     },
                     {
-                        "description": "Pok3r Media Keys (fn + qwe to Previous/Play-Pause/Next)",
+                        "description": "Pok3r Media Keys (fn + qwe to cmus Previous/Play-Pause/Next)",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 17733,
-                                                "vendor_id": 1241
-                                            }
-                                        ],
-                                        "type": "device_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "rewind"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 17733,
-                                                "vendor_id": 1241
-                                            }
-                                        ],
-                                        "type": "device_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "play_or_pause"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 17733,
-                                                "vendor_id": 1241
-                                            }
-                                        ],
-                                        "type": "device_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fastforward"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 17733,
-                                                "vendor_id": 1241
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
@@ -715,17 +614,6 @@
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 17733,
-                                                "vendor_id": 1241
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -745,17 +633,6 @@
                                 "type": "basic"
                             },
                             {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 17733,
-                                                "vendor_id": 1241
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
