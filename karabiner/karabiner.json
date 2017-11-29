@@ -17,6 +17,18 @@
                         "manipulators": [
                             {
                                 "description": "Change caps_lock to control/escape",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -34,8 +46,7 @@
                                     {
                                         "key_code": "escape"
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             },
                             {
                                 "description": "Tap left shift for (",
@@ -144,6 +155,18 @@
                         "manipulators": [
                             {
                                 "description": "Change left_control to HYPER",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "left_control",
                                     "modifiers": {
@@ -160,8 +183,7 @@
                                             "left_option"
                                         ]
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             },
                             {
                                 "description": "Change HYPER + C to left_control + C",
