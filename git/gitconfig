@@ -52,6 +52,7 @@
 	le = log --oneline --decorate
 	fl = log -u
 	hist = log --color --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+	contrib = shortlog -n -s
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
 	lr  = "!f() { git ll "$1"^.."$1"; }; f"
