@@ -50,6 +50,18 @@
                             },
                             {
                                 "description": "Tap left shift for (",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "left_shift",
                                     "modifiers": {
@@ -70,11 +82,22 @@
                                             "left_shift"
                                         ]
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             },
                             {
                                 "description": "Tap right shift for )",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
@@ -95,11 +118,22 @@
                                             "right_shift"
                                         ]
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             },
                             {
                                 "description": "Tap left command for {",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": {
@@ -120,11 +154,22 @@
                                             "left_shift"
                                         ]
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             },
                             {
                                 "description": "Tap right command for }",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_unless"
+                                    }
+                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "right_command",
                                     "modifiers": {
@@ -145,8 +190,7 @@
                                             "right_shift"
                                         ]
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             }
                         ]
                     },
@@ -413,6 +457,42 @@
                                     }
                                 ],
                                 "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "TADA68 layout changes",
+                        "manipulators": [
+                            {
+                                "description": "Change left_command + esc to left_command + `",
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 24672,
+                                                "vendor_id": 65261
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
