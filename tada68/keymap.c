@@ -20,7 +20,7 @@ enum custom_keycodes {
 };
 
 // Length of time before a tap is considered a hold
-#define TAPPING_TERM 165
+#define TAPPING_TERM 100
 
 // Fillers to make layering clear
 #define _______ KC_TRNS
