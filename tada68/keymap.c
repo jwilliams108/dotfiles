@@ -11,6 +11,8 @@ enum custom_layers {
 // special keys
 #define CTRLESC MT(MOD_LCTL, KC_ESC)
 #define HYPER   LALT(LGUI(KC_LCTL))
+#define Q_VOLD  LALT(LSFT(KC__VOLDOWN))
+#define Q_VOLU  LALT(LSFT(KC__VOLUP))
 
 enum custom_keycodes {
   LSFT_PN = SAFE_RANGE,
@@ -57,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |----------------------------------------------------------------|
    * |     | F7| F5| F8|   |   |   |   |   |   |   |   |   |     |Hme |
    * |----------------------------------------------------------------|
-   * |      |   |VU-|VU+|MUT|   |   |   |   |   |   |   |        |End |
+   * |      |   |QV-|QV+|MUT|   |   |   |   |   |   |   |        |End |
    * |----------------------------------------------------------------|
    * |        |   |   |Bl-|BL |BL+|   |   |   |   |   |      |   |    |
    * |----------------------------------------------------------------|
@@ -71,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_FL] = KEYMAP_ANSI(
   _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10, KC_F11, KC_F12, KC_DEL, KC_INS, \
   _______,  KC_F7,  KC_F5,  KC_F8,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,KC_HOME, \
-  _______,_______,KC_VOLD,KC_VOLU,KC_MUTE,_______,_______,_______,_______,_______,_______,_______,        _______, KC_END, \
+  _______,_______, Q_VOLD,Q_VOLU,KC__MUTE,_______,_______,_______,_______,_______,_______,_______,        _______, KC_END, \
   _______,_______,_______, BL_DEC,BL_TOGG, BL_INC,_______,_______,_______,_______,_______,_______,_______,_______, \
   _______,_______,_______,                _______,                        _______,_______,_______,_______,_______,_______),
 
