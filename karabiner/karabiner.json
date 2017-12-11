@@ -16,7 +16,6 @@
                         "description": "Tap/hold behaviour changes",
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to control/escape",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -28,7 +27,7 @@
                                         "type": "device_unless"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Change caps_lock to control/escape",
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {
@@ -46,10 +45,10 @@
                                     {
                                         "key_code": "escape"
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "description": "Tap left shift for (",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -61,7 +60,7 @@
                                         "type": "device_unless"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Tap left shift for (",
                                 "from": {
                                     "key_code": "left_shift",
                                     "modifiers": {
@@ -82,10 +81,10 @@
                                             "left_shift"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "description": "Tap right shift for )",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -97,7 +96,7 @@
                                         "type": "device_unless"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Tap right shift for )",
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
@@ -118,10 +117,10 @@
                                             "right_shift"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "description": "Tap left command for {",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -133,7 +132,7 @@
                                         "type": "device_unless"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Tap left command for {",
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": {
@@ -154,10 +153,10 @@
                                             "left_shift"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "description": "Tap right command for }",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -169,7 +168,7 @@
                                         "type": "device_unless"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Tap right command for }",
                                 "from": {
                                     "key_code": "right_command",
                                     "modifiers": {
@@ -190,7 +189,8 @@
                                             "right_shift"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -198,7 +198,6 @@
                         "description": "HYPER changes",
                         "manipulators": [
                             {
-                                "description": "Change left_control to HYPER",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -210,7 +209,7 @@
                                         "type": "device_unless"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Change left_control to HYPER",
                                 "from": {
                                     "key_code": "left_control",
                                     "modifiers": {
@@ -227,7 +226,8 @@
                                             "left_option"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
                                 "description": "Change HYPER + C to left_control + C",
@@ -464,7 +464,6 @@
                         "description": "TADA68 layout changes",
                         "manipulators": [
                             {
-                                "description": "Change left_command + esc to left_command + `",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -476,7 +475,7 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Change left_command + esc to left_command + `",
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
@@ -492,10 +491,10 @@
                                             "left_command"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             },
                             {
-                                "description": "Change right_shift + esc to right_shift + `",
                                 "conditions": [
                                     {
                                         "identifiers": [
@@ -507,7 +506,7 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "type": "basic",
+                                "description": "Change right_shift + esc to right_shift + `",
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
@@ -523,7 +522,8 @@
                                             "right_shift"
                                         ]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
