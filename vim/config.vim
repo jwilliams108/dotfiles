@@ -148,8 +148,6 @@ set tags=./tags;,tags;
 
 set foldenable
 set foldlevel=99
-set foldmethod=indent
-set foldopen=all
 
 " }}}
 
