@@ -101,17 +101,21 @@ let g:ale_linters = {
 
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-"let g:ale_php_phpcs_standard = '~/.phpcs/phpcs.xml'
 let g:ale_php_phpcs_standard = 'PSR2'
 let g:ale_statusline_format = ['>> %d', '-- %d', '']
 
 nmap <silent> [r <Plug>(ale_previous_wrap)
 nmap <silent> ]r <Plug>(ale_next_wrap)
 
+" only lint on file save
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+
 " fixers
 let g:ale_fixers = { 'javascript': ['prettier'] }
 let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma all'
 
+nmap <silent> <leader>at :ALEToggle<CR>
 nmap <silent> <leader>fm :ALEFix<CR>
 
 "}}}
