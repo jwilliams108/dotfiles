@@ -303,14 +303,13 @@ map g# <Plug>(asterisk-gz#)
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_yarp = 1
-" let g:deoplete#disable_auto_complete = 1
+let g:deoplete#disable_auto_complete = 1
 let g:deoplete#enable_smart_case = 1
 
 inoremap <expr><C-g> deoplete#undo_completion()
 inoremap <expr><C-l> deoplete#complete_common_string()
 
 " <TAB>: completion.
-"inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#manual_complete()
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<TAB>" :
