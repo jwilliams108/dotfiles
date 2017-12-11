@@ -71,7 +71,7 @@
 	ignore = dirty
 [submodule "zsh/plugins/zgen"]
 	path = zsh/plugins/zgen
-	url = https://github.com/tarjoilija/zgen.git
+	url = https://github.com/rslindee/zgen.git
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
