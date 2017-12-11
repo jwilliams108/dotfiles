@@ -1,14 +1,14 @@
 [submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
+	path = vim/pack/lang/start/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
+	path = vim/pack/lang/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround
 [submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
+	path = vim/pack/lang/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/pack/bundle/start/vim-repeat
@@ -17,13 +17,13 @@
 	path = vim/pack/bundle/start/delimitMate
 	url = https://github.com/Raimondi/delimitMate
 [submodule "vim/bundle/vim-css3-syntax"]
-	path = vim/bundle/vim-css3-syntax
+	path = vim/pack/lang/start/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax
 [submodule "vim/bundle/vim-css-color"]
-	path = vim/bundle/vim-css-color
+	path = vim/pack/lang/start/vim-css-color
 	url = https://github.com/skammer/vim-css-color.git
 [submodule "vim/bundle/gitv"]
-	path = vim/bundle/gitv
+	path = vim/pack/lang/start/gitv
 	url = https://github.com/gregsexton/gitv
 [submodule "vim/bundle/targets.vim"]
 	path = vim/pack/bundle/opt/targets.vim
@@ -32,10 +32,10 @@
 	path = vim/pack/bundle/opt/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim
 [submodule "vim/bundle/html5.vim"]
-	path = vim/bundle/html5.vim
+	path = vim/pack/lang/start/html5.vim
 	url = https://github.com/othree/html5.vim
 [submodule "vim/bundle/vim-json"]
-	path = vim/bundle/vim-json
+	path = vim/pack/lang/start/vim-json
 	url = https://github.com/elzr/vim-json
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/pack/bundle/start/vim-easymotion
@@ -54,7 +54,7 @@
 	path = vim/pack/bundle/start/undotree
 	url = https://github.com/mbbill/undotree.git
 [submodule "vim/bundle/vim-perl"]
-	path = vim/bundle/vim-perl
+	path = vim/pack/lang/start/vim-perl
 	url = https://github.com/vim-perl/vim-perl.git
 [submodule "vim/bundle/vim-vinegar"]
 	path = vim/pack/bundle/start/vim-vinegar
@@ -73,7 +73,7 @@
 	path = zsh/plugins/zgen
 	url = https://github.com/rslindee/zgen.git
 [submodule "vim/bundle/vim-jsx"]
-	path = vim/bundle/vim-jsx
+	path = vim/pack/lang/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/pack/bundle/start/vim-unimpaired
@@ -85,19 +85,19 @@
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 [submodule "vim/bundle/typescript-vim"]
-	path = vim/bundle/typescript-vim
+	path = vim/pack/lang/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "vim/bundle/lightline-hybrid.vim"]
 	path = vim/pack/bundle/start/lightline-hybrid.vim
 	url = https://github.com/cocopon/lightline-hybrid.vim.git
 [submodule "vim/bundle/vim-jsdoc"]
-	path = vim/bundle/vim-jsdoc
+	path = vim/pack/lang/start/vim-jsdoc
 	url = https://github.com/heavenshell/vim-jsdoc.git
 [submodule "vim/bundle/vim-grepper"]
 	path = vim/pack/bundle/start/vim-grepper
 	url = https://github.com/mhinz/vim-grepper.git
 [submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
+	path = vim/pack/lang/start/ale
 	url = https://github.com/w0rp/ale.git
 [submodule "vim/bundle/ListToggle"]
 	path = vim/pack/bundle/opt/ListToggle
@@ -139,7 +139,7 @@
 	path = vim/pack/bundle/start/vim-system-copy
 	url = https://github.com/christoomey/vim-system-copy.git
 [submodule "vim/bundle/vim-commentary"]
-	path = vim/bundle/vim-commentary
+	path = vim/pack/lang/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
 [submodule "vim/bundle/vim-lion"]
 	path = vim/pack/bundle/start/vim-lion
@@ -160,7 +160,7 @@
 	path = vim/bundle/denite-git
 	url = https://github.com/neoclide/denite-git.git
 [submodule "vim/bundle/vim-easygit"]
-	path = vim/bundle/vim-easygit
+	path = vim/pack/lang/start/vim-easygit
 	url = https://github.com/neoclide/vim-easygit.git
 [submodule "vim/bundle/vim-textobj-comment"]
 	path = vim/pack/bundle/start/vim-textobj-comment
@@ -184,7 +184,7 @@
 	path = vim/bundle/deoplete-ternjs
 	url = https://github.com/carlitux/deoplete-ternjs.git
 [submodule "vim/bundle/LanguageClient-neovim"]
-	path = vim/bundle/LanguageClient-neovim
+	path = vim/pack/lang/start/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim.git
 [submodule "vim/pack/bundle/start/vim-asterisk"]
 	path = vim/pack/bundle/start/vim-asterisk
