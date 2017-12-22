@@ -364,7 +364,7 @@
                         ]
                     },
                     {
-                        "description": "cmus to Media Keys next/play_pause/prev controls",
+                        "description": "cmus controls",
                         "manipulators": [
                             {
                                 "description": "Change f5 to cmus play/pause",
@@ -472,7 +472,7 @@
                         ]
                     },
                     {
-                        "description": "Pok3r Map fn + number keys to their corresponding function keys.",
+                        "description": "Pok3r emulations",
                         "manipulators": [
                             {
                                 "from": {
@@ -665,12 +665,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r Media Keys (fn + qwe to cmus Previous/Play-Pause/Next)",
-                        "manipulators": [
+                            },
                             {
                                 "from": {
                                     "key_code": "q",
@@ -727,12 +722,7 @@
                                     }
                                 ],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Pok3r Volume Controls (fn + sdf to Volume down/up/mute)",
-                        "manipulators": [
+                            },
                             {
                                 "from": {
                                     "key_code": "s",
