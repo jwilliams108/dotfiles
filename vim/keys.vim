@@ -87,6 +87,7 @@ noremap <leader>p i<CR><Esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 " ----------------------------------------------------------------------------
 "{{{
 
+" delete line above/below
 nnoremap <leader>da :-d<CR>
 nnoremap <leader>db :+d<CR>
 
