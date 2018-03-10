@@ -30,8 +30,7 @@ FIBB_HEIGHT = Math.round(GRID_B_RATIO * GRID_HEIGHT)
 # helpers
 Window::screenRect = (screen) -> screen?.flippedVisibleFrame() || @screen().flippedVisibleFrame()
 Window::fullGridFrame = -> @calculateGrid y: 0, x: 0, width: 1, height: 1
-Window::borderedFullGridFrame = -> @calculateGrid x: border / GRID_WIDTH, y: border / GRID_HEIGHT,
-  width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
+Window::borderedFullGridFrame = (border) -> @calculateGrid x: border / GRID_WIDTH, y: border / GRID_HEIGHT, width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
 
 # Window positions
 Window::gridCurrentPosition = ->
@@ -67,10 +66,9 @@ Window::toggleFullScreen = ->
     @forgetFrame()
 
 Window::toggleBorderedScreen = (border) ->
-  unless _.isEqual @frame(), @borderedfullGridFrame()
+  unless _.isEqual @frame(), @borderedFullGridFrame(border)
     @rememberFrame()
-    @toGrid x: border / GRID_WIDTH, y: border / GRID_HEIGHT,
-      width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
+    @toGrid x: border / GRID_WIDTH, y: border / GRID_HEIGHT, width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
   else if lastFrames[@uid()]
     @setFrame lastFrames[@uid()]
     @forgetFrame()

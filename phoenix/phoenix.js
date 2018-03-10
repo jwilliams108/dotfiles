@@ -58,11 +58,10 @@
     });
   };
 
-  Window.prototype.borderedFullGridFrame = function() {
+  Window.prototype.borderedFullGridFrame = function(border) {
     return this.calculateGrid({
       x: border / GRID_WIDTH,
-      y: border / GRID_HEIGHT
-    }, {
+      y: border / GRID_HEIGHT,
       width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH,
       height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
     });
@@ -91,26 +90,6 @@
     var rect;
     rect = this.calculateGrid({x, y, width, height});
     return this.setFrame(rect);
-  };
-
-  // expanded Window primitives
-  Window.prototype.topRight = function() {
-    return {
-      x: this.frame().x + this.frame().width,
-      y: this.frame().y
-    };
-  };
-
-  Window.prototype.toLeft = function() {
-    return _.filter(this.neighbors('west'), function(win) {
-      return win.topLeft().x < this.topLeft().x - 10;
-    });
-  };
-
-  Window.prototype.toRight = function() {
-    return _.filter(this.neighbors('east'), function(win) {
-      return win.topRight().x > this.topRight().x + 10;
-    });
   };
 
   // Window popout/focus
@@ -145,12 +124,13 @@
   };
 
   Window.prototype.toggleBorderedScreen = function(border) {
-    if (!_.isEqual(this.frame(), this.borderedfullGridFrame())) {
+    Phoenix.log(JSON.stringify(this.borderedFullGridFrame(border)));
+    Phoenix.log(JSON.stringify(this.fullGridFrame()));
+    if (!_.isEqual(this.frame(), this.borderedFullGridFrame(border))) {
       this.rememberFrame();
       return this.toGrid({
         x: border / GRID_WIDTH,
-        y: border / GRID_HEIGHT
-      }, {
+        y: border / GRID_HEIGHT,
         width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH,
         height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
       });
