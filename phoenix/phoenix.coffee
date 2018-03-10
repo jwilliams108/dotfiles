@@ -118,9 +118,7 @@ Window::resizeWindow = (direction) ->
 # toggle through stacked windows
 Window::toggleStackedWindows = ->
   stackedWindows = []
-
   allSameVisible = _.filter Window.recent(), (win) => _.isEqual @frame(), win.frame()
-
   topMostWindow = allSameVisible.pop()
   topMostWindow.focus()
 
