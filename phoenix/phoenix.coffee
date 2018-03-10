@@ -50,19 +50,6 @@ Window::toGrid = ({x, y, width, height}) ->
   rect = @calculateGrid {x, y, width, height}
   @setFrame rect
 
-# expanded Window primitives
-Window::topRight = ->
-  x: @frame().x + @frame().width
-  y: @frame().y
-
-Window::toLeft = ->
-  _.filter @neighbors('west'), (win) ->
-    win.topLeft().x < @topLeft().x - 10
-
-Window::toRight = ->
-  _.filter @neighbors('east'), (win) ->
-    win.topRight().x > @topRight().x + 10
-
 # Window popout/focus
 lastFrames = {}
 
