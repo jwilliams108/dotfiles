@@ -83,62 +83,23 @@ Window::resizeWindow = (direction) ->
   new_height = current_position.height
 
   if direction == 'left'
-    if current_position.width == HALF_WIDTH && current_position.height != FULL_HEIGHT
+    new_height = FULL_HEIGHT
+    new_y = 0
+    if current_position.width != HALF_WIDTH
       new_width = HALF_WIDTH
       new_x = 0
-      new_height = FULL_HEIGHT
-      new_y = 0
-    else if current_position.width == FIBA_WIDTH && current_position.height != FULL_HEIGHT
-      new_width = FIBA_WIDTH
-      new_x = 0
-      new_height = FULL_HEIGHT
-      new_y = 0
-    else if current_position.width == FIBB_WIDTH && current_position.height != FULL_HEIGHT
-      new_width = FIBA_WIDTH
-      new_x = 0
-      new_height = FULL_HEIGHT
-      new_y = 0
-    else if (current_position.width == HALF_WIDTH && current_position.x == 0) || current_position.width == FIBB_WIDTH
-      new_width = FIBA_WIDTH
-      new_x = 0
-      new_height = FULL_HEIGHT
-      new_y = 0
     else
-      new_width = HALF_WIDTH
+      new_width = FIBA_WIDTH
       new_x = 0
-      new_height = FULL_HEIGHT
-      new_y = 0
   else if direction == 'right'
-    if current_position.width == HALF_WIDTH && current_position.height != FULL_HEIGHT
-      new_width = HALF_WIDTH
-      new_x = HALF_WIDTH
-      new_height = FULL_HEIGHT
-      new_y = 0
-    else if current_position.width == FIBB_WIDTH && current_position.height != FULL_HEIGHT
+    new_height = FULL_HEIGHT
+    new_y = 0
+    if current_position.width != FIBB_WIDTH
       new_width = FIBB_WIDTH
       new_x = FIBA_WIDTH
-      new_height = FULL_HEIGHT
-      new_y = 0
-    else if current_position.width == FIBB_WIDTH || (current_position.width == HALF_WIDTH && current_position.x == 0)
-      new_width = HALF_WIDTH - 1 # take one unit off as the grid doesn't divide evenly
-      new_x = HALF_WIDTH
-      new_height = FULL_HEIGHT
-      new_y = 0
-    else if current_position.width == (HALF_WIDTH - 1) && current_position.x == HALF_WIDTH
-      new_width = FIBA_WIDTH
-      new_x = FIBB_WIDTH
-      new_height = FULL_HEIGHT
-      new_y = 0
-    else if current_position.width == FIBA_WIDTH && current_position.x == FIBB_WIDTH
-      new_width = 16 # not exactly fib, but whatever
-      new_x = GRID_WIDTH - new_width
-      new_height = FULL_HEIGHT
-      new_y = 0
     else
-      new_width = FIBB_WIDTH
-      new_x = FIBA_WIDTH
-      new_height = FULL_HEIGHT
-      new_y = 0
+      new_width = FIBA_WIDTH + 1 # prefer slightly larger
+      new_x = FIBB_WIDTH - 1
   else if direction == 'top'
     new_height = FIBA_HEIGHT
     new_y = 0
