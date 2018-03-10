@@ -1,5 +1,3 @@
-#!/usr/bin/env coffee -p
-
 ###
 Phoenix.app config
 
@@ -20,26 +18,37 @@ GRID_RATIO   = 1.618
 GRID_A_RATIO = 1 / GRID_RATIO
 GRID_B_RATIO = 1 - GRID_A_RATIO
 
-# Window grid
-Window::screenRect = -> @screen().visibleFrameInRectangle()
+HALF_WIDTH  = Math.round(0.5 * GRID_WIDTH)
+HALF_HEIGHT = Math.round(0.5 * GRID_HEIGHT)
+FULL_WIDTH  = 1 * GRID_WIDTH
+FULL_HEIGHT = 1 * GRID_HEIGHT
+FIBA_WIDTH  = Math.round(GRID_A_RATIO * GRID_WIDTH)
+FIBA_HEIGHT = Math.round(GRID_A_RATIO * GRID_HEIGHT)
+FIBB_WIDTH  = Math.round(GRID_B_RATIO * GRID_WIDTH)
+FIBB_HEIGHT = Math.round(GRID_B_RATIO * GRID_HEIGHT)
 
-Window::calculateGrid = (x, y, width, height) ->
-  x:      Math.round(x * @screenRect().width) + MARGIN_X + @screenRect().x
-  y:      Math.round(y * @screenRect().height) + MARGIN_Y + @screenRect().y
-  width:  Math.round(width * @screenRect().width) - 2.0 * MARGIN_X
-  height: Math.round(height * @screenRect().height) - 2.0 * MARGIN_Y
+# helpers
+Window::screenRect = (screen) -> screen?.flippedVisibleFrame() || @screen().flippedVisibleFrame()
+Window::fullGridFrame = -> @calculateGrid y: 0, x: 0, width: 1, height: 1
+Window::borderedFullGridFrame = -> @calculateGrid x: border / GRID_WIDTH, y: border / GRID_HEIGHT,
+  width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
 
-Window::toGrid = (x, y, width, height) ->
-  rect = @calculateGrid(x, y, width, height)
-  @setFrame rect
-  @
-
-# Window info/current_positions
+# Window positions
 Window::gridCurrentPosition = ->
   x:      Math.round(@frame().x / @screenRect().width * GRID_WIDTH)
   y:      Math.round(@frame().y / @screenRect().height * GRID_HEIGHT)
   width:  Math.round(@frame().width / @screenRect().width * GRID_WIDTH)
   height: Math.round(@frame().height / @screenRect().height * GRID_HEIGHT)
+
+Window::calculateGrid = ({x, y, width, height}) ->
+  x:      Math.round(x * @screenRect().width) + MARGIN_X + @screenRect().x
+  y:      Math.round(y * @screenRect().height) + MARGIN_Y + @screenRect().y
+  width:  Math.round(width * @screenRect().width) - 2.0 * MARGIN_X
+  height: Math.round(height * @screenRect().height) - 2.0 * MARGIN_Y
+
+Window::toGrid = ({x, y, width, height}) ->
+  rect = @calculateGrid {x, y, width, height}
+  @setFrame rect
 
 # expanded Window primitives
 Window::topRight = ->
@@ -54,14 +63,6 @@ Window::toRight = ->
   _.filter @neighbors('east'), (win) ->
     win.topRight().x > @topRight().x + 10
 
-Window.sortByMostRecent = (windows) ->
-  allVisible = Window.recent()
-
-  _.chain(windows)
-    .sortBy (win) ->
-      _.map(allVisible, (w)-> w.title()).indexOf(win.title())
-    .value()
-
 # Window popout/focus
 lastFrames = {}
 
@@ -70,35 +71,25 @@ Window::rememberFrame = -> lastFrames[@uid()] = @frame()
 Window::forgetFrame   = -> delete lastFrames[@uid()]
 
 # Window positions
-Window::toggleBorderedScreen = (border) ->
-  fullFrame = @calculateGrid(border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT)
-  unless _.isEqual(@frame(), fullFrame)
+Window::toggleFullScreen = ->
+  unless _.isEqual @frame(), @fullGridFrame()
     @rememberFrame()
-    @toGrid border / GRID_WIDTH, border / GRID_HEIGHT, (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
+    @toGrid x: 0, y: 0, width: 1, height: 1
   else if lastFrames[@uid()]
     @setFrame lastFrames[@uid()]
     @forgetFrame()
 
-Window::toggleFullScreen = ->
-  fullFrame = @calculateGrid(0, 0, 1, 1)
-  unless _.isEqual(@frame(), fullFrame)
+Window::toggleBorderedScreen = (border) ->
+  unless _.isEqual @frame(), @borderedfullGridFrame()
     @rememberFrame()
-    @toGrid 0, 0, 1, 1
+    @toGrid x: border / GRID_WIDTH, y: border / GRID_HEIGHT,
+      width: (GRID_WIDTH - (2.0 * border)) / GRID_WIDTH, height: (GRID_HEIGHT - (2.0 * border)) / GRID_HEIGHT
   else if lastFrames[@uid()]
     @setFrame lastFrames[@uid()]
     @forgetFrame()
 
 # Window resizing
 Window::resizeWindow = (direction) ->
-  half_width  = Math.round(0.5 * GRID_WIDTH)
-  half_height = Math.round(0.5 * GRID_HEIGHT)
-  full_width  = 1 * GRID_WIDTH
-  full_height = 1 * GRID_HEIGHT
-  fiba_width  = Math.round(GRID_A_RATIO * GRID_WIDTH)
-  fiba_height = Math.round(GRID_A_RATIO * GRID_HEIGHT)
-  fibb_width  = Math.round(GRID_B_RATIO * GRID_WIDTH)
-  fibb_height = Math.round(GRID_B_RATIO * GRID_HEIGHT)
-
   current_position = @gridCurrentPosition()
 
   new_x = current_position.x
@@ -107,114 +98,89 @@ Window::resizeWindow = (direction) ->
   new_height = current_position.height
 
   if direction == 'left'
-    if current_position.width == half_width && current_position.height != full_height
-      new_width = half_width
+    if current_position.width == HALF_WIDTH && current_position.height != FULL_HEIGHT
+      new_width = HALF_WIDTH
       new_x = 0
-      new_height = full_height
+      new_height = FULL_HEIGHT
       new_y = 0
-    else if current_position.width == fiba_width && current_position.height != full_height
-      new_width = fiba_width
+    else if current_position.width == FIBA_WIDTH && current_position.height != FULL_HEIGHT
+      new_width = FIBA_WIDTH
       new_x = 0
-      new_height = full_height
+      new_height = FULL_HEIGHT
       new_y = 0
-    else if current_position.width == fibb_width && current_position.height != full_height
-      new_width = fiba_width
+    else if current_position.width == FIBB_WIDTH && current_position.height != FULL_HEIGHT
+      new_width = FIBA_WIDTH
       new_x = 0
-      new_height = full_height
+      new_height = FULL_HEIGHT
       new_y = 0
-    else if (current_position.width == half_width && current_position.x == 0) || current_position.width == fibb_width
-      new_width = fiba_width
+    else if (current_position.width == HALF_WIDTH && current_position.x == 0) || current_position.width == FIBB_WIDTH
+      new_width = FIBA_WIDTH
       new_x = 0
-      new_height = full_height
+      new_height = FULL_HEIGHT
       new_y = 0
     else
-      new_width = half_width
+      new_width = HALF_WIDTH
       new_x = 0
-      new_height = full_height
+      new_height = FULL_HEIGHT
       new_y = 0
   else if direction == 'right'
-    if current_position.width == half_width && current_position.height != full_height
-      new_width = half_width
-      new_x = half_width
-      new_height = full_height
+    if current_position.width == HALF_WIDTH && current_position.height != FULL_HEIGHT
+      new_width = HALF_WIDTH
+      new_x = HALF_WIDTH
+      new_height = FULL_HEIGHT
       new_y = 0
-    else if current_position.width == fibb_width && current_position.height != full_height
-      new_width = fibb_width
-      new_x = fiba_width
-      new_height = full_height
+    else if current_position.width == FIBB_WIDTH && current_position.height != FULL_HEIGHT
+      new_width = FIBB_WIDTH
+      new_x = FIBA_WIDTH
+      new_height = FULL_HEIGHT
       new_y = 0
-    else if current_position.width == fibb_width || (current_position.width == half_width && current_position.x == 0)
-      new_width = half_width - 1 # take one unit off as the grid doesn't divide evenly
-      new_x = half_width
-      new_height = full_height
+    else if current_position.width == FIBB_WIDTH || (current_position.width == HALF_WIDTH && current_position.x == 0)
+      new_width = HALF_WIDTH - 1 # take one unit off as the grid doesn't divide evenly
+      new_x = HALF_WIDTH
+      new_height = FULL_HEIGHT
       new_y = 0
-    else if current_position.width == (half_width - 1) && current_position.x == half_width
-      new_width = fiba_width
-      new_x = fibb_width
-      new_height = full_height
+    else if current_position.width == (HALF_WIDTH - 1) && current_position.x == HALF_WIDTH
+      new_width = FIBA_WIDTH
+      new_x = FIBB_WIDTH
+      new_height = FULL_HEIGHT
       new_y = 0
-    else if current_position.width == fiba_width && current_position.x == fibb_width
-      new_width = 17 # not exactly fib, but whatever
+    else if current_position.width == FIBA_WIDTH && current_position.x == FIBB_WIDTH
+      new_width = 16 # not exactly fib, but whatever
       new_x = GRID_WIDTH - new_width
-      new_height = full_height
+      new_height = FULL_HEIGHT
       new_y = 0
     else
-      new_width = fibb_width
-      new_x = fiba_width
-      new_height = full_height
+      new_width = FIBB_WIDTH
+      new_x = FIBA_WIDTH
+      new_height = FULL_HEIGHT
       new_y = 0
   else if direction == 'top'
-    new_height = fiba_height
+    new_height = FIBA_HEIGHT
     new_y = 0
   else if direction == 'bottom'
-    new_height = fibb_height
-    new_y = fiba_height
+    new_height = FIBB_HEIGHT
+    new_y = FIBA_HEIGHT
 
-  if new_x != 0
-    new_x = new_x / GRID_WIDTH
+  new_frame =
+    x: if new_x != 0 then new_x / GRID_WIDTH else 0
+    y: if new_y != 0 then new_y / GRID_HEIGHT else 0
+    width: new_width / GRID_WIDTH
+    height: new_height / GRID_HEIGHT
 
-  if new_y != 0
-    new_y = new_y / GRID_HEIGHT
-
-  @toGrid new_x, new_y, new_width / GRID_WIDTH, new_height / GRID_HEIGHT
+  @toGrid new_frame
 
 # toggle through stacked windows
 Window::toggleStackedWindows = ->
   stackedWindows = []
 
-  allVisible = Window.recent()
+  allSameVisible = _.filter Window.recent(), (win) => _.isEqual @frame(), win.frame()
 
-  _.each allVisible, (window) ->
-    if _.isEqual(@frame, window.frame())
-      stackedWindows.push(window)
-
-  topMostWindow = stackedWindows.pop()
+  topMostWindow = allSameVisible.pop()
   topMostWindow.focus()
-
-# focus to direction
-Window::focusToFrontLeft = ->
-  win = Window.focused()
-  targets = win.neighbours('west')
-
-  sortedTargets = Window.sortByMostRecent(targets)
-
-  if sortedTargets.length
-    topMostLeft = sortedTargets[0]
-    topMostLeft.focus()
-
-Window::focusToFrontRight = ->
-  win = Window.focused()
-  targets = win.neighbours('east')
-
-  sortedTargets = Window.sortByMostRecent(targets)
-
-  if sortedTargets.length
-    topMostRight = sortedTargets[0]
-    topMostRight.focus()
 
 # Bindings
 keys = []
-key_binding = (key, modifier, fn)-> keys.push Key.on(key, modifier, fn)
+key_binding = (key, modifier, fn) -> keys.push Key.on(key, modifier, fn)
 
 # command keys
 shiftCmd   = 'shift+cmd'.split '+'
@@ -232,5 +198,5 @@ key_binding 'A', ctrlAltCmd, -> Window.focused().toggleBorderedScreen(0.5)
 key_binding '`', ctrlAltCmd, -> Window.focused().toggleStackedWindows()
 
 # focus to direction
-key_binding 'H',  shiftCmd, -> Window.focused().focusToFrontLeft()
-key_binding 'L',  shiftCmd, -> Window.focused().focusToFrontRight()
+key_binding 'H',  shiftCmd, -> Window.focused().focusClosestNeighbour('west')
+key_binding 'L',  shiftCmd, -> Window.focused().focusClosestNeighbour('east')
