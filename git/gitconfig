@@ -28,6 +28,7 @@
 	cm = commit -m
 	ca = commit --amend
 	cma = commit --amend -m
+	cfx = commit --fixup
 	st = status -s
 	pl = pull --rebase
 	br = branch
