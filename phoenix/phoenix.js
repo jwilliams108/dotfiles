@@ -159,9 +159,9 @@
     } else if (direction === 'right') {
       new_height = FULL_HEIGHT;
       new_y = 0;
-      if (current_position.width !== FIBA_WIDTH + 1) {
-        new_width = FIBA_WIDTH + 1; // prefer slightly larger
-        new_x = FIBB_WIDTH - 1;
+      if (current_position.width !== (GRID_WIDTH - (FIBB_WIDTH + 2))) {
+        new_width = GRID_WIDTH - (FIBB_WIDTH - 2); // prefer slightly larger
+        new_x = FIBB_WIDTH - 2;
       } else {
         new_width = FIBB_WIDTH;
         new_x = FIBA_WIDTH;
