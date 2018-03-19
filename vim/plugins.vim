@@ -418,7 +418,8 @@ nnoremap <leader>R yiw:%s/<C-r>0/
 vnoremap <leader>r y:%s/<C-r>0/
 
 " call  formatters
-nnoremap <silent> <leader>js :%!python -m json.tool<CR>
+nnoremap <silent> <leader>js :%!jq .<CR>
+nnoremap <silent> <leader>jc :%!jq -c .<CR>
 nnoremap <silent> <leader>xm :%!xmllint --format -<CR>
 nnoremap <silent> <leader>pt :%!prettier --print-width 120 --single-quote --trailing-comma all<CR>
 
