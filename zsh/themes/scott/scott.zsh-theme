@@ -91,8 +91,8 @@ prompt_time() {
 
 # build prompt {{{
 
-PROMPT_DIR='[ $(prompt_context)$(prompt_dir)$(prompt_end) ]'
-PROMPT_SIGN='%F{red}➜ %f'
+PROMPT_DIR='[ $(prompt_dir)$(prompt_end) ]'
+PROMPT_SIGN='%F{red}❯%f'
 PROMPT_TIME='[ $(prompt_time) ]'
 
 GIT_PROMPT='$(git_super_status)'

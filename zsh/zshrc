@@ -35,6 +35,8 @@ if ! zgen saved; then
   zgen load "${HOME}/.zsh/plugins/zsh-autosuggestions"
 
   # theme
+  #zgen load "${HOME}/.zsh/themes/pure/async.zsh"
+  #zgen load "${HOME}/.zsh/themes/pure/pure.zsh"
   zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
 
   zgen save

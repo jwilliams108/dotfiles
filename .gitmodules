@@ -190,3 +190,6 @@
 [submodule "vim/pack/bundle/start/vim-asterisk"]
 	path = vim/pack/bundle/start/vim-asterisk
 	url = https://github.com/haya14busa/vim-asterisk
+[submodule "zsh/themes/pure"]
+	path = zsh/themes/pure
+	url = https://github.com/sindresorhus/pure.git
