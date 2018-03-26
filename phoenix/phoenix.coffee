@@ -94,12 +94,13 @@ Window::resizeWindow = (direction) ->
   else if direction == 'right'
     new_height = FULL_HEIGHT
     new_y = 0
-    if current_position.width != (GRID_WIDTH - (FIBB_WIDTH + 2))
-      new_width = (GRID_WIDTH - (FIBB_WIDTH - 2)) # prefer slightly larger
-      new_x = FIBB_WIDTH - 2
-    else
+    adj_x = FIBB_WIDTH - 3
+    if current_position.x == adj_x
       new_width = FIBB_WIDTH
       new_x = FIBA_WIDTH
+    else
+      new_width = GRID_WIDTH - adj_x
+      new_x = adj_x
   else if direction == 'top'
     new_height = FIBA_HEIGHT
     new_y = 0
