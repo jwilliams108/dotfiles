@@ -13,8 +13,8 @@ if [ -d /usr/X11 ]; then
 fi
 
 # texlive
-if [ -d /usr/local/texlive/2016/bin/x86_64-darwin ]; then
-  export PATH=/usr/local/texlive/2016/bin/x86_64-darwin:$PATH
+if [ -d /usr/local/texlive/2017/bin/x86_64-darwin ]; then
+  export PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
 fi
 
 # for nvm
@@ -29,6 +29,11 @@ if [ -d ~/.perl5/perlbrew ]; then
   #export PATH=$HOME/.perl5/perlbrew/bin:$PATH
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 fi
+
+# for php 5.6
+#if [ -d /usr/local/opt/php@5.6 ]; then
+#  export PATH="/usr/local/opt/php@5.6/bin:$PATH"
+#fi
 
 # for homebrew python3/python2
 if [ -d /usr/local/opt/python ]; then
