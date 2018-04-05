@@ -193,3 +193,6 @@
 [submodule "zsh/themes/pure"]
 	path = zsh/themes/pure
 	url = https://github.com/sindresorhus/pure.git
+[submodule "vim/pack/colours/opt/deep"]
+	path = vim/pack/colours/opt/deep
+	url = https://github.com/challenger-deep-theme/vim.git
