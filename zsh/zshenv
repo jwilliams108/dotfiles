@@ -59,6 +59,11 @@ if [ -d /usr/local/opt/postgresql@9.5/bin ]; then
   export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 fi
 
+# for VS Code
+if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
+  export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+fi
+
 # editor and utils
 export EDITOR=vim
 export PAGER=less
