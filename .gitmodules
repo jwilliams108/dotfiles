@@ -196,3 +196,9 @@
 [submodule "vim/pack/colours/opt/deep"]
 	path = vim/pack/colours/opt/deep
 	url = https://github.com/challenger-deep-theme/vim.git
+[submodule "vim/pack/bundle/start/traces.vim"]
+	path = vim/pack/bundle/start/traces.vim
+	url = https://github.com/markonm/traces.vim.git
+[submodule "vim/pack/bundle/start/vim-highlightedyank"]
+	path = vim/pack/bundle/start/vim-highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank.git
