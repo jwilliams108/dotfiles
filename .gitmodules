@@ -1,9 +1,6 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/pack/lang/start/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/vim-gitgutter"]
-	path = vim/pack/lang/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround
@@ -202,3 +199,9 @@
 [submodule "vim/pack/bundle/start/vim-highlightedyank"]
 	path = vim/pack/bundle/start/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank.git
+[submodule "vim/pack/bundle/start/clever-f.vim"]
+	path = vim/pack/bundle/start/clever-f.vim
+	url = https://github.com/rhysd/clever-f.vim.git
+[submodule "vim/pack/lang/start/vim-signify"]
+	path = vim/pack/lang/start/vim-signify
+	url = https://github.com/mhinz/vim-signify.git

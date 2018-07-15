@@ -159,15 +159,14 @@ nmap <silent> <leader>gr  :Gremove<CR>
 "}}}
 
 " ----------------------------------------------------------------------------
-" gitgutter
+" signify
 " ----------------------------------------------------------------------------
 "{{{
 
-highlight clear SignColumn
-highlight GitGutterAdd ctermfg=green
-highlight GitGutterChange ctermfg=yellow
-highlight GitGutterDelete ctermfg=red
-highlight GitGutterChangeDelete ctermfg=yellow
+let g:signify_vcs_list = [ 'git' ]
+
+nmap <leader>gj <plug>(signify-next-hunk)
+nmap <leader>gk <plug>(signify-prev-hunk)
 
 "}}}
 
@@ -375,6 +374,16 @@ omap cm <Plug>Commentary
 let b:lion_squeeze_spaces = 1
 let g:lion_map_right = '<leader>A'
 let g:lion_map_left = '<leader>a'
+
+"}}}
+
+" ----------------------------------------------------------------------------
+" clever_f
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:clever_f_across_no_line = 1
+let g:clever_f_fix_key_direction = 1
 
 "}}}
 
