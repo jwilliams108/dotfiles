@@ -30,18 +30,9 @@ if [ -d ~/.perl5/perlbrew ]; then
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
 fi
 
-# for php 5.6
-#if [ -d /usr/local/opt/php@5.6 ]; then
-#  export PATH="/usr/local/opt/php@5.6/bin:$PATH"
-#fi
-
-# for homebrew python3/python2
-if [ -d /usr/local/opt/python ]; then
-  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-fi
-
-if [ -d /usr/local/opt/python@2 ]; then
-  export PATH="$PATH:/usr/local/opt/python@2/bin"
+# for pyenv/python
+if [ -d ~/.pyenv/shims ]; then
+  export PATH="$HOME/.pyenv/shims:$PATH"
 fi
 
 # for groovy
@@ -52,11 +43,6 @@ fi
 # for rust/cargo
 if [ -d ~/.cargo/bin ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
-fi
-
-# for postgresql@9.5 (homebrew)
-if [ -d /usr/local/opt/postgresql@9.5/bin ]; then
-  export PATH="/usr/local/opt/postgresql@9.5/bin:$PATH"
 fi
 
 # for VS Code
@@ -79,6 +65,3 @@ export HOMEBREW_NO_ANALYTICS=1
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS="--inline-info"
 #export FZF_CTRL_R_OPTS="-e"
-
-# for thefuck
-eval "$(thefuck --alias)"
