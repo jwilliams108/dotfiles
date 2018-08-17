@@ -45,6 +45,11 @@ if [ -d ~/.cargo/bin ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# for composer vendor bins
+if [ -d ~/.composer/vendor/bin ]; then
+  export PATH=$HOME/.composer/vendor/bin:$PATH
+fi
+
 # for VS Code
 if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
