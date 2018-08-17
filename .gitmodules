@@ -205,3 +205,9 @@
 [submodule "vim/pack/lang/start/vim-signify"]
 	path = vim/pack/lang/start/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule "vim/pack/colours/start/vim-hybrid-material"]
+	path = vim/pack/colours/start/vim-hybrid-material
+	url = https://github.com/kristijanhusak/vim-hybrid-material.git
+[submodule "vim/pack/bundle/start/vim-eunuch"]
+	path = vim/pack/bundle/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
