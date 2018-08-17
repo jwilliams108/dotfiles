@@ -164,6 +164,7 @@ nmap <silent> <leader>gr  :Gremove<CR>
 "{{{
 
 let g:signify_vcs_list = [ 'git' ]
+let g:signify_update_on_focusgained = 1
 
 nmap <leader>gj <plug>(signify-next-hunk)
 nmap <leader>gk <plug>(signify-prev-hunk)
