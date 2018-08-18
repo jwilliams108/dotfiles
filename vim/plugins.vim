@@ -303,10 +303,8 @@ map g# <Plug>(asterisk-gz#)
 
 let g:deoplete#enable_at_startup = 1
 
-call deoplete#custom#option('auto_complete', 1)
-
-inoremap <expr><C-g> deoplete#undo_completion()
-inoremap <expr><C-l> deoplete#complete_common_string()
+" Don't autocomplete by default
+call deoplete#custom#option('auto_complete', 0)
 
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
@@ -319,12 +317,18 @@ function! s:check_back_space() abort
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+" refresh, close
+inoremap <expr><C-g> deoplete#refresh()
+inoremap <expr><C-e> deoplete#cancel_popup()
+
 " <BS>: close popup and delete backword char.
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
-" Movement within 'ins-completion-menu'
-inoremap <expr><C-j> pumvisible() ? "\<Down>" : "\<C-j>"
-inoremap <expr><C-k> pumvisible() ? "\<Up>" : "\<C-k>"
+" Movement
+inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <silent><expr><C-l> deoplete#complete_common_string()
 
 "}}}
 
