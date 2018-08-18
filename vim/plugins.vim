@@ -302,9 +302,8 @@ map g# <Plug>(asterisk-gz#)
 "{{{
 
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_yarp = 1
-let g:deoplete#disable_auto_complete = 1
-let g:deoplete#enable_smart_case = 1
+
+call deoplete#custom#option('auto_complete', 1)
 
 inoremap <expr><C-g> deoplete#undo_completion()
 inoremap <expr><C-l> deoplete#complete_common_string()
@@ -330,26 +329,19 @@ inoremap <expr><C-k> pumvisible() ? "\<Up>" : "\<C-k>"
 "}}}
 
 " ----------------------------------------------------------------------------
-" deoplete ternjs
-" ----------------------------------------------------------------------------
-"{{{
-
-let g:deoplete#sources#ternjs#filetypes = [ 'jsx', 'javascript.jsx' ]
-
-"}}}
-
-" ----------------------------------------------------------------------------
 " languageclient
 " ----------------------------------------------------------------------------
 "{{{
 
-" let g:LanguageClient_serverCommands = {
-"     \ 'javascript.jsx': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
-"     \ }
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'python': ['/usr/local/bin/pyls'],
+    \ }
 
-" " Automatically start language servers.
-" let g:LanguageClient_autoStart = 0
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
 
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " nnoremap <silent> gk :call LanguageClient_textDocument_hover()<CR>
 " nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 " nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
