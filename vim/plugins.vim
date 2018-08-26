@@ -92,6 +92,12 @@ let g:jsx_ext_required = 0
 " ----------------------------------------------------------------------------
 "{{{
 
+" appearance
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_statusline_format = ['>> %d', '-- %d', '']
+
+" linters
 let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'javascript': ['eslint'],
@@ -99,24 +105,31 @@ let g:ale_linters = {
 \   'php': ['phpcs'],
 \}
 
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_php_phpcs_standard = 'PSR2'
-let g:ale_statusline_format = ['>> %d', '-- %d', '']
+let g:ale_linters_explicit = 1
 
+let g:ale_php_phpcs_standard = 'PSR12'
+
+" only lint on enter or file save
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_text_changed = 'never'
+
+" disable LSP features
+let g:ale_completion_enabled = 0
+
+" fixers
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'php': ['php-cs-fixer'],
+\}
+
+let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma all'
+
+" keymaps
 nmap <silent> [r <Plug>(ale_previous_wrap)
 nmap <silent> ]r <Plug>(ale_next_wrap)
 
-" only lint on file save
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-
-" fixers
-let g:ale_fixers = { 'javascript': ['prettier'] }
-let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma all'
-
 nmap <silent> <leader>at :ALEToggle<CR>
-nmap <silent> <leader>fm :ALEFix<CR>
+nmap <silent> <leader>af :ALEFix<CR>
 
 "}}}
 
@@ -340,15 +353,16 @@ inoremap <silent><expr><C-l> deoplete#complete_common_string()
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'python': ['/usr/local/bin/pyls'],
+    \ 'php': ['tcp://127.0.0.1:12345'],
     \ }
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" nnoremap <silent> gk :call LanguageClient_textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-" nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <leader>lc :call LanguageClient_contextMenu()<CR>
+nnoremap <silent><leader>lh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent><leader>ld :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent><leader>lr :call LanguageClient_textDocument_rename()<CR>
 
 "}}}
 
