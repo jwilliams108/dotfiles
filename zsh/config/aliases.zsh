@@ -36,3 +36,4 @@ HELPDIR=/usr/local/share/zsh/help
 # dev
 alias gentags='find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort'
 alias inspect='node --inspect-brk'
+alias php56='PATH=/usr/local/opt/php@5.6/bin:"$PATH" php'
