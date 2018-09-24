@@ -83,7 +83,7 @@ nmap <silent> <leader>lS :BufExplorerHorizontalSplit<CR>
 " ----------------------------------------------------------------------------
 "{{{
 
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
 
 "}}}
 
@@ -352,6 +352,8 @@ inoremap <silent><expr><C-l> deoplete#complete_common_string()
 
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ 'python': ['/usr/local/bin/pyls'],
     \ 'php': ['tcp://127.0.0.1:12345'],
     \ }

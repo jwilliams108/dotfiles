@@ -8,3 +8,6 @@ __pycache__
 *.code-workspace
 .tern-port
 .php_cs.cache
+.phpcs-cache
+tmp
+cov
