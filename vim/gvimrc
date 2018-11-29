@@ -8,8 +8,7 @@ scriptencoding utf-8
 set lines=60 columns=180
 
 " font
-" set guifont=Source\ Code\ Pro:h14
-set guifont=Hasklig:h14
+set guifont=Hasklig:h13
 set macligatures
 
 " remove toolbar
@@ -38,6 +37,16 @@ let &t_EI = g:end_insert
 
 "}}}
 
+" ----------------------------------------------------------------------------
+" theme
+" ----------------------------------------------------------------------------
+"{{{
+
+colorscheme hybrid
+set background=dark
+
+"}}}
+"
 " ----------------------------------------------------------------------------
 " Local overrides
 " ----------------------------------------------------------------------------
