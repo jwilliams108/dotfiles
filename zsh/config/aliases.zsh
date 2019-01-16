@@ -37,3 +37,5 @@ HELPDIR=/usr/local/share/zsh/help
 alias gentags='find . -type f -iregex ".*\.js$" -not -path "./node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort'
 alias inspect='node --inspect-brk'
 alias php56='PATH=/usr/local/opt/php@5.6/bin:"$PATH" php'
+alias canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222 --user-data-dir=$HOME/.config/chrome-canary 2>/dev/null"
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir=$HOME/.config/chrome 2>/dev/null"

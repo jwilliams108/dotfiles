@@ -13,14 +13,24 @@ if [ -d /usr/X11 ]; then
 fi
 
 # texlive
-if [ -d /usr/local/texlive/2017/bin/x86_64-darwin ]; then
-  export PATH=/usr/local/texlive/2017/bin/x86_64-darwin:$PATH
+if [ -d /usr/local/texlive/2018/bin/x86_64-darwin ]; then
+  export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
 fi
 
 # for nvm
 if [ -d ~/.nvm ] && [ -d /usr/local/opt/nvm ]; then
   export NVM_DIR=~/.nvm
   source /usr/local/opt/nvm/nvm.sh
+fi
+
+# for php (homebrew)
+if [ -d /usr/local/opt/php@7.2 ]; then
+    export PATH=/usr/local/opt/php@7.2/bin:$PATH
+fi
+
+# for postgresql (homebrew)
+if [ -d /usr/local/opt/postgresql@10 ]; then
+    export PATH=/usr/local/opt/postgresql@10/bin:$PATH
 fi
 
 # for perlbrew
@@ -53,6 +63,14 @@ fi
 # for VS Code
 if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+fi
+
+# Base16 Shell
+if [ -d ~/.config/base16-shell ]; then
+  BASE16_SHELL="$HOME/.config/base16-shell/"
+  [ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+      eval "$("$BASE16_SHELL/profile_helper.sh")"
 fi
 
 # editor and utils
