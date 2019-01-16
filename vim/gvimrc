@@ -5,11 +5,14 @@ scriptencoding utf-8
 " ----------------------------------------------------------------------------
 "{{{
 
-set lines=60 columns=180
+" window
+set lines=999 columns=180
+set fuopt+=maxhorz,maxvert
 
 " font
 set guifont=Hasklig:h13
 set macligatures
+set macthinstrokes
 
 " remove toolbar
 set guioptions-=T

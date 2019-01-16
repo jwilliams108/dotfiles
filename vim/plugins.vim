@@ -101,6 +101,7 @@ let g:ale_statusline_format = ['>> %d', '-- %d', '']
 let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'javascript': ['eslint'],
+\   'typescript': ['tslint'],
 \   'perl': ['perlcritic'],
 \   'php': ['phpcs'],
 \}
@@ -119,6 +120,7 @@ let g:ale_completion_enabled = 0
 " fixers
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
 \   'php': ['php-cs-fixer'],
 \}
 
@@ -354,6 +356,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'typescript.tsx': ['javascript-typescript-stdio'],
     \ 'python': ['/usr/local/bin/pyls'],
     \ 'php': ['tcp://127.0.0.1:12345'],
     \ }
@@ -361,10 +364,11 @@ let g:LanguageClient_serverCommands = {
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1
 
-nnoremap <leader>lc :call LanguageClient_contextMenu()<CR>
-nnoremap <silent><leader>lh :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent><leader>ld :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent><leader>lr :call LanguageClient_textDocument_rename()<CR>
+nnoremap <leader>lcs :LanguageClientStart<CR>
+nnoremap <leader>lcc :call LanguageClient_contextMenu()<CR>
+nnoremap <silent><leader>lch :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent><leader>lcd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent><leader>lcr :call LanguageClient_textDocument_rename()<CR>
 
 "}}}
 
