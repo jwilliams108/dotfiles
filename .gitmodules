@@ -208,3 +208,6 @@
 [submodule "vim/pack/colours/start/vim-hybrid"]
 	path = vim/pack/colours/start/vim-hybrid
 	url = https://github.com/micke/vim-hybrid.git
+[submodule "vim/pack/bundle/start/targets.vim"]
+	path = vim/pack/bundle/start/targets.vim
+	url = https://github.com/wellle/targets.vim.git
