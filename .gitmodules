@@ -41,9 +41,6 @@
 	path = .dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "vim/bundle/vim-hybrid"]
-	path = vim/pack/colours/start/vim-hybrid
-	url = https://github.com/w0ng/vim-hybrid.git
 [submodule "vim/bundle/ftl-vim-syntax"]
 	path = vim/pack/bundle/opt/ftl-vim-syntax
 	url = https://github.com/chaquotay/ftl-vim-syntax.git
@@ -208,3 +205,6 @@
 [submodule "vim/pack/lang/start/yats.vim"]
 	path = vim/pack/lang/start/yats.vim
 	url = https://github.com/HerringtonDarkholme/yats.vim.git
+[submodule "vim/pack/colours/start/vim-hybrid"]
+	path = vim/pack/colours/start/vim-hybrid
+	url = https://github.com/micke/vim-hybrid.git
