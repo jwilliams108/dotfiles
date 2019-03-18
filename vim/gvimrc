@@ -10,7 +10,7 @@ set lines=999 columns=180
 set fuopt+=maxhorz,maxvert
 
 " font
-set guifont=Hasklig:h13
+set guifont=Hasklig:h14
 set macligatures
 set macthinstrokes
 

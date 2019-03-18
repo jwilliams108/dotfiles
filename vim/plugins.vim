@@ -215,10 +215,11 @@ let g:lightline = {
   \   'fileencoding': 'LightLineFileencoding',
   \   'ale': 'ALEGetStatusLine',
   \ },
-  \ 'separator': { 'left': '', 'right': '' },
   \ 'subseparator': { 'left': '|', 'right': '|' },
   \ }
 
+" 'separator': { 'left': '', 'right': '' },
+"
 "let g:lightline_hybrid_style = 'plain'
 
 function! LightLineModified()
