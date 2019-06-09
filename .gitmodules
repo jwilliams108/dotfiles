@@ -181,9 +181,6 @@
 [submodule "zsh/themes/pure"]
 	path = zsh/themes/pure
 	url = https://github.com/sindresorhus/pure.git
-[submodule "vim/pack/colours/opt/deep"]
-	path = vim/pack/colours/opt/deep
-	url = https://github.com/challenger-deep-theme/vim.git
 [submodule "vim/pack/bundle/start/traces.vim"]
 	path = vim/pack/bundle/start/traces.vim
 	url = https://github.com/markonm/traces.vim.git
