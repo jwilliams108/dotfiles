@@ -10,3 +10,4 @@ __pycache__
 .phpcs-cache
 tmp
 cov
+auth.json
