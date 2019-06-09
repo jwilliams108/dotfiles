@@ -17,10 +17,10 @@ nnoremap <leader>; ;
 "{{{
 
 " larger moves
-nmap J 5j
-nmap K 5k
-xmap J 5j
-xmap K 5k
+nmap J <C-u>
+nmap K <C-d>
+nmap H ^
+nmap L $
 
 " emacs-like movement
 cnoremap <C-A> <Home>
@@ -205,8 +205,8 @@ vmap <leader>h <gv
 "nnoremap <leader>B :sbuffer <C-z><S-Tab>
 
 " Move to the previous/next buffer
-nnoremap <PageUp>   :bprevious<CR>
-nnoremap <PageDown> :bnext<CR>
+nnoremap <silent> <PageUp>   :bprevious<CR>
+nnoremap <silent> <PageDown> :bnext<CR>
 
 "nnoremap H :bprevious<CR>
 "nnoremap L :bnext<CR>
