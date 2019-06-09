@@ -23,9 +23,9 @@ if [ -d ~/.nvm ] && [ -d /usr/local/opt/nvm ]; then
   source /usr/local/opt/nvm/nvm.sh
 fi
 
-# for php (homebrew)
-if [ -d /usr/local/opt/php@7.2 ]; then
-    export PATH=/usr/local/opt/php@7.2/bin:$PATH
+# for phpbrew
+if [ -d ~/.phpbrew ]; then
+    source $HOME/.phpbrew/bashrc
 fi
 
 # for postgresql (homebrew)
