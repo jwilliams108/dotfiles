@@ -191,7 +191,7 @@
 	path = vim/pack/bundle/start/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank.git
 [submodule "vim/pack/bundle/start/clever-f.vim"]
-	path = vim/pack/bundle/start/clever-f.vim
+	path = vim/pack/bundle/opt/clever-f.vim
 	url = https://github.com/rhysd/clever-f.vim.git
 [submodule "vim/pack/lang/start/vim-signify"]
 	path = vim/pack/lang/start/vim-signify
@@ -211,3 +211,6 @@
 [submodule "vim/pack/bundle/start/targets.vim"]
 	path = vim/pack/bundle/start/targets.vim
 	url = https://github.com/wellle/targets.vim.git
+[submodule "vim/pack/bundle/start/quickfix-reflector.vim"]
+	path = vim/pack/bundle/start/quickfix-reflector.vim
+	url = https://github.com/stefandtw/quickfix-reflector.vim.git
