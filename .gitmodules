@@ -211,3 +211,9 @@
 [submodule "vim/pack/bundle/start/quickfix-reflector.vim"]
 	path = vim/pack/bundle/start/quickfix-reflector.vim
 	url = https://github.com/stefandtw/quickfix-reflector.vim.git
+[submodule "vim/pack/colours/opt/vim-colors-pencil"]
+	path = vim/pack/colours/opt/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil.git
+[submodule "vim/pack/colours/opt/lightline-theme-pencil"]
+	path = vim/pack/colours/opt/lightline-theme-pencil
+	url = https://github.com/mikker/lightline-theme-pencil.git
