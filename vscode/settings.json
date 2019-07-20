@@ -1,0 +1,94 @@
+{
+  "editor.fontFamily": "Hasklig",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.parameterHints.enabled": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "git.rebaseWhenSync": true,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "php.executablePath": "/usr/local/bin/php",
+  "php.suggest.basic": false,
+  "phpcs.executablePath": "/usr/local/bin/phpcs",
+  "phpcs.standard": "PSR2",
+  "php-cs-fixer.executablePath": "/usr/local/bin/php-cs-fixer",
+  "telemetry.enableTelemetry": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.easymotion": true,
+  "vim.easymotionMarkerFontFamily": "Hasklig",
+  "vim.easymotionMarkerFontSize": "13",
+  "vim.hlsearch": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["leader", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["leader", "d"],
+      "commands": ["workbench.view.debug"]
+    },
+    {
+      "before": ["leader", "g"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["leader", "c"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      "before": ["leader", "f"],
+      "after": ["leader", "leader", "f"]
+    },
+    {
+      "before": ["leader", "F"],
+      "after": ["leader", "leader", "F"]
+    },
+    {
+      "before": ["leader", "t"],
+      "after": ["leader", "leader", "t"]
+    },
+    {
+      "before": ["leader", "T"],
+      "after": ["leader", "leader", "T"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["leader", "c"],
+      "commands": ["editor.action.blockComment"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.substituteGlobalFlag": true,
+  "vim.visualstar": true,
+  "workbench.colorTheme": "Hybrid Next Plus",
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": false,
+  "breadcrumbs.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false
+}
