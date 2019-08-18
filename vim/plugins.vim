@@ -20,45 +20,6 @@ nmap \ :Grepper -tool ag -grepprg ag --vimgrep<CR>
 "}}}
 
 " ----------------------------------------------------------------------------
-" denite
-" ----------------------------------------------------------------------------
-"{{{
-
-call denite#custom#option('default', {  'prompt': '❯'  })
-
-if executable('ag')
-    call denite#custom#var('file_rec', 'command', ['ag', '-l', '--follow', '--nocolor', '--nogroup', '-g', ''])
-endif
-
-" key maps
-call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>', 'noremap')
-call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
-call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
-call denite#custom#map('normal', '<Esc>', '<NOP>', 'noremap')
-call denite#custom#map('normal', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
-call denite#custom#map('normal', '<C-e>', '<denite:do_action:execute>', 'noremap')
-
-highlight link deniteMatchedChar Special
-
-nnoremap <C-p> :<C-u>Denite file_rec -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
-nnoremap <leader>ls :<C-u>Denite buffer -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
-nnoremap <leader>ll :<C-u>Denite line -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
-
-"}}}
-
-" ----------------------------------------------------------------------------
-" denite extras, git, etc.
-" ----------------------------------------------------------------------------
-"{{{
-
-nnoremap <leader>hs :<C-u>Denite history:search -mode=normal -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
-nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
-nnoremap <leader>gl :<C-u>Denite gitlog -highlight-mode-insert=Search -highlight-mode-normal=Search<CR>
-
-"}}}
-
-" ----------------------------------------------------------------------------
 " tagbar
 " ----------------------------------------------------------------------------
 "{{{
@@ -438,6 +399,22 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>ls :Buffers<CR>
+nnoremap <leader>ll :Lines<CR>
+nnoremap <leader>lg :GFiles<CR>
+nnoremap <leader>lh :History<CR>
+nnoremap <leader>lc :Commands<CR>
+
+" Fuzzy search for Git commits. Requires tpope/vim-fugitive
+"let g:fzf_commits_log_options = '--graph --color=always
+"  \ --format="%C(yellow)%h%C(red)%d%C(reset)
+"  \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
+
+nnoremap <leader>gls :Commits<CR>
+nnoremap <leader>glc :BCommits<CR>
 
 "}}}
 
