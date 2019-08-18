@@ -20,15 +20,6 @@ nmap \ :Grepper -tool ag -grepprg ag --vimgrep<CR>
 "}}}
 
 " ----------------------------------------------------------------------------
-" tagbar
-" ----------------------------------------------------------------------------
-"{{{
-
-nmap <leader>lt :TagbarToggle<CR>
-
-"}}}
-
-" ----------------------------------------------------------------------------
 " BufExplorer
 " ----------------------------------------------------------------------------
 "{{{
@@ -407,6 +398,7 @@ nnoremap <leader>ll :Lines<CR>
 nnoremap <leader>lg :GFiles<CR>
 nnoremap <leader>lh :History<CR>
 nnoremap <leader>lc :Commands<CR>
+nnoremap <leader>lt :BTags<CR>
 
 " Fuzzy search for Git commits. Requires tpope/vim-fugitive
 "let g:fzf_commits_log_options = '--graph --color=always
