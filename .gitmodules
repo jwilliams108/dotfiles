@@ -178,9 +178,6 @@
 [submodule "vim/pack/bundle/start/vim-asterisk"]
 	path = vim/pack/bundle/start/vim-asterisk
 	url = https://github.com/haya14busa/vim-asterisk
-[submodule "zsh/themes/pure"]
-	path = zsh/themes/pure
-	url = https://github.com/sindresorhus/pure.git
 [submodule "vim/pack/bundle/start/traces.vim"]
 	path = vim/pack/bundle/start/traces.vim
 	url = https://github.com/markonm/traces.vim.git
@@ -214,3 +211,9 @@
 [submodule "vim/pack/colours/opt/lightline-theme-pencil"]
 	path = vim/pack/colours/opt/lightline-theme-pencil
 	url = https://github.com/mikker/lightline-theme-pencil.git
+[submodule "vim/bundle/deoplete-phpactor"]
+	path = vim/bundle/deoplete-phpactor
+	url = https://github.com/kristijanhusak/deoplete-phpactor.git
+[submodule "vim/pack/lang/start/phpactor"]
+	path = vim/pack/lang/start/phpactor
+	url = https://github.com/phpactor/phpactor.git
