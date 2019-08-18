@@ -97,9 +97,6 @@
 [submodule "vim/bundle/base16-vim"]
 	path = vim/pack/colours/start/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
-[submodule "vim/bundle/bufexplorer"]
-	path = vim/pack/bundle/opt/bufexplorer
-	url = https://github.com/jlanzarotta/bufexplorer.git
 [submodule "vim/bundle/vim-slash"]
 	path = vim/pack/bundle/start/vim-slash
 	url = https://github.com/junegunn/vim-slash.git
