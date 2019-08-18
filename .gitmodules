@@ -149,10 +149,10 @@
 	path = vim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
 [submodule "vim/bundle/nvim-yarp"]
-	path = vim/pack/bundle/start/nvim-yarp
+	path = vim/bundle/nvim-yarp
 	url = https://github.com/roxma/nvim-yarp.git
 [submodule "vim/bundle/vim-hug-neovim-rpc"]
-	path = vim/pack/bundle/start/vim-hug-neovim-rpc
+	path = vim/bundle/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc.git
 [submodule "vim/bundle/deoplete.nvim"]
 	path = vim/bundle/deoplete.nvim
