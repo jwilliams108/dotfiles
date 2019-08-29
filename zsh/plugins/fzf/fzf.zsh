@@ -1,56 +1,31 @@
-# fe [FUZZY PATTERN] - Open the selected file with the default editor
-#   - Bypass fuzzy finder if there's only one match (--select-1)
-#   - Exit if there's no match (--exit-0)
-function fe() {
-  local file
-  file=$(fzf --query="$1" --select-1 --exit-0)
-  [ -n "$file" ] && ${EDITOR:-vim} "$file"
+# fv - edit given file or search in recently used files
+function fv {
+    local file
+    file="$(fasd -Rfl "$*" | fzf -1 -0 --no-sort +m)" && [ -n "$file" ] && ${EDITOR:-vim} "${file}" || return 1
 }
 
-# Modified version where you can press
-#   - CTRL-O to open with `open` command,
-#   - CTRL-E or Enter key to open with the $EDITOR
-function fo() {
-  local out file key
-  out=$(fzf-tmux --query="$1" --exit-0 --expect=ctrl-o,ctrl-e)
-  key=$(head -1 <<< "$out")
-  file=$(head -2 <<< "$out" | tail -1)
-  if [ -n "$file" ]; then
-    [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
-  fi
+# fm - edit given file using mvim or search in recently used files
+function fm {
+    local file
+    file="$(fasd -Rfl "$*" | fzf -1 -0 --no-sort +m)" && [ -n "$file" ] && mvim "${file}" || return 1
 }
 
-# searching file contents
-alias fg='ag --nobreak --nonumbers --noheading . | fzf'
-
-# fd - cd to selected directory
-function fd() {
-  local dir
-  dir=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) && cd "$dir"
-}
-
-# fda - including hidden directories
-function fda() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
-
-# ff - change to directory containg file
+# ff - change into directory containing given file or search in recently used files
 function ff() {
-  local dir
-  dir=$(find ${1:-.} -type f -not -path './.git/*' 2> /dev/null | fzf +m) && cd "$(dirname $dir)"
+  local file
+  file=$(fasd -Rfl "$*" | fzf -1 -0 --no-sort +m) && cd "$(dirname $file)" || return 1
 }
 
-# ffa - change to directory containg file (with fasd)
-function ffa() {
+# fz - change into given dir or search in recently used dirs
+function fz() {
   local dir
-  dir=$(fasd -Rfl | fzf --no-sort) && cd "$(dirname $dir)"
+  dir=$(fasd -Rdl "$*" | fzf -1 -0 --no-sort +m) && cd "${dir}" || return 1
 }
 
-# fj - changing directory with fasd
-function fj() {
+# fz - change into given dir and open in mvim or search in recently used dirs
+function fmz() {
   local dir
-  dir=$(fasd -Rdl | sed "s:$HOME:~:" | fzf --no-sort | sed "s:~:$HOME:") && cd "$dir"
+  dir=$(fasd -Rdl "$*" | fzf -1 -0 --no-sort +m) && cd "${dir}" && mvim . || return 1
 }
 
 # fh - repeat history

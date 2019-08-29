@@ -24,9 +24,11 @@ alias tmux='tmux -u'
 alias mrem='mvim --remote-silent'
 alias mtab='mvim -p --remote-tab-silent'
 
-# fasd
-alias j='z'
-alias m='d -e mvim'
+# fasd/fzf
+alias v='fv'
+alias m='fm'
+alias j='fz'
+alias mj='fmz'
 
 # help
 unalias run-help
