@@ -12,6 +12,7 @@
 	default = upstream
 [pull]
 	default = current
+	rebase = true
 [help]
 	autocorrect = 1
 [diff]
@@ -45,14 +46,14 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-	le = log --oneline --decorate
-	fl = log -u
-	hist = log --color --graph --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+	lgl = log --pretty=format:"%C(auto)[%h:%ad]\\ %an\\ %d%n%s%n%w(72,4,4)%b" --date=short --graph --decorate
+	his = log --pretty=format:"%C(auto)[%h:%ad]\\ %s%d%C(blue)\\ <%an>%C(auto)\\ " --date=short
+	ls = !git his --decorate --graph # full short log
+	lld = !git ls --date=relative
+	ll = !git ls --stat # log including which files changed
+	lst = !git ls --numstat
+	lp = !git ls -p # log including patch
+	lbr = !git ls --all --simplify-by-decoration # show branch relationships
 	contrib = shortlog -n -s
 	dl = "!git ll -1"
 	dlc = diff --cached HEAD^
