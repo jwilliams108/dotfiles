@@ -2,9 +2,15 @@
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
-# for gnu bin on osx
+# for gnu bin, sed and grep on osx
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
   export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+fi
+if [ -d /usr/local/opt/grep/libexec/gnubin ]; then
+  export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
+fi
+if [ -d /usr/local/opt/gnu-sed/libexec/gnubin ]; then
+  export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 fi
 
 # for XQuartz
@@ -13,8 +19,8 @@ if [ -d /usr/X11 ]; then
 fi
 
 # texlive
-if [ -d /usr/local/texlive/2018/bin/x86_64-darwin ]; then
-  export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
+if [ -d /usr/local/texlive/2020/bin/x86_64-darwin ]; then
+  export PATH=/usr/local/texlive/2020/bin/x86_64-darwin:$PATH
 fi
 
 # for nvm
@@ -28,31 +34,11 @@ if [ -d ~/.phpbrew ]; then
     source $HOME/.phpbrew/bashrc
 fi
 
-# for postgresql (homebrew)
-if [ -d /usr/local/opt/postgresql@10 ]; then
-    export PATH=/usr/local/opt/postgresql@10/bin:$PATH
-fi
-
 # for perlbrew
 if [ -d ~/.perl5/perlbrew ]; then
   source $HOME/.perl5/perlbrew/etc/bashrc
   #export PATH=$HOME/.perl5/perlbrew/bin:$PATH
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
-fi
-
-# for pyenv/python
-if [ -d ~/.pyenv/shims ]; then
-  export PATH="$HOME/.pyenv/shims:$PATH"
-fi
-
-# for groovy
-if [ -d /usr/local/opt/groovy ]; then
-  export GROOVY_HOME=/usr/local/opt/groovy/libexec
-fi
-
-# for rust/cargo
-if [ -d ~/.cargo/bin ]; then
-  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 # for composer vendor bins
