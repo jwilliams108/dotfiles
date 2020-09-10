@@ -29,6 +29,15 @@ let g:jsx_ext_required = 1
 "}}}
 
 " ----------------------------------------------------------------------------
+" vim-vue
+" ----------------------------------------------------------------------------
+"{{{
+
+let g:vue_pre_processors = []
+
+"}}}
+
+" ----------------------------------------------------------------------------
 " ale
 " ----------------------------------------------------------------------------
 "{{{
@@ -42,7 +51,7 @@ let g:ale_statusline_format = ['>> %d', '-- %d', '']
 let g:ale_linters = {
 \   'css': ['stylelint'],
 \   'javascript': ['eslint'],
-\   'typescript': ['tslint'],
+\   'typescript': ['eslint'],
 \   'perl': ['perlcritic'],
 \   'php': ['phpcs'],
 \}
@@ -60,12 +69,10 @@ let g:ale_completion_enabled = 0
 
 " fixers
 let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'php': ['php-cs-fixer'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'php': ['php_cs_fixer'],
 \}
-
-let g:ale_javascript_prettier_options = '--print-width 120 --single-quote --trailing-comma all'
 
 " keymaps
 nmap <silent> [r <Plug>(ale_previous_wrap)
@@ -294,6 +301,8 @@ inoremap <silent><expr><C-l> deoplete#complete_common_string()
 " ----------------------------------------------------------------------------
 "{{{
 
+set rtp+=~/.dotfiles/vim/pack/lang/start/LanguageClient-neovim
+
 let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
@@ -303,8 +312,8 @@ let g:LanguageClient_serverCommands = {
     \ 'php': ['tcp://127.0.0.1:12345'],
     \ }
 
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+" don't automatically start language servers.
+let g:LanguageClient_autoStart = 0
 
 nnoremap <leader>lcs :LanguageClientStart<CR>
 nnoremap <leader>lcc :call LanguageClient_contextMenu()<CR>
