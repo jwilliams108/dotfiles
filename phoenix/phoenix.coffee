@@ -12,8 +12,8 @@ Phoenix.set
 # Grid Settings
 MARGIN_X     = 3
 MARGIN_Y     = 3
-GRID_WIDTH   = 21
-GRID_HEIGHT  = 21
+GRID_WIDTH   = 24
+GRID_HEIGHT  = 24
 GRID_RATIO   = 1.618
 GRID_A_RATIO = 1 / GRID_RATIO
 GRID_B_RATIO = 1 - GRID_A_RATIO
@@ -96,8 +96,8 @@ Window::resizeWindow = (direction) ->
     new_y = 0
     adj_x = FIBB_WIDTH - 3
     if current_position.x == adj_x
-      new_width = FIBB_WIDTH
-      new_x = FIBA_WIDTH
+      new_width = HALF_WIDTH
+      new_x = HALF_WIDTH
     else
       new_width = GRID_WIDTH - adj_x
       new_x = adj_x
