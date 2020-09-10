@@ -202,3 +202,6 @@
 [submodule "vim/pack/lang/start/phpactor"]
 	path = vim/pack/lang/start/phpactor
 	url = https://github.com/phpactor/phpactor.git
+[submodule "vim/pack/lang/start/vim-vue"]
+	path = vim/pack/lang/start/vim-vue
+	url = https://github.com/posva/vim-vue
