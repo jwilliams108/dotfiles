@@ -4,6 +4,7 @@ node_modules/
 tags
 __pycache__
 .vscode
+.idea
 *.code-workspace
 .tern-port
 .php_cs.cache

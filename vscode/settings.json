@@ -2,7 +2,7 @@
   "editor.fontFamily": "Hasklig",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
   "editor.parameterHints.enabled": false,
   "editor.renderWhitespace": "boundary",
@@ -23,151 +23,86 @@
   "telemetry.enableTelemetry": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "Hasklig",
-  "vim.easymotionMarkerFontSize": "13",
   "vim.hlsearch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        ";"
-      ],
-      "after": [
-        ":"
-      ]
+      "before": [";"],
+      "after": [":"]
     },
     {
-      "before": [
-        "leader",
-        "p"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
+      "before": ["leader", "p"],
+      "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": [
-        "leader",
-        "e"
-      ],
-      "commands": [
-        "workbench.view.explorer"
-      ]
+      "before": ["leader", "e"],
+      "commands": ["workbench.view.explorer"]
     },
     {
-      "before": [
-        "leader",
-        "d"
-      ],
-      "commands": [
-        "workbench.view.debug"
-      ]
+      "before": ["leader", "d"],
+      "commands": ["workbench.view.debug"]
     },
     {
-      "before": [
-        "leader",
-        "g"
-      ],
-      "commands": [
-        "workbench.view.scm"
-      ]
+      "before": ["leader", "g"],
+      "commands": ["workbench.view.scm"]
     },
     {
-      "before": [
-        "<C-l>"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": ["<C-l>"],
+      "commands": [":nohl"]
     },
     {
-      "before": [
-        "leader",
-        "c"
-      ],
-      "commands": [
-        "editor.action.commentLine"
-      ]
+      "before": ["leader", "c"],
+      "commands": ["editor.action.commentLine"]
     },
     {
-      "before": [
-        "leader",
-        "f"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "f"
-      ]
+      "before": ["leader", "f"],
+      "after": ["leader", "leader", "f"]
     },
     {
-      "before": [
-        "leader",
-        "F"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "F"
-      ]
+      "before": ["leader", "F"],
+      "after": ["leader", "leader", "F"]
     },
     {
-      "before": [
-        "leader",
-        "t"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "t"
-      ]
+      "before": ["leader", "t"],
+      "after": ["leader", "leader", "t"]
     },
     {
-      "before": [
-        "leader",
-        "T"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "T"
-      ]
+      "before": ["leader", "T"],
+      "after": ["leader", "leader", "T"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        ">"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
     },
     {
-      "before": [
-        "<"
-      ],
-      "commands": [
-        "editor.action.outdentLines"
-      ]
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
     },
     {
-      "before": [
-        "leader",
-        "c"
-      ],
-      "commands": [
-        "editor.action.blockComment"
-      ]
+      "before": ["leader", "c"],
+      "commands": ["editor.action.blockComment"]
     }
   ],
   "vim.leader": "<space>",
-  "vim.substituteGlobalFlag": true,
+  "vim.gdefault": true,
   "vim.visualstar": true,
   "workbench.colorTheme": "Hybrid Next Plus",
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": false,
   "breadcrumbs.enabled": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.formatOnSaveTimeout": 5000,
-  "window.zoomLevel": 0
+  "window.zoomLevel": 0,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

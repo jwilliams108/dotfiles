@@ -30,7 +30,7 @@ uptime=$(uptime | sed 's/^.*up/up/')
 shell=$(/usr/local/bin/zsh --version | awk '{print $1, $2}')
 terminal="xterm-256color"
 cpu=$(sysctl -n machdep.cpu.brand_string)
-packagehandler="`/usr/local/bin/brew list -l | wc -l | awk '{print $1 }'`"
+packagehandler="`/usr/local/bin/brew list -1 --formula | wc -l`"
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
 cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')
