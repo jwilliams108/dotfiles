@@ -158,7 +158,7 @@
 	path = vim/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "vim/bundle/LanguageClient-neovim"]
-	path = vim/pack/lang/start/LanguageClient-neovim
+	path = vim/pack/lang/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim.git
 [submodule "vim/pack/bundle/start/vim-asterisk"]
 	path = vim/pack/bundle/start/vim-asterisk
@@ -205,3 +205,6 @@
 [submodule "vim/pack/lang/start/vim-vue"]
 	path = vim/pack/lang/start/vim-vue
 	url = https://github.com/posva/vim-vue
+[submodule "vim/pack/bundle/start/vim-peekaboo"]
+	path = vim/pack/bundle/start/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo.git
