@@ -31,13 +31,13 @@ if ! zgen saved; then
 
   # local plugins
   zgen load "${HOME}/.zsh/plugins/fzf"
-  zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
   zgen load "${HOME}/.zsh/plugins/zsh-autosuggestions"
+  #zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
 
   # theme
   #zgen load "${HOME}/.zsh/themes/pure/async.zsh"
   #zgen load "${HOME}/.zsh/themes/pure/pure.zsh"
-  zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
+  #zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
 
   zgen save
 fi
@@ -53,19 +53,21 @@ done
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] &&  source $HOME/.zshrc.local
 
+eval "$(starship init zsh)"
+
 #}}}
 
 # welcome message {{{
 
 if [[ "$(uname -o)" == 'Darwin' ]]; then
-  echo -e "Distro: OS X $(sw_vers -productVersion)"
+  echo -e "$fg[yellow]Distro:$reset_color OS X $fg[cyan]$(sw_vers -productVersion)$reset_color"
 else
-  echo -e "Distro: $(uname -io)"
+  echo -e "$fg[yellow]Distro:$reset_color $(uname -io)"
 fi
-echo -e "Kernel: $(uname -smr)"
-echo -e "Shell:  $(zsh --version)"
-echo -e "Uptime: $(uptime | sed 's/^.*up/up/' | sed -e 's/  */ /g')"
-echo -ne "Current Time: "; date
+echo -e "$fg[yellow]Kernel:$reset_color $(uname -smr)"
+echo -e "$fg[yellow]Shell:$reset_color $(zsh --version)"
+echo -e "$fg[yellow]Uptime:$reset_color $(uptime | sed 's/^.*up/up/' | sed -e 's/  */ /g')"
+echo -ne "$fg[yellow]Current Time:$reset_color "; date
 
 #}}}
 

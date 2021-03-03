@@ -29,16 +29,16 @@ if [ -d ~/.nvm ] && [ -d /usr/local/opt/nvm ]; then
   source /usr/local/opt/nvm/nvm.sh
 fi
 
-# for phpbrew
-if [ -d ~/.phpbrew ]; then
-    source $HOME/.phpbrew/bashrc
-fi
-
 # for perlbrew
 if [ -d ~/.perl5/perlbrew ]; then
   source $HOME/.perl5/perlbrew/etc/bashrc
   #export PATH=$HOME/.perl5/perlbrew/bin:$PATH
   export PERLBREW_ROOT=$HOME/.perl5/perlbrew
+fi
+
+# for pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi
 
 # for composer vendor bins
@@ -64,13 +64,22 @@ export EDITOR=vim
 export PAGER=less
 export COPYFILE_DISABLE=1
 
+# prevent slowdowns on large pastes into terminal
+export ZSH_HIGHLIGHT_MAXLENGTH=60
+
 # disable oh-my-zsh updates
 export DISABLE_AUTO_UPDATE=true
 
 # homebrew stuff
 export HOMEBREW_NO_ANALYTICS=1
 
+# starship prompt
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
 # fzf options
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS="--inline-info"
 #export FZF_CTRL_R_OPTS="-e"
+
+# GPG
+export GPG_TTY=$(tty)
