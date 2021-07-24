@@ -184,9 +184,6 @@
 [submodule "vim/pack/colours/opt/lightline-theme-pencil"]
 	path = vim/pack/colours/opt/lightline-theme-pencil
 	url = https://github.com/mikker/lightline-theme-pencil.git
-[submodule "vim/pack/lang/start/phpactor"]
-	path = vim/pack/lang/start/phpactor
-	url = https://github.com/phpactor/phpactor.git
 [submodule "vim/pack/lang/start/vim-vue"]
 	path = vim/pack/lang/start/vim-vue
 	url = https://github.com/posva/vim-vue
