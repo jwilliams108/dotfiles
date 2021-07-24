@@ -145,12 +145,6 @@
 [submodule "vim/pack/colours/start/vim-hybrid"]
 	path = vim/pack/colours/start/vim-hybrid
 	url = https://github.com/micke/vim-hybrid.git
-[submodule "vim/pack/bundle/start/targets.vim"]
-	path = vim/pack/bundle/start/targets.vim
-	url = https://github.com/wellle/targets.vim.git
-[submodule "vim/pack/bundle/start/quickfix-reflector.vim"]
-	path = vim/pack/bundle/start/quickfix-reflector.vim
-	url = https://github.com/stefandtw/quickfix-reflector.vim.git
 [submodule "vim/pack/colours/opt/vim-colors-pencil"]
 	path = vim/pack/colours/opt/vim-colors-pencil
 	url = https://github.com/reedes/vim-colors-pencil.git
