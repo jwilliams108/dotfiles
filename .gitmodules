@@ -22,12 +22,6 @@
 [submodule "vim/bundle/gitv"]
 	path = vim/pack/lang/start/gitv
 	url = https://github.com/gregsexton/gitv
-[submodule "vim/bundle/targets.vim"]
-	path = vim/pack/bundle/opt/targets.vim
-	url = https://github.com/wellle/targets.vim
-[submodule "vim/bundle/scss-syntax.vim"]
-	path = vim/pack/bundle/opt/scss-syntax.vim
-	url = https://github.com/cakebaker/scss-syntax.vim
 [submodule "vim/bundle/html5.vim"]
 	path = vim/pack/lang/start/html5.vim
 	url = https://github.com/othree/html5.vim
@@ -41,9 +35,6 @@
 	path = .dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule "vim/bundle/ftl-vim-syntax"]
-	path = vim/pack/bundle/opt/ftl-vim-syntax
-	url = https://github.com/chaquotay/ftl-vim-syntax.git
 [submodule "vim/bundle/undotree"]
 	path = vim/pack/bundle/start/undotree
 	url = https://github.com/mbbill/undotree.git
@@ -53,9 +44,6 @@
 [submodule "vim/bundle/vim-vinegar"]
 	path = vim/pack/bundle/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
-[submodule "vim/bundle/vim-mustache-handlebars"]
-	path = vim/pack/bundle/opt/vim-mustache-handlebars
-	url = https://github.com/mustache/vim-mustache-handlebars.git
 [submodule "vim/bundle/lightline.vim"]
 	path = vim/pack/bundle/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
@@ -91,18 +79,12 @@
 	path = vim/pack/lang/start/ale
 	url = https://github.com/w0rp/ale.git
 	ignore = dirty
-[submodule "vim/bundle/ListToggle"]
-	path = vim/pack/bundle/opt/ListToggle
-	url = https://github.com/sunaku/ListToggle.git
 [submodule "vim/bundle/base16-vim"]
 	path = vim/pack/colours/start/base16-vim
 	url = https://github.com/chriskempson/base16-vim.git
 [submodule "vim/bundle/vim-slash"]
 	path = vim/pack/bundle/start/vim-slash
 	url = https://github.com/junegunn/vim-slash.git
-[submodule "vim/bundle/vim-coffee-script"]
-	path = vim/pack/bundle/opt/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "vim/bundle/vim-sort-motion"]
 	path = vim/pack/bundle/start/vim-sort-motion
 	url = https://github.com/christoomey/vim-sort-motion.git
@@ -130,12 +112,6 @@
 [submodule "vim/bundle/vim-lion"]
 	path = vim/pack/bundle/start/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
-[submodule "vim/bundle/vim-qf"]
-	path = vim/pack/bundle/opt/vim-qf
-	url = https://github.com/romainl/vim-qf
-[submodule "vim/bundle/splitjoin.vim"]
-	path = vim/pack/bundle/opt/splitjoin.vim
-	url = https://github.com/AndrewRadev/splitjoin.vim
 [submodule "vim/bundle/vim-easygit"]
 	path = vim/pack/lang/start/vim-easygit
 	url = https://github.com/neoclide/vim-easygit.git
@@ -157,9 +133,6 @@
 [submodule "vim/pack/bundle/start/vim-highlightedyank"]
 	path = vim/pack/bundle/start/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank.git
-[submodule "vim/pack/bundle/start/clever-f.vim"]
-	path = vim/pack/bundle/opt/clever-f.vim
-	url = https://github.com/rhysd/clever-f.vim.git
 [submodule "vim/pack/lang/start/vim-signify"]
 	path = vim/pack/lang/start/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
