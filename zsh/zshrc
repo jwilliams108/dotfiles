@@ -35,6 +35,7 @@ if ! zgen saved; then
   #zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
 
   # theme
+  zgen load romkatv/powerlevel10k powerlevel10k
   #zgen load "${HOME}/.zsh/themes/pure/async.zsh"
   #zgen load "${HOME}/.zsh/themes/pure/pure.zsh"
   #zgen load "${HOME}/.zsh/themes/scott/scott.zsh-theme"
@@ -46,14 +47,13 @@ fi
 
 # modularised config {{{
 
-for config_file (history coloured-man-pages keybindings aliases); do
+for config_file (history coloured-man-pages keybindings aliases misc); do
   source $HOME/.zsh/config/$config_file.zsh
 done
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.zshrc.local ] &&  source $HOME/.zshrc.local
-
-eval "$(starship init zsh)"
 
 #}}}
 

@@ -17,9 +17,6 @@ alias bup='brew update'
 alias bcup='brew cleanup'
 alias bout='brew outdated'
 
-# tmux
-alias tmux='tmux -u'
-
 # macvim
 alias mrem='mvim --remote-silent'
 alias mtab='mvim -p --remote-tab-silent'
@@ -29,6 +26,9 @@ alias v='fv'
 alias m='fm'
 alias j='fz'
 alias mj='fmz'
+
+# phpstan
+alias phpstan='docker run -v $PWD:/app --rm ghcr.io/phpstan/phpstan'
 
 # help
 unalias run-help
