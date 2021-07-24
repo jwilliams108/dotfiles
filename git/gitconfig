@@ -5,22 +5,24 @@
 # core {{{
 [core]
 	excludesfile = ~/.gitignore
-	pager = less -F -X
 # }}}
 # misc {{{
+[help]
+	autocorrect = 1
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
 [push]
 	default = upstream
 [pull]
 	default = current
 	rebase = true
-[help]
-	autocorrect = 1
-[diff]
-	tool = gvimdiff
-[difftool]
-	prompt = false
-[merge]
-	tool = gvimdiff
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
 # }}}
 # alias {{{
 [alias]
@@ -28,12 +30,19 @@
 	ci = commit
 	cm = commit -m
 	ca = commit --amend
+	car = commit --amend --no-edit
 	cma = commit --amend -m
 	cfx = commit --fixup
 	st = status -s
 	pl = pull --rebase
+	pf = push --force-with-lease
+	pt = push --tags
+	mff = merge --ff-only
 	br = branch
 	chp = cherry-pick
+	f = fetch
+	fp = fetch --prune
+	fap = fetch --all --prune
 	diff = diff --word-diff
 	d = diff
 	dc = diff --cached
@@ -43,6 +52,8 @@
 	rh = reset --hard
 	rhe = reset HEAD
 	rc = rebase --continue
+	re = restore
+	res = restore --staged
 	sl = stash list
 	sa = stash apply
 	ss = stash save
@@ -60,10 +71,18 @@
 	lr  = "!f() { git ll "$1"^.."$1"; }; f"
 	dr  = "!f() { git diff "$1"^.."$1"; }; f"
 # }}}
-# git-lfs {{{
+# extra {{{
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[delta]
+	line-numbers = true
+	minus-emph-style = normal "#80002a"
+	minus-style = normal "#330011"
+	navigate = true
+	plus-emph-style = syntax "#003300"
+	plus-style = syntax "#001a00"
+	syntax-theme = Nord
 # }}}
