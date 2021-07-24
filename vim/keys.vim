@@ -194,26 +194,9 @@ vmap <leader>h <gv
 " ----------------------------------------------------------------------------
 "{{{
 
-" using Denite buffer and BufExplorer to handle many of these now
-
-" list buffers then wait for input to switch
-"nnoremap <leader>lb :ls<CR>:b<Space>
-"nnoremap <leader>ld :ls<CR>:bd<Space>
-"nnoremap gb :ls<CR>:vert sb<Space>
-
-"nnoremap <leader>b :buffer <C-z><S-Tab>
-"nnoremap <leader>B :sbuffer <C-z><S-Tab>
-
 " Move to the previous/next buffer
 nnoremap <silent> <PageUp>   :bprevious<CR>
 nnoremap <silent> <PageDown> :bnext<CR>
-
-"nnoremap H :bprevious<CR>
-"nnoremap L :bnext<CR>
-
-" Replace remapped H and L
-"nnoremap + H
-"nnoremap _ L
 
 "}}}
 
