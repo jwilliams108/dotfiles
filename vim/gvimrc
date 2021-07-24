@@ -45,8 +45,8 @@ let &t_EI = g:end_insert
 " ----------------------------------------------------------------------------
 "{{{
 
-colorscheme hybrid
 set background=dark
+colorscheme hybrid
 
 "}}}
 "
