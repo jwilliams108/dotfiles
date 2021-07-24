@@ -261,33 +261,6 @@ map g# <Plug>(asterisk-gz#)
 "}}}
 
 " ----------------------------------------------------------------------------
-" languageclient
-" ----------------------------------------------------------------------------
-"{{{
-
-set rtp+=~/.dotfiles/vim/pack/lang/start/LanguageClient-neovim
-
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'typescript.tsx': ['javascript-typescript-stdio'],
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'php': ['tcp://127.0.0.1:12345'],
-    \ }
-
-" don't automatically start language servers.
-let g:LanguageClient_autoStart = 0
-
-nnoremap <leader>lcs :LanguageClientStart<CR>
-nnoremap <leader>lcc :call LanguageClient_contextMenu()<CR>
-nnoremap <silent><leader>lch :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent><leader>lcd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent><leader>lcr :call LanguageClient_textDocument_rename()<CR>
-
-"}}}
-
-" ----------------------------------------------------------------------------
 " Commentary
 " ----------------------------------------------------------------------------
 "{{{

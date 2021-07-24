@@ -148,9 +148,6 @@
 [submodule "vim/pack/bundle/opt/fzf.vim"]
 	path = vim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
-[submodule "vim/bundle/LanguageClient-neovim"]
-	path = vim/pack/lang/opt/LanguageClient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim.git
 [submodule "vim/pack/bundle/start/vim-asterisk"]
 	path = vim/pack/bundle/start/vim-asterisk
 	url = https://github.com/haya14busa/vim-asterisk
