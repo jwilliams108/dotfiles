@@ -148,15 +148,6 @@
 [submodule "vim/pack/bundle/opt/fzf.vim"]
 	path = vim/pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
-[submodule "vim/bundle/nvim-yarp"]
-	path = vim/bundle/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp.git
-[submodule "vim/bundle/vim-hug-neovim-rpc"]
-	path = vim/bundle/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc.git
-[submodule "vim/bundle/deoplete.nvim"]
-	path = vim/bundle/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "vim/bundle/LanguageClient-neovim"]
 	path = vim/pack/lang/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim.git
@@ -196,9 +187,6 @@
 [submodule "vim/pack/colours/opt/lightline-theme-pencil"]
 	path = vim/pack/colours/opt/lightline-theme-pencil
 	url = https://github.com/mikker/lightline-theme-pencil.git
-[submodule "vim/bundle/deoplete-phpactor"]
-	path = vim/bundle/deoplete-phpactor
-	url = https://github.com/kristijanhusak/deoplete-phpactor.git
 [submodule "vim/pack/lang/start/phpactor"]
 	path = vim/pack/lang/start/phpactor
 	url = https://github.com/phpactor/phpactor.git
