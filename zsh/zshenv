@@ -1,6 +1,8 @@
 # make sure local takes precendence
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+export MANPATH=/opt/local/share/man:$MANPATH
 
 # for gnu bin, sed and grep on osx
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
@@ -11,6 +13,9 @@ if [ -d /usr/local/opt/grep/libexec/gnubin ]; then
 fi
 if [ -d /usr/local/opt/gnu-sed/libexec/gnubin ]; then
   export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+fi
+if [ -d /opt/local/libexec/gnubin ]; then
+  export PATH=/opt/local/libexec/gnubin:$PATH
 fi
 
 # for XQuartz
