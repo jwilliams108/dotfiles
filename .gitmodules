@@ -157,3 +157,6 @@
 [submodule "vim/pack/bundle/start/vim-peekaboo"]
 	path = vim/pack/bundle/start/vim-peekaboo
 	url = https://github.com/junegunn/vim-peekaboo.git
+[submodule "vim/pack/bundle/start/targets.vim"]
+	path = vim/pack/bundle/start/targets.vim
+	url = https://github.com/wellle/targets.vim
