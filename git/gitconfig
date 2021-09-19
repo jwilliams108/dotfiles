@@ -38,6 +38,7 @@
 	pf = push --force-with-lease
 	pt = push --tags
 	mff = merge --ff-only
+	mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
 	br = branch
 	chp = cherry-pick
 	f = fetch
@@ -57,11 +58,12 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
-	lgl = log --pretty=format:"%C(auto)[%h:%ad]\\ %an\\ %d%n%s%n%w(72,4,4)%b" --date=short --graph --decorate
 	his = log --pretty=format:"%C(auto)[%h:%ad]\\ %s%d%C(blue)\\ <%an>%C(auto)\\ " --date=short
-	ls = !git his --decorate --graph # full short log
+	lgl = log --pretty=format:"%C(auto)[%h:%ad]\\ %an\\ %d%n%s%n%w(72,4,4)%b" --date=short --graph --decorate
+	ls = log --pretty=format:"%C(auto)[%h:%ad]\\ %s%d%C(blue)\\ <%an>%C(auto)\\ " --date=short
+	ll = !git his --decorate --graph # full short log
+	lc = !git ls --stat # log including which files changed
 	lld = !git ls --date=relative
-	ll = !git ls --stat # log including which files changed
 	lst = !git ls --numstat
 	lp = !git ls -p # log including patch
 	lbr = !git ls --all --simplify-by-decoration # show branch relationships
