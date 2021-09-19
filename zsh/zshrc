@@ -24,15 +24,15 @@ if ! zgen saved; then
   zgen load Tarrasch/zsh-bd
   zgen load hlissner/zsh-autopair
 
+  # local plugins
+  zgen load "${HOME}/.zsh/plugins/fzf"
+  zgen load "${HOME}/.zsh/plugins/fzf-tab"
+  zgen load "${HOME}/.zsh/plugins/zsh-autosuggestions"
+
   # zsh-users plugins
   zgen load zsh-users/zsh-completions src
   zgen load zsh-users/zsh-history-substring-search
   zgen load zsh-users/zsh-syntax-highlighting
-
-  # local plugins
-  zgen load "${HOME}/.zsh/plugins/fzf"
-  zgen load "${HOME}/.zsh/plugins/zsh-autosuggestions"
-  #zgen load "${HOME}/.zsh/plugins/zsh-git-prompt"
 
   # theme
   zgen load romkatv/powerlevel10k powerlevel10k
