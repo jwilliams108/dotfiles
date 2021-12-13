@@ -27,10 +27,10 @@ distro="OS X $(sw_vers -productVersion)"
 kernel=$(uname -smr)
 #uptime=$(uptime | sed 's/.*up \([^,]*\), .*/\1/')
 uptime=$(uptime | sed 's/^.*up/up/')
-shell=$(/usr/local/bin/zsh --version | awk '{print $1, $2}')
+shell=$(/opt/local/bin/zsh --version | awk '{print $1, $2}')
 terminal="xterm-256color"
 cpu=$(sysctl -n machdep.cpu.brand_string)
-packagehandler="`/usr/local/bin/brew list -1 --formula | wc -l`"
+packagehandler="`/opt/local/bin/port installed | wc -l`"
 
 # removes (R) and (TM) from the CPU name so it fits in a standard 80 window
 cpu=$(echo "$cpu" | awk '$1=$1' | sed 's/([A-Z]\{1,2\})//g')

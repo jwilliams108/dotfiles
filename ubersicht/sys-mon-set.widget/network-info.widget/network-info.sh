@@ -56,8 +56,8 @@ echo '  ,'
 
 # Output the Public IP information
 #ip=$(curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//')
-#ip=$(/usr/local/bin/wget -qO - ident.me)
-ip=$(/usr/local/bin/wget -qO - icanhazip.com | awk '{print $1}')
+ip=$(/opt/local/bin/wget -qO - ident.me)
+#ip=$(/opt/local/bin/wget -qO - icanhazip.com | awk '{print $1}')
 mac=""
 exportService "public-ip"
 
