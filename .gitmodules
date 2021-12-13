@@ -159,3 +159,6 @@
 [submodule "zsh/plugins/fzf-tab"]
 	path = zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule "kitty/kitty-themes"]
+	path = kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
