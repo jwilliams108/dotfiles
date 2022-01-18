@@ -20,15 +20,15 @@ endJSON() {
   echo '}'
 }
 
-CMUS=`/usr/local/bin/cmus-remote -Q 2>&1`
+CMUS=`/opt/local/bin/cmus-remote -Q 2>&1`
 
 startJSON
 if [ "$CMUS" == "${CMUS/not running/}" ]; then
   # only output now playing if cmus is running
-  STATUS=`/usr/local/bin/cmus-remote -Q | grep status | awk '{print $2}'`
-  ARTIST=`/usr/local/bin/cmus-remote -Q | grep artist | grep -v albumartist | awk '{sub(/^[ ]*([^ ]+ +){2}/, ""); print $0}'`
-  ALBUM=`/usr/local/bin/cmus-remote -Q | grep album | grep -v albumartist | grep -v replaygain | awk '{sub(/^[ ]*([^ ]+ +){2}/, ""); print $0}'`
-  TITLE=`/usr/local/bin/cmus-remote -Q | grep title | awk '{sub(/^[ ]*([^ ]+ +){2}/, ""); print $0}'`
+  STATUS=`/opt/local/bin/cmus-remote -Q | grep status | awk '{print $2}'`
+  ARTIST=`/opt/local/bin/cmus-remote -Q | grep artist | grep -v albumartist | awk '{sub(/^[ ]*([^ ]+ +){2}/, ""); print $0}'`
+  ALBUM=`/opt/local/bin/cmus-remote -Q | grep album | grep -v albumartist | grep -v replaygain | awk '{sub(/^[ ]*([^ ]+ +){2}/, ""); print $0}'`
+  TITLE=`/opt/local/bin/cmus-remote -Q | grep title | awk '{sub(/^[ ]*([^ ]+ +){2}/, ""); print $0}'`
 
   exportNowPlaying
 fi
