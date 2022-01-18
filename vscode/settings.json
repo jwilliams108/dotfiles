@@ -104,5 +104,7 @@
   "[jsonc]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "telemetry.enableCrashReporter": false,
+  "telemetry.telemetryLevel": "off"
 }
