@@ -276,7 +276,7 @@ let g:lion_map_left = '<leader>a'
 " ----------------------------------------------------------------------------
 "{{{
 
-set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/local/share/fzf/vim
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
