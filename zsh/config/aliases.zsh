@@ -17,7 +17,9 @@ alias bup='brew update'
 alias bcup='brew cleanup'
 alias bout='brew outdated'
 
-# macvim
+# vim/macvim
+alias vim='/Applications/MacPorts/MacVim.app/Contents/MacOS/Vim'
+alias mvim='/Applications/MacPorts/MacVim.app/Contents/MacOS/Vim -g'
 alias mrem='mvim --remote-silent'
 alias mtab='mvim -p --remote-tab-silent'
 

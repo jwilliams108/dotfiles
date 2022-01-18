@@ -1,26 +1,26 @@
 # make sure local takes precendence
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
-# for gnu bin, sed and grep on osx
-if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
-  export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-fi
-if [ -d /usr/local/opt/grep/libexec/gnubin ]; then
-  export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
-fi
-if [ -d /usr/local/opt/gnu-sed/libexec/gnubin ]; then
-  export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
-fi
+# for gnu versions of sed, grep, etc. on osx
 if [ -d /opt/local/libexec/gnubin ]; then
   export PATH=/opt/local/libexec/gnubin:$PATH
 fi
 
-# for XQuartz
-if [ -d /usr/X11 ]; then
-  export PATH=/usr/X11/bin:$PATH
+# asdf
+if [ -d ~/.asdf ]; then
+  source ~/.asdf/asdf.sh
+
+  # direnv via asdf
+  eval "$(asdf exec direnv hook zsh)"
+  direnv() { asdf exec direnv "$@"; }
+fi
+
+# for go bins
+if [ -d /opt/go/bin ]; then
+  export GOPATH=/opt/go
+  export PATH=/opt/go/bin:$PATH
 fi
 
 # texlive
@@ -28,46 +28,15 @@ if [ -d /usr/local/texlive/2020/bin/x86_64-darwin ]; then
   export PATH=/usr/local/texlive/2020/bin/x86_64-darwin:$PATH
 fi
 
-# for nvm
-if [ -d ~/.nvm ] && [ -d /usr/local/opt/nvm ]; then
-  export NVM_DIR=~/.nvm
-  source /usr/local/opt/nvm/nvm.sh
-fi
-
-# for pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
-
-# for composer vendor bins
-if [ -d ~/.composer/vendor/bin ]; then
-  export PATH=$HOME/.composer/vendor/bin:$PATH
-fi
-
-# for ruby gem bins
-if [ -d /usr/local/lib/ruby/gems/3.0.0/bin ]; then
-  export PATH=/usr/local/lib/ruby/gems/3.0.0/bin:$PATH
-fi
-
 # for VS Code
 if [ -d "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" ]; then
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 fi
 
-# Base16 Shell
-if [ -d ~/.config/base16-shell ]; then
-  BASE16_SHELL="$HOME/.config/base16-shell/"
-  [ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-      eval "$("$BASE16_SHELL/profile_helper.sh")"
-fi
-
 # editor and utils
 export EDITOR=vim
 export PAGER=less
+export PSQL_PAGER='pspg -s 16'
 export COPYFILE_DISABLE=1
 
 # prevent slowdowns on large pastes into terminal
@@ -79,12 +48,9 @@ export DISABLE_AUTO_UPDATE=true
 # homebrew stuff
 export HOMEBREW_NO_ANALYTICS=1
 
-# starship prompt
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
 # fzf options
-export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_DEFAULT_OPTS="--inline-info"
+#export FZF_DEFAULT_COMMAND='ag -g ""'
+#export FZF_DEFAULT_OPTS="--inline-info"
 #export FZF_CTRL_R_OPTS="-e"
 
 # GPG
